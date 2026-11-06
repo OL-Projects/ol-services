@@ -3,299 +3,652 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>OL — the agent that checks its own work</title>
-<link rel="icon" type="image/svg+xml" href="ol-mark-v2.svg">
-<meta property="og:title" content="OL — the agent that checks its own work">
-<meta property="og:description" content="$5/month with your own API key. Documents, estimates and audits, checked before delivery.">
+<title>OL — Optimization and Logistics · documents, estimates and audits that hold up</title>
+<meta name="description" content="OL writes the document your business needs and cannot get to: construction estimates and takeoffs, technical audits, and automations that run on your own accounts. Montréal.">
+<link rel="icon" href="ol-mark.svg" type="image/svg+xml">
 <meta property="og:type" content="website">
-<meta name="description" content="OL checks its own work: it writes your estimate, renders it, measures it and totals it again. $5/month with your own API key.">
+<meta property="og:title" content="OL — Optimization and Logistics · documents, estimates and audits">
+<meta property="og:description" content="Fixed-price estimates, technical audits and automations, written and machine-checked before delivery. Montréal, Québec.">
+<meta property="og:image" content="https://ol-projects.github.io/ol-services/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Paperwork that holds up — OL, Montréal.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://ol-projects.github.io/ol-services/og.png">
+<link rel="canonical" href="https://ol-projects.github.io/ol-services/">
+<!-- Machine-readable identity. A crawler, a browser or a client's accounting system can read who this
+     company is without parsing prose: legal name, registration, tax numbers, and the three offers with
+     their prices. This is the cheapest legitimacy there is, and it costs nothing. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "OL — Optimization and Logistics",
+  "alternateName": "OL",
+  "description": "Fixed-price construction estimating and takeoff documents, technical audits, and automation builds. Prepared and machine-checked before delivery.",
+  "url": "https://ol-projects.github.io/ol-services/",
+  "email": "spirokaglis@gmail.com",
+  "logo": "https://ol-projects.github.io/ol-services/ol-mark.svg",
+  "address": { "@type": "PostalAddress", "addressLocality": "Montréal", "addressRegion": "QC", "addressCountry": "CA" },
+  "areaServed": { "@type": "AdministrativeArea", "name": "Québec" },
+  "identifier": [
+    { "@type": "PropertyValue", "name": "NEQ", "value": "2270669312" },
+    { "@type": "PropertyValue", "name": "GST", "value": "81902 9992 RT0001" },
+    { "@type": "PropertyValue", "name": "QST", "value": "4024451921 TQ0002" }
+  ],
+  "currenciesAccepted": "CAD",
+  "paymentAccepted": "Interac e-Transfer, Credit Card",
+  "makesOffer": [
+    { "@type": "Offer", "name": "Technical audit", "price": "490.00", "priceCurrency": "CAD" },
+    { "@type": "Offer", "name": "Takeoff and priced material list", "price": "95.00", "priceCurrency": "CAD" },
+    { "@type": "Offer", "name": "Automation build", "price": "75.00", "priceCurrency": "CAD" }
+  ]
+}
+</script>
 <style>
-:root{
-  --navy:#0E2439; --navy2:#183A5C; --steel:#315D8C; --ink:#101820; --body:#42505E;
-  --line:#E5EAF0; --bg:#FFFFFF; --tint:#F4F7FA; --accent:#B4552D; --accent2:#E8A87C;
-  --ok:#1E7A4F; --radius:14px;
-}
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font:16px/1.65 ui-sans-serif,-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif;color:var(--ink);background:var(--bg);-webkit-font-smoothing:antialiased}
-.wrap{max-width:1120px;margin:0 auto;padding:0 28px}
-a{color:inherit}
-.serif{font-family:ui-serif,"New York",Georgia,"Times New Roman",serif}
+  :root{
+    --navy:#183A5C; --steel:#315D8C; --ink:#1d232b; --muted:#6C7177;
+    --line:#D5DCE3; --wash:#F4F6F9; --white:#fff; --accent:#B8860B;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{margin:0;font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+       color:var(--ink);background:var(--white)}
+  .wrap{max-width:920px;margin:0 auto;padding:0 28px}
+  header{border-bottom:1px solid var(--line);padding:22px 0}
+  .brand{display:flex;align-items:center;gap:14px}
+  .brand svg{width:44px;height:44px;flex:none}
+  .brand .n{font-weight:800;font-size:19px;letter-spacing:.14em;color:var(--navy);line-height:1}
+  .brand .t{font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-top:5px}
+  .hero{padding:34px 0 18px}
+  .kicker{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--steel);font-weight:700}
+  h1{font-size:38px;line-height:1.08;letter-spacing:-.025em;color:var(--navy);margin:10px 0 12px;max-width:20ch}
+  .lede{font-size:17.5px;color:#3b4550;max-width:56ch;margin:0}
+  .offers{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:30px 0 8px}
+  .offer{border:1px solid var(--line);border-radius:12px;padding:17px 17px;background:var(--white);
+         display:flex;flex-direction:column}
+  .offer .price{font-size:30px;font-weight:800;color:var(--navy);letter-spacing:-.02em;line-height:1}
+  .offer .unit{font-size:12.5px;color:var(--muted);margin:6px 0 14px}
+  .offer h3{margin:0 0 8px;font-size:17px;color:var(--navy)}
+  .offer p{margin:0 0 16px;font-size:14.5px;color:#3b4550}
+  .offer a{margin-top:auto;font-weight:700;color:var(--steel);text-decoration:none;font-size:14.5px}
+  .offer a:hover{text-decoration:underline}
+  h2{font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--steel);
+     margin:34px 0 12px;padding-bottom:7px;border-bottom:2px solid var(--line)}
+  ul{margin:0 0 0 20px;padding:0}
+  li{margin:7px 0}
+  .proof{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  .pcard{background:var(--wash);border:1px solid var(--line);border-radius:12px;padding:18px 20px}
+  .pcard h3{margin:0 0 6px;font-size:15.5px;color:var(--navy)}
+  .pcard p{margin:0;font-size:14px;color:#3b4550}
+  .legit{margin-top:16px;border-left:4px solid var(--navy);background:var(--wash);
+         padding:16px 18px;border-radius:0 10px 10px 0;font-size:14px;color:#3b4550}
+  .cta{display:inline-block;background:var(--navy);color:#fff;text-decoration:none;font-weight:700;
+       padding:15px 28px;border-radius:9px;margin:10px 0 8px}
+  .contact{padding:26px 0 12px}
+  .small{font-size:13px;color:var(--muted)}
+  footer{border-top:1px solid var(--line);margin-top:28px;padding:16px 0 26px;font-size:12.5px;color:var(--muted)}
+  footer strong{color:var(--ink)}
+  /* The quote form. Deliberately a real form with real <label>s rather than a
+     bare mailto link: the visitor's keyboard, screen reader and browser autofill
+     all work, and the structured fields are filled for them instead of being a
+     wall of text they are expected to rewrite. */
+  .quote{border:1px solid var(--line);border-radius:12px;padding:20px 22px;background:var(--wash);margin:14px 0 0}
+  .quote .f{margin:0 0 14px}
+  .quote label{display:block;font-weight:700;font-size:14px;color:var(--navy);margin-bottom:5px}
+  .quote .hint{font-weight:400;font-size:12.5px;color:var(--muted);display:block;margin-top:3px}
+  .quote select,.quote textarea,.quote input{width:100%;font:inherit;font-size:15px;color:var(--ink);
+    background:var(--white);border:1px solid var(--line);border-radius:8px;padding:10px 12px}
+  .quote textarea{min-height:132px;resize:vertical}
+  .quote input[type=email]{max-width:360px}
+  .quote .req{color:#9c2b2b;font-weight:700}
+  .quote .err{color:#9c2b2b;font-size:13.5px;font-weight:600;margin:10px 0 0;min-height:1.2em}
+  .quote .err:empty{display:none}
+  .quote .actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:14px}
+  .quote .send{background:var(--navy);color:#fff;border:0;font:inherit;font-weight:700;padding:13px 24px;
+    border-radius:9px;cursor:pointer}
+  .quote .send:hover{background:var(--steel)}
+  .quote .preview{font-size:13px;color:var(--steel);font-weight:700;text-decoration:none}
+  .quote .preview:hover{text-decoration:underline}
+  .quote .after{margin:12px 0 0;font-size:13.5px;color:#3b4550}
+  .quote .after:empty{display:none}
+  /* The notice the law requires to sit at the point of collection, in the same
+     sentence the visitor is deciding to press send. Not a link they must hunt. */
+  .notice{font-size:12.5px;color:var(--muted);margin:12px 0 0;padding-top:12px;border-top:1px solid var(--line)}
+  .notice a{color:var(--steel)}
+  /* Print is a separate artefact from the screen: on paper there is no scrolling, so the same content
+     has to compress to two pages without shrinking the type below readable. Measured 2026-11-06: the
+     screen layout printed as three pages with a nearly-empty third, which the document gate flagged. */
+  @media print{
+    .offer,.pcard,.legit,.proof,.offers{break-inside:avoid;page-break-inside:avoid}
+    h1,h2,h3{break-after:avoid;page-break-after:avoid}
+    header{border:0;padding:10px 0}
+    .hero{padding:14px 0 8px}
+    h1{font-size:29px;margin:6px 0 8px}
+    .lede{font-size:14px}
+    .offers{gap:9px;margin:16px 0 4px;grid-template-columns:repeat(3,1fr)}
+    .proof{grid-template-columns:1fr 1fr}
+    .offer{padding:12px 12px}
+    .offer .price{font-size:23px}
+    .offer p{font-size:12.5px;margin-bottom:10px}
+    h2{margin:20px 0 8px}
+    .pcard{padding:11px 12px}
+    .pcard p{font-size:12.5px}
+    li{margin:4px 0;font-size:13px}
+    .legit{font-size:12.5px;padding:11px 13px}
+    .contact{padding:14px 0 6px}
+    footer{margin-top:16px;padding:10px 0 0}
+    /* The quote form is an interactive artefact: a printed sheet cannot send it,
+       so on paper it compresses to its text and keeps the page count at two. */
+    .quote{padding:11px 13px;margin-top:9px}
+    .quote .f{margin-bottom:8px}
+    .quote textarea{min-height:64px}
+    .quote .send,.quote .preview,.quote .after{display:none}
+    .quote .hint{font-size:11px}
+    .notice{font-size:11px;margin-top:8px;padding-top:8px}
+  }
+  @media screen and (max-width:760px){
+    h1{font-size:33px}
+    .offers,.proof{grid-template-columns:1fr}
+    .hero{padding:40px 0 20px}
+  }
 
-/* nav */
-nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.82);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
-.nav{display:flex;align-items:center;justify-content:space-between;height:64px}
-.brand{display:flex;align-items:center;gap:10px;font-weight:650;letter-spacing:-.01em;font-size:17px}
-.brand svg{width:26px;height:26px}
-.navlinks{display:flex;gap:28px;align-items:center;font-size:14.5px;color:var(--body)}
-.navlinks a{text-decoration:none}
-.navlinks a:hover{color:var(--ink)}
-.btn{display:inline-flex;align-items:center;gap:8px;background:var(--navy);color:#fff;text-decoration:none;font-weight:600;font-size:14.5px;padding:10px 18px;border-radius:9px;transition:transform .18s ease,background .18s ease}
-.btn:hover{background:var(--navy2);transform:translateY(-1px)}
-.btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
-.btn.ghost:hover{background:var(--tint)}
-
-/* hero */
-.hero{position:relative;overflow:hidden;padding:86px 0 0}
-.mesh{position:absolute;inset:0;pointer-events:none;
-  background:
-   radial-gradient(680px 380px at 12% -6%, rgba(49,93,140,.20), transparent 62%),
-   radial-gradient(560px 340px at 92% 4%, rgba(180,85,45,.13), transparent 60%),
-   radial-gradient(900px 420px at 50% 108%, rgba(14,36,57,.10), transparent 70%);
-  mask-image:linear-gradient(#000 62%, transparent)}
-.heroinner{position:relative;display:grid;grid-template-columns:1.02fr .98fr;gap:56px;align-items:center;padding-bottom:64px}
-.eyebrow{display:inline-flex;align-items:center;gap:9px;font-size:12.5px;font-weight:650;letter-spacing:.10em;text-transform:uppercase;color:var(--steel);background:#EAF1F8;border:1px solid #D8E4F0;padding:6px 12px;border-radius:100px}
-.dot{width:6px;height:6px;border-radius:50%;background:var(--ok);box-shadow:0 0 0 3px rgba(30,122,79,.16)}
-h1{max-width:15.2em;font-size:54px;line-height:1.04;letter-spacing:-.028em;margin:22px 0 18px;font-weight:600}
-h1 em{font-style:normal;color:var(--steel)}
-.sub{font-size:18.5px;line-height:1.6;color:var(--body);max-width:31em}
-.cta{display:flex;gap:12px;margin-top:30px;align-items:center;flex-wrap:wrap}
-.price-note{font-size:13.5px;color:#68757F}
-
-/* product window */
-.window{background:#fff;border:1px solid var(--line);border-radius:16px;box-shadow:0 30px 60px -28px rgba(14,36,57,.34),0 2px 8px rgba(14,36,57,.06);overflow:hidden}
-.wbar{display:flex;align-items:center;gap:8px;padding:11px 14px;border-bottom:1px solid var(--line);background:#FBFCFE}
-.wdot{width:9px;height:9px;border-radius:50%;background:#DDE3EA}
-.wtitle{margin-left:8px;font-size:12.5px;color:#7A8794;font-weight:550;letter-spacing:.01em}
-.wbody{padding:20px 22px 22px}
-.wrow{display:flex;justify-content:space-between;font-size:14px;padding:9px 0;border-bottom:1px solid #F0F3F7}
-.wrow span:last-child{font-variant-numeric:tabular-nums;font-weight:550}
-.whead{display:flex;justify-content:space-between;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#8A96A2;font-weight:650;padding-bottom:10px}
-.bad{color:var(--accent)}
-.bad .amt{text-decoration:line-through;text-decoration-thickness:1.5px}
-.good{background:#F0F8F4;margin:0 -22px;padding:12px 22px;border-top:1px solid #D9EDE2;border-bottom:1px solid #D9EDE2;display:flex;justify-content:space-between;font-size:14px;font-weight:650;color:#125C3B}
-.note{margin-top:14px;font-size:12.5px;color:#7A8794;display:flex;gap:8px;align-items:flex-start}
-.check{flex:0 0 auto;width:15px;height:15px;border-radius:50%;background:#DFF0E7;color:#125C3B;font-size:10px;display:grid;place-items:center;font-weight:800;margin-top:2px}
-
-/* logos strip */
-.strip{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:#FCFDFE;padding:22px 0}
-.striplabel{font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:#93A0AC;font-weight:650;text-align:center;margin-bottom:16px}
-.striplogos{display:flex;gap:46px;justify-content:center;flex-wrap:wrap;color:#8C99A5;font-weight:650;font-size:15px;letter-spacing:-.01em}
-.striplogos span{opacity:.85}
-
-/* sections */
-section.blk{padding:88px 0}
-h2{font-size:36px;line-height:1.14;letter-spacing:-.022em;font-weight:600;margin-bottom:14px}
-.lede{font-size:17.5px;color:var(--body);max-width:38em}
-.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:44px}
-.card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:26px 24px;transition:transform .2s ease,box-shadow .2s ease}
-.card:hover{transform:translateY(-2px);box-shadow:0 18px 40px -26px rgba(14,36,57,.30)}
-.card h3{font-size:16.5px;font-weight:650;margin-bottom:8px;letter-spacing:-.01em}
-.card p{font-size:14.5px;color:var(--body);line-height:1.6}
-.icon{width:34px;height:34px;border-radius:9px;background:#EAF1F8;display:grid;place-items:center;margin-bottom:16px;color:var(--steel)}
-
-/* dual */
-.dual{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:center;margin-top:52px}
-.compare{border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
-.compare .row{display:grid;grid-template-columns:1fr 1fr;font-size:14px}
-.compare .row>div{padding:13px 18px;border-bottom:1px solid var(--line)}
-.compare .row>div:first-child{border-right:1px solid var(--line);color:#8E9AA6}
-.compare .row.head>div{background:#F7F9FC;font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:#7A8794}
-.compare .row.badr>div:last-child{color:var(--accent);font-weight:600}
-.compare .row.goodr>div:last-child{color:#125C3B;font-weight:650;background:#F4FAF6}
-
-/* pricing */
-.prices{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:44px}
-.price{border:1px solid var(--line);border-radius:var(--radius);padding:24px 20px;background:#fff;display:flex;flex-direction:column}
-.price.feature{border:2px solid var(--navy);box-shadow:0 22px 48px -30px rgba(14,36,57,.42)}
-.price .tier{font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--steel)}
-.price .amt{font-size:38px;font-weight:650;letter-spacing:-.03em;margin:12px 0 2px}
-.price .amt small{font-size:14px;font-weight:500;color:#7A8794;letter-spacing:0}
-.price ul{list-style:none;margin:18px 0 22px;font-size:13.8px;color:var(--body);flex:1}
-.price li{padding:6px 0;border-bottom:1px solid #F2F5F8}
-.price li:last-child{border:0}
-.badge{font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;font-weight:750;background:var(--navy);color:#fff;padding:3px 9px;border-radius:100px;display:inline-block;margin-left:8px;vertical-align:2px}
-
-/* limits */
-.limits{background:var(--navy);color:#fff;border-radius:20px;padding:56px 52px;margin-top:22px}
-.limits h2{color:#fff}
-.limits .lede{color:#B9CBDC}
-.limitgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:38px}
-.limitgrid div{font-size:14.5px;line-height:1.6;color:#CFDCE8}
-.limitgrid strong{display:block;color:#fff;font-size:15px;margin-bottom:6px;font-weight:650}
-
-/* footer */
-footer{border-top:1px solid var(--line);padding:52px 0 64px;margin-top:0;background:#FBFCFE}
-.foot{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px}
-.foot h4{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#8E9AA6;font-weight:700;margin-bottom:14px}
-.foot a,.foot p{font-size:14px;color:var(--body);text-decoration:none;display:block;margin-bottom:9px}
-.foot a:hover{color:var(--ink)}
-.legal{margin-top:38px;padding-top:22px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:20px;font-size:12.5px;color:#8E9AA6;flex-wrap:wrap}
-
-@media(max-width:940px){
-  .heroinner{grid-template-columns:1fr;gap:40px}
-  h1{font-size:42px}
-  .grid3,.prices,.limitgrid{grid-template-columns:1fr 1fr}
-  .dual{grid-template-columns:1fr}
-  .foot{grid-template-columns:1fr 1fr}
-}
-@media(max-width:620px){
-  h1{font-size:34px} h2{font-size:27px}
-  .grid3,.prices,.limitgrid,.foot{grid-template-columns:1fr}
-  .navlinks{display:none}
-  .limits{padding:36px 24px}
-  section.blk{padding:60px 0}
-}
-@media print{
-  nav,.mesh{display:none}
-  body{font-size:11pt}
-  section.blk{padding:24pt 0}
-  .card,.price{break-inside:avoid}
-}
+.xnav{display:flex;gap:22px;align-items:center;padding:16px 26px 0;font:500 11px/1 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.13em;text-transform:uppercase;color:#6C7177}
+.xnav a{color:inherit;text-decoration:none;border-bottom:1px solid transparent;padding-bottom:3px}
+.xnav a:hover{border-bottom-color:#183A5C;color:#183A5C}
+.xnav .cur{color:#183A5C}
+.xnav .out{margin-left:auto}
 </style>
 </head>
 <body>
 
-<nav><div class="wrap nav">
-  <div class="brand">
-    <svg viewBox="0 0 120 120" aria-label="OL" style="width:34px;height:26px"><path fill="#183A5C" fill-rule="evenodd" d="M41 29a31 31 0 1 0 0 62a31 31 0 1 0 0-62zM41 43a17 17 0 1 1 0 34a17 17 0 1 1 0-34z"/><path fill="#183A5C" d="M78 29h11v51h17v11H78z"/></svg>
-  </div>
-  <div class="navlinks">
-    <a href="#how">How it works</a>
-    <a href="#pricing">Pricing</a>
-    <a href="#limits">Limits</a>
-    <a href="https://ol-projects.github.io/ol-agent/" target="_blank" rel="noopener">The Mac app</a>
-    <a class="btn" href="mailto:spirokaglis@gmail.com?subject=Early%20access">Get early access</a>
-  </div>
-</div></nav>
-
-<header class="hero"><div class="mesh"></div><div class="wrap heroinner">
-  <div>
-    <span class="eyebrow"><span class="dot"></span>Now in private beta · Montréal</span>
-    <h1>It checks its own work <em>before you see it.</em></h1>
-    <p class="sub">OL writes your estimate, renders it, measures every line and totals it a second time. Anything that fails is rewritten. If the numbers still don't add up, it won't hand the document over.</p>
-    <div class="cta">
-      <a class="btn" href="mailto:spirokaglis@gmail.com?subject=Early%20access">Get early access</a>
-      <a class="btn ghost" href="#how">See how the check works</a>
-    </div>
-    <p class="price-note" style="margin-top:14px">$5/month with your own API key · 10 documents free · no card</p>
-  </div>
-
-  <div class="window" role="img" aria-label="A subtotal that fails the check, and the corrected total beneath it">
-    <div class="wbar"><span class="wdot"></span><span class="wdot"></span><span class="wdot"></span><span class="wtitle">estimate-516-meloche.pdf — verification</span></div>
-    <div class="wbody">
-      <div class="whead"><span>Line</span><span>Amount</span></div>
-      <div class="wrow"><span>Drywall, 42 m² at $38</span><span>$1,596.00</span></div>
-      <div class="wrow"><span>Labour, 16 h at $85</span><span>$1,360.00</span></div>
-      <div class="wrow bad"><span>Subtotal <span style="font-size:11px;letter-spacing:.08em;text-transform:uppercase">· mismatch</span></span><span class="amt">$3,056.90</span></div>
-      <div class="good"><span>Subtotal, recounted</span><span>$2,956.00</span></div>
-      <div class="note"><span class="check">✓</span><span>Second total did not match the first. Row rewritten before delivery — 0 documents left with an unbalanced total.</span></div>
-    </div>
-  </div>
-</div></header>
-
-<div class="strip"><div class="wrap">
-  <div class="striplabel">Built for the work that has to be right</div>
-  <div class="striplogos"><span>Estimates</span><span>Takeoffs</span><span>Audits</span><span>Invoices</span><span>Client reports</span></div>
-</div></div>
-
-<section class="blk" id="how"><div class="wrap">
-  <h2 class="serif">Most software generates. <br>This one refuses.</h2>
-  <p class="lede">Every agent looks good in a demo. The difference shows up on the document your client actually receives.</p>
-  <div class="grid3">
-    <div class="card">
-      <div class="icon"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h10M4 17h7"/></svg></div>
-      <h3>It writes</h3>
-      <p>From a plan, a file or a few sentences — an estimate, a takeoff, an audit or a report, in your own format.</p>
-    </div>
-    <div class="card">
-      <div class="icon"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="M7 14l4-4 3 3 5-6"/></svg></div>
-      <h3>It measures</h3>
-      <p>The document is rendered and read back: margins, page count, every line, and the sum of the parts against the printed total.</p>
-    </div>
-    <div class="card">
-      <div class="icon"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12a9 9 0 1 1-3-6.7"/><path d="M21 3v6h-6"/></svg></div>
-      <h3>It rewrites</h3>
-      <p>What fails goes back for another pass. What still fails is not delivered. You are told which line failed and why.</p>
-    </div>
-  </div>
-</div></section>
-
-<section class="blk" style="background:var(--tint)"><div class="wrap">
-  <h2 class="serif">The difference is one line.</h2>
-  <p class="lede">A quote that says $3,056.90 next to line items that add to $2,956.00 is not a rounding error. Someone signs it, builds it, and eats the difference.</p>
-  <div class="dual">
-    <div class="compare">
-      <div class="row head"><div>Without the check</div><div>With OL</div></div>
-      <div class="row badr"><div>Total printed from a stale cell</div><div>Total recomputed from the lines</div></div>
-      <div class="row badr"><div>Table runs off the page</div><div>Every page measured before sending</div></div>
-      <div class="row badr"><div>Wrong tax rate applied</div><div>GST 5% and QST 9.975%, to the cent</div></div>
-      <div class="row goodr"><div>Found by the client</div><div>Found before it leaves</div></div>
-    </div>
+<header>
+  <div class="wrap brand">
+    <svg viewBox="0 0 120 120" aria-hidden="true">
+      <rect width="120" height="120" rx="18" fill="#183A5C"/>
+      <g fill="none" stroke="#fff" stroke-width="8.5" stroke-linecap="butt" stroke-linejoin="miter">
+        <circle cx="44" cy="50" r="22"/>
+        <path d="M78 28 V72 H98"/>
+      </g>
+    </svg>
     <div>
-      <p style="font-size:17px;line-height:1.65;color:var(--body)">On a $40,000 job, a two percent error wipes out the margin. The check takes seconds and costs less than the coffee you drink while the job is priced.</p>
-      <p style="font-size:17px;line-height:1.65;color:var(--body);margin-top:18px">OL was built on documents that had to be right — construction estimates with taxes to the cent, invoices that have to survive an accountant, reports a client will read closely.</p>
+      <div class="n">OL</div>
+      <div class="t">Optimization and Logistics · Montréal</div>
     </div>
   </div>
-</div></section>
+</header>
+<nav class="wrap xnav" aria-label="Sections">
+  <span class="cur">Documents · estimates · audits</span>
+  <a href="estimate.html">Free takeoff</a>
+  <a href="ops-audit.html">Sample audit</a>
+  <a href="pay.html">Pay</a>
+  <a class="out" href="https://ol-projects.github.io/ol-agent/">OL, the agent ↗</a>
+</nav>
 
-<section class="blk" id="pricing"><div class="wrap">
-  <h2 class="serif">Priced so trying it is free.</h2>
-  <p class="lede">Your own API key means the model cost is yours and the software cost is small. That is the only reason $5 is possible.</p>
-  <div class="prices">
-    <div class="price">
-      <div class="tier">Free</div>
-      <div class="amt">$0</div>
-      <ul><li>10 documents / month</li><li>Full self-check</li><li>Your own key</li><li>Community docs</li></ul>
-      <a class="btn ghost" href="mailto:spirokaglis@gmail.com?subject=Free%20tier">Start free</a>
+
+<div class="wrap">
+
+  <section class="hero">
+    <div class="kicker">Documents, estimates and audits</div>
+    <h1>The paperwork your business needs and nobody has time to produce.</h1>
+    <p class="lede">I write the estimate, the audit or the automation — professionally, in French or
+       English, with the arithmetic checked by a machine before it reaches you. Fixed price. No retainer
+       you have to remember to cancel.</p>
+  </section>
+
+  <section class="offers">
+    <div class="offer">
+      <div class="price">$490</div>
+      <div class="unit">fixed · 5 business days</div>
+      <h3>Technical audit</h3>
+      <p>One repo, API or workflow. What is broken, what is fragile, what is fine — each finding tied to a
+         file or a line, plus a recorded walkthrough.</p>
+      <a href="ops-audit.html">See what you get →</a>
     </div>
-    <div class="price">
-      <div class="tier">Day pass</div>
-      <div class="amt">$0.50</div>
-      <ul><li>24 hours</li><li>Unlimited documents</li><li>No subscription</li><li>For one urgent job</li></ul>
-      <a class="btn ghost" href="mailto:spirokaglis@gmail.com?subject=Day%20pass">Buy a day</a>
+    <div class="offer">
+      <div class="price">$95</div>
+      <div class="unit">up to 1,000 ft² · then $0.09/ft²</div>
+      <h3>Takeoff &amp; priced material list</h3>
+      <p>Send the plan or the measurements. You get quantities, waste allowance, boxes and trim, priced —
+         ready to hand to a client.</p>
+      <a href="mailto:spirokaglis@gmail.com?subject=Takeoff%20request">Request a takeoff →</a>
     </div>
-    <div class="price feature">
-      <div class="tier">Solo <span class="badge">Most chosen</span></div>
-      <div class="amt">$5<small>/month</small></div>
-      <ul><li>Unlimited documents</li><li>Estimates and takeoffs</li><li>5 automations</li><li>Email support</li></ul>
-      <a class="btn" href="mailto:spirokaglis@gmail.com?subject=Solo%20plan">Get Solo</a>
+    <div class="offer">
+      <div class="price">$75–300</div>
+      <div class="unit">per automation · 24–48 h</div>
+      <h3>Automation build</h3>
+      <p>n8n, Make or Zapier, on <em>your</em> accounts. Tested with real sample data, documented, with a
+         fix window.</p>
+      <a href="mailto:spirokaglis@gmail.com?subject=Automation%20build">Describe the job →</a>
     </div>
-    <div class="price">
-      <div class="tier">Pro</div>
-      <div class="amt">$19<small>/month</small></div>
-      <ul><li>Everything in Solo</li><li>OL pays for inference</li><li>Unlimited automations</li><li>24-hour support</li></ul>
-      <a class="btn ghost" href="mailto:spirokaglis@gmail.com?subject=Pro%20plan">Get Pro</a>
+  </section>
+
+  <h2>Why the output holds up</h2>
+  <div class="proof">
+    <div class="pcard">
+      <h3>Checked by a machine, not by mood</h3>
+      <p>Every document is rendered and measured before it leaves: nothing outside the margins, no page
+         left half-empty, totals that add up to the cent. A document that fails is not sent.</p>
+    </div>
+    <div class="pcard">
+      <h3>A real sample you can read first</h3>
+      <p>A complete 2-page construction estimate — five divisions, taxes to the cent — is available on
+         request before you spend anything.</p>
+    </div>
+    <div class="pcard">
+      <h3>French and English</h3>
+      <p>Montréal business documents, produced in both languages, with Québec tax lines handled correctly
+         (GST 5 %, QST 9.975 %).</p>
+    </div>
+    <div class="pcard">
+      <h3>Fixed price, stated up front</h3>
+      <p>No hourly drift. If the scope changes, you get a new price before any work continues.</p>
     </div>
   </div>
-</div></section>
 
-<section class="blk" id="limits"><div class="wrap"><div class="limits">
-  <h2 class="serif">What it cannot do</h2>
-  <p class="lede">A short list, because a company that cannot name its limits has not tested them.</p>
-  <div class="limitgrid">
-    <div><strong>It cannot check a price you never gave it.</strong> It verifies structure and arithmetic, not whether your supplier quoted you fairly.</div>
-    <div><strong>It cannot visit the site.</strong> No measurements from a room it has never seen. You supply the plan or the numbers.</div>
-    <div><strong>It runs on your key.</strong> If your provider is down or out of credit, so is OL. Nothing is silently routed through us.</div>
+  <div class="legit">
+    <strong>Who you are dealing with.</strong> OL — Optimization and Logistics is a registered Québec
+    company (NEQ 2270669312 · GST 81902 9992 RT0001 · QST 4024451921 TQ0002). The analysis and drafting
+    are done by an AI agent; every deliverable is reviewed before it is sent, and the limit is stated
+    plainly: <strong>OL holds no RBQ licence</strong> and does not perform or advertise construction work —
+    estimates are prepared for a licensed contractor to sign and present.
   </div>
-</div></div></section>
 
-<footer><div class="wrap">
-  <div class="foot">
-    <div>
-      <div class="brand" style="margin-bottom:14px">
-        <svg viewBox="0 0 120 120" style="width:30px;height:24px"><path fill="#183A5C" fill-rule="evenodd" d="M41 29a31 31 0 1 0 0 62a31 31 0 1 0 0-62zM41 43a17 17 0 1 1 0 34a17 17 0 1 1 0-34z"/><path fill="#183A5C" d="M78 29h11v51h17v11H78z"/></svg>
+  <section class="contact">
+    <h2>Start</h2>
+    <p>Choose what you need priced and write two lines about the job. The button opens your own email
+       app with everything filled in — nothing is sent from this page.</p>
+
+    <form class="quote" id="quote" novalidate>
+      <div class="f">
+        <label for="q-service">What do you need priced? <span class="req" aria-hidden="true">*</span></label>
+        <select id="q-service" name="service" required aria-describedby="q-service-hint">
+          <option value="">— choose one —</option>
+          <option value="takeoff">Takeoff &amp; priced material list — $95</option>
+          <option value="audit">Technical audit — $490</option>
+          <option value="automation">Automation build — $75–300</option>
+          <option value="other">Something else — tell me and I will price it</option>
+        </select>
+        <span class="hint" id="q-service-hint">Prices are fixed and stated on the page — the email just starts the job.</span>
       </div>
-      <p style="max-width:26em">Optimization and Logistics. Documents, estimates and audits for small businesses, checked before delivery.</p>
-    </div>
-    <div>
-      <h4>Product</h4>
-      <a href="#how">How it works</a>
-      <a href="#pricing">Pricing</a>
-      <a href="#limits">Limits</a>
-    </div>
-    <div>
-      <h4>Company</h4>
-      <a href="mailto:spirokaglis@gmail.com">spirokaglis@gmail.com</a>
-      <a href="https://ol-projects.github.io/ol-agent/" target="_blank" rel="noopener">The Mac app — what OL is</a>
-      <p>Montréal, Québec</p>
-    </div>
+
+      <div class="f">
+        <label for="q-detail">About the job <span class="req" aria-hidden="true">*</span></label>
+        <textarea id="q-detail" name="detail" required maxlength="1500"
+          aria-describedby="q-detail-hint"></textarea>
+        <span class="hint" id="q-detail-hint">One or two lines. Plans, repos and files are attached when you reply.</span>
+      </div>
+
+      <div class="f">
+        <label for="q-reply">Your email <span class="hint" style="display:inline;margin:0">(optional — your mail app already puts your address on the message)</span></label>
+        <input id="q-reply" name="replyTo" type="email" autocomplete="email" spellcheck="false">
+      </div>
+
+      <div class="actions">
+        <button type="submit" class="send">Open the request in my email app →</button>
+        <a class="preview" id="q-preview" href="mailto:spirokaglis@gmail.com?subject=Quote%20request" hidden>Preview the whole message</a>
+      </div>
+      <p class="err" id="q-err" role="alert"></p>
+      <p class="after" id="q-after"></p>
+
+      <p class="notice">
+        <strong>What happens to what you type.</strong> This page does not send, store or transmit it:
+        the text is put into an email on <em>your</em> device and you send it yourself. It reaches OL only
+        as an ordinary email to <a href="mailto:spirokaglis@gmail.com">spirokaglis@gmail.com</a>, is used
+        only to answer you and price the job, and is deleted once the job is settled or after 24 months.
+        You can ask for a copy or the deletion of your information at any time by writing to that
+        address. Full detail: <a href="privacy.html">Privacy</a>.
+      </p>
+    </form>
+
+    <p class="small" style="margin-top:14px">Prefer a plain email? Write to
+       <a href="mailto:spirokaglis@gmail.com" style="color:var(--steel);font-weight:600">spirokaglis@gmail.com</a>
+       — same thing, no form. <a href="pay.html" style="color:var(--steel);font-weight:600">How to pay</a> —
+       Interac e-Transfer now, card shortly · every invoice shows GST 5 % and QST 9.975 %</p>
+  </section>
+
+</div>
+
+<footer>
+  <div class="wrap">
+    <strong>OL — Optimization and Logistics</strong> · Montréal, Québec · NEQ 2270669312<br>
+    GST 81902 9992 RT0001 · QST 4024451921 TQ0002<br>
+    <a href="privacy.html" style="color:var(--muted)">Privacy &amp; your information</a>
   </div>
-  <div class="legal">
-    <span>OL — Optimization and Logistics · NEQ 2270669312 · GST 81902 9992 RT0001 · QST 4024451921 TQ0002</span>
-    <span>Produced by an autonomous agent. Reviewed before delivery.</span>
-  </div>
-</div></footer>
+</footer>
+
+<!-- ────────────────────────────────────────────────────────────────────────────
+     The quote form and the aggregate visit counter. Everything below is a
+     byte-identical copy of assets/quote.js, assets/counter.js and
+     assets/quote-ui.js (minus the `export`/`import` keywords); test/quote.test.mjs
+     fails if the two ever drift apart. Regenerate with `npm run build`.
+     No network request is made by the form. The counter makes exactly one,
+     carrying a constant site name and a page name — never an identifier.
+     ──────────────────────────────────────────────────────────────────────── -->
+<script type="module" id="quote-core">
+
+// ═══ quoted form: composer (identical to assets/quote.js) ═══
+// OL — quote composer.
+//
+// Pure, dependency-free, and deliberately the ONLY thing this site does with
+// visitor input. It takes the two filled-in fields and returns a `mailto:` URL.
+//
+// Why mailto and not a form endpoint:
+//   * There is no server here (GitHub Pages is static), so a form POST has
+//     nowhere to go without a third party — SendGrid, Formspree, a Cloudflare
+//     Worker with an account. "No third party" is the requirement, so no.
+//   * A mailto:URL is opened by the visitor's OWN mail client. The site never
+//     receives, stores, logs or transmits the content. Nothing to breach, no
+//     transfer outside Québec to assess, and the smallest possible collection
+//     under Law 25 s.5 ("only the information necessary").
+//   * It is also reversible and auditable: the visitor sees exactly what will
+//     be sent, in their own client, before they press send.
+//
+// This file is inlined into index.html and guarded by test/quote.test.js so the
+// shipped copy cannot silently drift from the tested one.
+
+const QUOTE_EMAIL = 'spirokaglis@gmail.com';
+
+// What can be quoted. `value` is what goes in the email, in ASCII, so the
+// subject line is identical in every client and survives non-UTF-8 mailers.
+const QUOTE_SERVICES = [
+  {
+    value: 'takeoff',
+    label: 'Takeoff & priced material list — $95',
+    ref: 'TAKEOFF',
+    ask: 'Plan, dimensions or a photo of the measurements, plus the location of the job.',
+  },
+  {
+    value: 'audit',
+    label: 'Technical audit — $490',
+    ref: 'AUDIT',
+    ask: 'A link to the repo or workflow, and the one thing that worries you about it.',
+  },
+  {
+    value: 'automation',
+    label: 'Automation build — $75–300',
+    ref: 'AUTOMATION',
+    ask: 'Which tool you use (n8n, Make, Zapier), and what should happen automatically.',
+  },
+  {
+    value: 'other',
+    label: 'Something else — tell me and I will price it',
+    ref: 'OTHER',
+    ask: 'What the document or job is.',
+  },
+];
+
+const MAX_DETAIL = 1500;
+
+const serviceByValue = (v) => QUOTE_SERVICES.find((s) => s.value === String(v == null ? '' : v).trim()) || null;
+
+const clean = (s) => String(s == null ? '' : s).replace(/\r\n?/g, '\n').trim();
+
+/**
+ * Fill the question fields with what the site knows, so a visitor does not have
+ * to invent structure. The list of prompts is stable and labelled; a line whose
+ * prompt ends in "*" is the one that makes the request answerable.
+ */
+function detailPrompts(serviceValue) {
+  const s = serviceByValue(serviceValue);
+  if (!s) return [];
+  return [s.ask, 'Deadline, or "no deadline"', 'Where the job is', 'Any question you want answered first'];
+}
+
+/** The placeholder text for the detail box (empty when nothing is chosen). */
+function detailPlaceholder(serviceValue) {
+  const p = detailPrompts(serviceValue);
+  if (!p.length) return '';
+  return p.map((t, i) => (i === 0 ? `${t} *` : `${t}:`)).join('\n');
+}
+
+/**
+ * Validate and compose. Returns {ok, href, errors, body, subject}.
+ * `ok` is false and `href` null when the input cannot make a useful email.
+ * Nothing here touches the network.
+ */
+function buildQuoteMailto(input) {
+  const data = input || {};
+  const errors = [];
+
+  const service = serviceByValue(clean(data.service));
+  if (!service) errors.push('Choose which service you want priced.');
+
+  const detail = clean(data.detail);
+  if (!detail) errors.push('Write one or two lines about the job.');
+  if (detail.length > MAX_DETAIL) {
+    errors.push(`Keep the description under ${MAX_DETAIL} characters (it is ${detail.length}).`);
+  }
+
+  // Optional and never required: a return address is useful but the visitor is
+  // writing from their own mailbox, so the reply address already exists and
+  // asking for it would be collection beyond what the purpose needs (s.5).
+  const replyTo = clean(data.replyTo).slice(0, 200);
+
+  if (errors.length) return { ok: false, href: null, errors, body: null, subject: null };
+
+  const ref = `OL-${service.ref}`;
+  const subject = `Quote request ${ref}`;
+
+  const lines = [
+    'Bonjour / Hello,',
+    '',
+    'Quote request — OL (Optimization and Logistics)',
+    '---------------------------------------------',
+    `Service requested: ${service.label}`,
+    `Reference: ${ref}`,
+    '',
+    'The job:',
+    detail,
+    '',
+    replyTo ? `Reply to: ${replyTo}` : '',
+    '--- end of request ---',
+    '',
+    'Sent from the OL website. This message was composed on my own device;',
+    'the website did not receive a copy.',
+  ];
+
+  const body = lines.filter((l, i) => !(l === '' && lines[i - 1] === '')).join('\n');
+
+  const params = new URLSearchParams();
+  params.set('subject', subject);
+  params.set('body', body);
+
+  return {
+    ok: true,
+    href: `mailto:${QUOTE_EMAIL}?${params.toString()}`,
+    errors: [],
+    body,
+    subject,
+    reference: ref,
+  };
+}
+
+// ═══ aggregate visit counter (identical to assets/counter.js) ═══
+// OL — aggregate visit counter (client).
+//
+// WHAT THIS DOES
+//   Once, per page load, it sends ONE request to the site's own counter endpoint.
+//   The endpoint increments a number. That is the entire purpose.
+//
+// WHAT THIS DELIBERATELY NEVER SENDS
+//   - no cookie, no localStorage id, no sessionStorage id
+//   - no fingerprint (canvas, fonts, audio, WebGL, timezone, language, screen)
+//   - no IP-based identifier computed on the client
+//   - no referrer, no query string, no full URL with parameters
+//   - no per-visitor or per-session value of ANY kind
+//
+// So the request cannot tell one visitor from another, and cannot tell whether
+// the same browser has been here before. What is left is a hit count: how many
+// page loads the site served. That is why a consent banner is not used — there
+// is no individual to consent on behalf of, and no identifier to store (Law 25
+// s.8.1 has nothing to attach to; see privacy.html).
+//
+// The design rule is enforced twice: this file never calls storage or builds an
+// identifier, and counter/worker.js refuses any request carrying a cookie or an
+// identifier parameter. A counter that cannot be abused is worth more than one
+// that is documented as not abusing people.
+
+const COUNTER_CONFIG = {
+  // Set by hand once the owner deploys the Worker (see README). Empty means
+  // "not deployed yet": the page then sends nothing at all.
+  endpoint: '',
+  // Used only to attribute a hit to a page. A fixed constant, not the URL,
+  // because the URL carries no information worth sending.
+  site: 'ol-services',
+};
+
+/** Which page this is, from the file name only — never the full location. */
+function pageName(locationPath) {
+  const p = String(locationPath || '');
+  // Drop any query or fragment first: a URL like pay.html?email=… must become
+  // "pay", never carry the parameter anywhere near the wire.
+  const bare = p.split('#')[0].split('?')[0];
+  const file = bare.split('/').pop() || '';
+  if (!file) return 'index';
+  return file.replace(/\.html?$/i, '') || 'index';
+}
+
+/**
+ * The complete payload. Reviewing this function is the whole privacy audit:
+ * every value is a constant or a public page name.
+ */
+function counterPayload(locationPath) {
+  return { site: COUNTER_CONFIG.site, page: pageName(locationPath) };
+}
+
+/**
+ * Send the single hit. Never throws, never blocks rendering, and stays silent
+ * when the endpoint is not configured — a site must not break because its
+ * counter is down.
+ */
+function sendHit(win, locationPath, fetchImpl) {
+  const cfg = (win && win.OL_COUNTER) || COUNTER_CONFIG;
+  const endpoint = String(cfg.endpoint || '').trim();
+  if (!endpoint) return Promise.resolve({ sent: false, reason: 'not-configured' });
+
+  const f = fetchImpl || (win && win.fetch && win.fetch.bind(win));
+  if (!f) return Promise.resolve({ sent: false, reason: 'no-fetch' });
+
+  const payload = { site: cfg.site || COUNTER_CONFIG.site, page: pageName(locationPath) };
+
+  try {
+    return Promise.resolve(
+      f(endpoint, {
+        method: 'POST',
+        // text/plain avoids a CORS preflight on a cross-origin endpoint.
+        headers: { 'Content-Type': 'text/plain;charset=UTF-8' },
+        body: JSON.stringify(payload),
+        // No credentials: this request carries no cookie even if the endpoint
+        // could accept one.
+        credentials: 'omit',
+        referrerPolicy: 'no-referrer',
+        mode: 'cors',
+        keepalive: true,
+      }),
+    )
+      .then((r) => ({ sent: true, ok: !!(r && r.ok) }))
+      .catch(() => ({ sent: false, reason: 'network' }));
+  } catch (e) {
+    return Promise.resolve({ sent: false, reason: 'error' });
+  }
+}
+
+// ═══ run it (identical to assets/quote-ui.js) ═══
+// OL — quote form UI.
+//
+// Wires the <form id="quote"> to the pure composer in quote.js. Its only side
+// effect is setting an anchor's href to a mailto: URL, which the visitor then
+// clicks themselves. There is no fetch, no storage and no submit to a server.
+
+
+
+const form = document.getElementById('quote');
+
+if (form) {
+  const serviceEl = document.getElementById('q-service');
+  const detailEl = document.getElementById('q-detail');
+  const replyEl = document.getElementById('q-reply');
+  const errEl = document.getElementById('q-err');
+  const afterEl = document.getElementById('q-after');
+  const previewEl = document.getElementById('q-preview');
+
+  // The form is inert without scripts: make that explicit rather than letting a
+  // submit do nothing silently.
+  const submitBtn = form.querySelector('button[type=submit]');
+
+  const read = () => ({
+    service: serviceEl.value,
+    detail: detailEl.value,
+    replyTo: replyEl.value,
+  });
+
+  const refreshPlaceholder = () => {
+    const ph = detailPlaceholder(serviceEl.value);
+    if (ph) detailEl.placeholder = ph;
+    else detailEl.removeAttribute('placeholder');
+  };
+
+  const refreshPreview = () => {
+    const result = buildQuoteMailto(read());
+    if (result.ok) {
+      previewEl.href = result.href;
+      previewEl.hidden = false;
+    } else {
+      previewEl.hidden = true;
+      previewEl.removeAttribute('href');
+    }
+    return result;
+  };
+
+  serviceEl.addEventListener('change', () => {
+    refreshPlaceholder();
+    errEl.textContent = '';
+    afterEl.textContent = '';
+    refreshPreview();
+  });
+
+  [detailEl, replyEl].forEach((el) => {
+    el.addEventListener('input', () => {
+      errEl.textContent = '';
+      refreshPreview();
+    });
+  });
+
+  form.addEventListener('submit', (ev) => {
+    ev.preventDefault();
+    const result = buildQuoteMailto(read());
+
+    if (!result.ok) {
+      errEl.textContent = result.errors.join(' ');
+      // Put the cursor where the fix is needed.
+      if (!serviceByValue(serviceEl.value)) serviceEl.focus();
+      else detailEl.focus();
+      return;
+    }
+
+    errEl.textContent = '';
+    // Hand off to the visitor's mail client. Nothing leaves the page.
+    window.location.href = result.href;
+
+    const s = serviceByValue(serviceEl.value);
+    afterEl.textContent =
+      `Your email app should now be open with the request for “${s.label}” filled in. ` +
+      'If nothing opened, use “Preview the whole message” or write to spirokaglis@gmail.com. ' +
+      'Nothing was sent from this page — press Send in your mail app when you are happy with it.';
+  });
+
+  // Progressive enhancement: the plain preview link is the no-script path, so
+  // it starts hidden and only appears once scripts can build a real href.
+  refreshPlaceholder();
+  refreshPreview();
+
+  // One aggregate page-view. Fire-and-forget; a failure cannot affect the form.
+  Promise.resolve()
+    .then(() => sendHit(window, window.location.pathname))
+    .catch(() => {});
+}
+</script>
 
 </body>
 </html>

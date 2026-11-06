@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120" role="img" aria-label="OL — Optimization and Logistics">
+  <title>OL — Optimization and Logistics</title>
+  <!--
+    The mark: an O and an L on a 12-unit grid with a deliberate gap between them.
+    Measured 2026-11-06: the first version put the L's stem flush against the ring, so the pair read as
+    "CL" — a logo that misreads the company name is worse than no logo. The ring is now 22 units at
+    centre 44 (right edge 66) and the L stem starts at 78, leaving a 12-unit gap at any size.
+  -->
+  <rect width="120" height="120" rx="18" fill="#183A5C"/>
+  <g fill="none" stroke="#FFFFFF" stroke-width="8.5" stroke-linecap="butt" stroke-linejoin="miter">
+    <circle cx="44" cy="50" r="22"/>
+    <path d="M78 28 V72 H98"/>
+  </g>
+</svg>

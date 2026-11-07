@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Payer OL — virement Interac ou carte</title>
+<style>
+  :root{--navy:#183A5C;--steel:#315D8C;--ink:#1d232b;--muted:#6C7177;--line:#D5DCE3;--wash:#F4F6F9}
+  *{box-sizing:border-box}
+  body{margin:0;font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;color:var(--ink);background:#fff}
+  .wrap{max-width:720px;margin:0 auto;padding:44px 28px 64px}
+  .kicker{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--steel);font-weight:700}
+  h1{font-size:36px;line-height:1.1;letter-spacing:-.02em;color:var(--navy);margin:10px 0 12px}
+  .lede{font-size:17.5px;color:#3b4550;margin:0 0 28px}
+  h2{font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--steel);margin:34px 0 10px;
+     padding-bottom:7px;border-bottom:2px solid var(--line)}
+  .box{border:1px solid var(--line);border-radius:12px;padding:20px 22px;background:var(--wash);margin:12px 0}
+  .box h3{margin:0 0 8px;font-size:16px;color:var(--navy)}
+  .amt{font-size:30px;font-weight:800;color:var(--navy);letter-spacing:-.02em}
+  code{background:#fff;border:1px solid var(--line);border-radius:6px;padding:2px 7px;font-size:15px}
+  ol{margin:8px 0 0 20px;padding:0} li{margin:7px 0}
+  table{width:100%;border-collapse:collapse;margin-top:10px;font-size:15px}
+  th,td{text-align:left;padding:9px 8px;border-bottom:1px solid var(--line)}
+  td:last-child,th:last-child{text-align:right}
+  .note{font-size:13.5px;color:var(--muted);margin-top:8px}
+  a{color:var(--steel)}
+  /* Print is a separate artefact: on paper this content must fit ONE page. Measured 2026-11-06: with the
+     screen sizes it spilled to a second page carrying 1.3% ink, which the document gate flags as unfinished. */
+  @media print{
+    .wrap{padding:16px 22px}
+    .box{break-inside:avoid}
+    h1,h2{break-after:avoid}
+    h1{font-size:26px;margin:6px 0 8px}
+    .lede{font-size:13.5px;margin-bottom:16px}
+    h2{font-size:11px;margin:18px 0 7px;padding-bottom:5px}
+    .box{padding:12px 14px;margin:8px 0}
+    .box h3{font-size:14px;margin-bottom:5px}
+    body{font-size:12.5px}
+    ol{margin:5px 0 0 18px} li{margin:4px 0}
+    table{margin-top:6px;font-size:12.5px} th,td{padding:6px 6px}
+    .note{font-size:11px;margin-top:5px}
+    .amt{font-size:22px}
+    .noprint{display:none}
+  }
+</style>
+<link rel="canonical" href="https://ol-projects.github.io/ol-services/fr/pay.html">
+<link rel="alternate" hreflang="fr-CA" href="https://ol-projects.github.io/ol-services/fr/pay.html">
+<link rel="alternate" hreflang="en-CA" href="https://ol-projects.github.io/ol-services/pay.html">
+<link rel="alternate" hreflang="x-default" href="https://ol-projects.github.io/ol-services/pay.html">
+</head>
+<body>
+<div class="wrap">
+  <div class="kicker">OL · Optimization and Logistics · Montréal</div>
+  <h1>Comment payer</h1>
+  <p class="lede">Deux façons de payer. Dans les deux cas, vous recevez une facture où la TPS et la TVQ sont indiquées séparément,
+     comme le souhaite votre comptable.</p>
+
+  <h2>1 · Virement Interac — dès maintenant</h2>
+  <div class="box">
+    <h3>Envoyez le paiement à</h3>
+    <p><code>spirokaglis@gmail.com</code></p>
+    <ol>
+      <li>Envoyez le montant convenu par virement Interac à l'adresse ci-dessus.</li>
+      <li>Dans le champ du message, inscrivez la référence du mandat convenue (par exemple <code>AUDIT-001</code>).</li>
+      <li>Aucune question de sécurité n'est requise : l'adresse est inscrite au dépôt automatique.</li>
+      <li>Vous recevez une facture numérotée indiquant séparément la TPS 5 % et la TVQ 9.975 %, habituellement le jour même.</li>
+    </ol>
+    <p class="note">Aucun montant n'est facturé avant que nous ayons convenu par écrit du mandat et du prix.</p>
+  </div>
+
+  <h2>2 · Carte — bientôt disponible</h2>
+  <div class="box">
+    <h3>Paiement par carte avec Stripe</h3>
+    <p>Le compte Stripe est en cours de configuration. Dès qu'il sera actif, cette page affichera un bouton
+       de paiement acceptant Visa, Mastercard et Amex. Le reçu sera émis automatiquement.</p>
+    <p class="note">Si vous devez payer par carte d'ici là, dites-le-nous : nous vous enverrons un lien
+       de paiement direct le jour même.</p>
+  </div>
+
+  <h2>À quoi ressemble la facture</h2>
+  <table>
+    <tr><th>Poste</th><th>Montant</th></tr>
+    <tr><td>Service (selon l'entente)</td><td>$450.00</td></tr>
+    <tr><td>TPS 5.0 %</td><td>$22.50</td></tr>
+    <tr><td>TVQ 9.975 %</td><td>$44.89</td></tr>
+    <tr><td><strong>Total</strong></td><td><strong>$517.39</strong></td></tr>
+  </table>
+  <p class="note">Exemple seulement. TPS 81902 9992 RT0001 · TVQ 4024451921 TQ0002 · NEQ 2270669312.
+     Les taxes sont calculées au cent près par le même programme qui émet la facture; les calculs sont vérifiés
+     avant l'envoi du document.</p>
+
+  <h2>En cas de problème</h2>
+  <p>Écrivez à <a href="mailto:spirokaglis@gmail.com">spirokaglis@gmail.com</a> en indiquant la référence du mandat.
+     Si un paiement a été reçu pour un travail non livré, il est remboursé en totalité.</p>
+
+  <p class="note noprint" style="margin-top:28px">
+    <a href="index.html">← Retour aux offres</a>
+  </p>
+</div>
+<div class="wrap"><p style="font-size:.85rem;opacity:.8;margin:1.2rem 0 2rem"><a href="../pay.html" hreflang="en" lang="en">English version</a></p></div>
+</body>
+</html>

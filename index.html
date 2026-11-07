@@ -158,6 +158,102 @@
 .xnav a:hover{border-bottom-color:#183A5C;color:#183A5C}
 .xnav .cur{color:#183A5C}
 .xnav .out{margin-left:auto}
+
+  /* ── 2026-11-07 craft pass: proof in the fold, a wider measure, offers for the arriving reader ── */
+  @media screen and (min-width:1100px){ .wrap{max-width:1080px} }
+  .hero{display:grid;grid-template-columns:1fr;gap:26px}
+  @media screen and (min-width:980px){
+    .hero{grid-template-columns:minmax(0,1.02fr) minmax(0,.98fr);align-items:start;gap:46px;padding:46px 0 30px}
+  }
+  .hero h1{max-width:22ch}
+  .hero-cta{display:flex;flex-wrap:wrap;gap:11px;margin:22px 0 0}
+  .btn{display:inline-block;text-decoration:none;font-weight:700;border-radius:9px;
+       padding:14px 21px;font-size:15px;line-height:1.2}
+  .btn.primary{background:var(--navy);color:#fff}
+  .btn.primary:hover{background:var(--steel)}
+  .btn.ghost{border:1px solid #C7D1DB;color:var(--navy);background:var(--white)}
+  .btn.ghost:hover{border-color:var(--navy)}
+  .hero-note{font-size:13px;color:var(--muted);margin:11px 0 0}
+  .paper{background:var(--white);border:1px solid #C8D3DE;border-radius:12px;
+         box-shadow:0 22px 46px -30px rgba(24,58,92,.6);overflow:hidden}
+  .paper-top{display:flex;justify-content:space-between;gap:10px;padding:12px 15px;
+      border-bottom:1px solid var(--line);background:#FBFCFD;
+      font:600 10px/1.35 ui-monospace,SFMono-Regular,Menlo,monospace;
+      letter-spacing:.13em;text-transform:uppercase;color:var(--muted)}
+  .paper-top b{color:var(--navy);font-weight:700}
+  .paper-body{padding:10px 15px 8px}
+  .prow{display:grid;grid-template-columns:24px minmax(0,1fr) auto;gap:9px;align-items:baseline;
+        padding:7px 0;border-bottom:1px dotted #E1E7ED;font-size:13px}
+  .prow .ref{font:600 10px/1 ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--steel);
+             letter-spacing:.04em;padding-top:2px}
+  .prow .nm{color:#3b4550}
+  .prow .nm b{display:block;color:var(--ink);font-weight:600;font-size:13px}
+  .prow .amt{font-variant-numeric:tabular-nums;font-weight:600;color:var(--ink)}
+  .psum{margin-top:6px;border-top:1px solid #CFD8E1;padding-top:7px}
+  .psum .prow{border-bottom:0;padding:3px 0}
+  .psum .prow .nm{color:var(--muted);font-size:12.5px}
+  .pgrand .nm{color:var(--navy);font-weight:800;font-size:13px}
+  .pgrand .amt{color:var(--navy);font-weight:800;font-size:15px}
+  .paper-foot{padding:9px 15px 12px;border-top:1px solid var(--line);background:#FBFCFD;
+      font:11px/1.5 ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--muted)}
+  .paper-foot .ok{color:#1c6b45;font-weight:700}
+  .paper-foot a{color:var(--steel);font-weight:700;text-decoration:none}
+  .paper-foot a:hover{text-decoration:underline}
+  .sec-note{font-size:13.5px;color:var(--muted);margin:-2px 0 14px;max-width:70ch}
+  /* ── mobile: the live page overflowed 390px because the section nav and the brand line were
+     flex rows with no wrap; every card was clipped on a phone. Fix the cause, not the symptom. ── */
+  .brand>div{min-width:0}
+  .quote{max-width:760px}
+  @media screen and (max-width:760px){
+    .xnav{flex-wrap:wrap;gap:8px 16px;padding:12px 20px 0;align-items:baseline}
+    .xnav .out{margin-left:0}
+    .brand .t{letter-spacing:.09em;font-size:10.5px}
+    .wrap{padding:0 20px}
+    h1{font-size:31px}
+    .hero{padding:26px 0 16px}
+    .paper-top{font-size:9px;letter-spacing:.09em}
+    .paper-body{padding:8px 12px 6px}
+    .prow{grid-template-columns:22px minmax(0,1fr) auto;gap:7px;font-size:12.5px}
+    .paper-foot{padding:8px 12px 10px;font-size:10px}
+  }
+  @media print{
+    @page{margin:12mm}
+    .paper{box-shadow:none;break-inside:avoid;page-break-inside:avoid}
+    .paper-top,.paper-foot{font-size:8px;padding:6px 9px}
+    .paper-body{padding:5px 9px 3px}
+    .prow{font-size:10.5px;padding:2.5px 0;grid-template-columns:20px minmax(0,1fr) auto}
+    .prow .nm b{font-size:10.5px;display:inline}
+    .psum .prow{padding:1.5px 0}
+    .pgrand .amt{font-size:12px}
+    .btn,.hero-cta,.xnav{display:none}
+    .hero{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:16px;align-items:start;
+          padding:8px 0 4px}
+    .hero-note{display:none}
+    h1{font-size:26px;margin:4px 0 6px}
+    .lede{font-size:12.5px}
+    .kicker{font-size:10px}
+    .offers{margin:10px 0 2px}
+    .offer .price{font-size:20px}
+    .offer .unit{font-size:10.5px;margin:3px 0 8px}
+    .offer h3{font-size:14px;margin-bottom:4px}
+    .offer p{font-size:11px;margin-bottom:6px}
+    .offer a{font-size:11px}
+    h2{margin:12px 0 6px;font-size:11px}
+    .pcard{padding:8px 10px}
+    .pcard h3{font-size:12.5px}
+    .pcard p{font-size:10.5px}
+    .sec-note{display:none}
+    .legit{font-size:11px;padding:8px 10px;margin-top:8px}
+    .contact{padding:8px 0 2px}
+    .quote{padding:8px 10px;margin-top:6px}
+    .quote .f{margin-bottom:5px}
+    .quote label{font-size:11.5px}
+    .quote textarea{min-height:44px}
+    .quote .hint{font-size:10px}
+    .notice{font-size:9.5px;margin-top:6px;padding-top:6px}
+    .small{font-size:10.5px}
+    footer{margin-top:8px;padding:6px 0 0;font-size:9.5px}
+  }
 </style>
 </head>
 <body>
@@ -189,14 +285,56 @@
 <div class="wrap">
 
   <section class="hero">
-    <div class="kicker">Documents, estimates and audits</div>
-    <h1>The paperwork your business needs and nobody has time to produce.</h1>
-    <p class="lede">I write the estimate, the audit or the automation — professionally, in French or
-       English, with the arithmetic checked by a machine before it reaches you. Fixed price. No retainer
-       you have to remember to cancel.</p>
+    <div class="hero-copy">
+      <div class="kicker">Construction takeoffs · technical audits · Montréal</div>
+      <h1>Plans in. A priced takeoff out — checked to the cent.</h1>
+      <p class="lede">Quantities, waste allowance, boxes and trim, with prices and Québec taxes
+         done correctly — and the arithmetic recomputed by a machine before the document reaches
+         you. Fixed price, in French or English.</p>
+      <div class="hero-cta">
+        <a class="btn primary" href="mailto:spirokaglis@gmail.com?subject=First%20takeoff%20request">First takeoff free — send a plan</a>
+        <a class="btn ghost" href="#sample">See the sample ↓</a>
+      </div>
+      <p class="hero-note">No account, no retainer. The first takeoff for a new client is free;
+         after that it is $95 up to 1,000 ft².</p>
+    </div>
+
+    <!-- The proof band. Every figure below is from SAMPLE-2026-001, the same two-page PDF the
+         outreach letter attaches (sha256 46806530…): five divisions, division totals, and the
+         three tax lines recomputed to the cent. Nothing here is illustrative. -->
+    <aside class="paper" id="sample" aria-label="Excerpt from the sample estimate SAMPLE-2026-001">
+      <div class="paper-top"><span><b>Estimate</b> SAMPLE-2026-001</span><span>Bathroom · 120 ft²</span></div>
+      <div class="paper-body">
+        <div class="prow"><span class="ref">02</span><span class="nm"><b>Selective demolition &amp; removals</b></span><span class="amt">$1,850.00</span></div>
+        <div class="prow"><span class="ref">09</span><span class="nm"><b>Tiling &amp; waterproofing</b></span><span class="amt">$4,130.00</span></div>
+        <div class="prow"><span class="ref">10</span><span class="nm"><b>Fixtures &amp; finishes</b></span><span class="amt">$3,570.00</span></div>
+        <div class="prow"><span class="ref">22</span><span class="nm"><b>Plumbing</b></span><span class="amt">$2,400.00</span></div>
+        <div class="prow"><span class="ref">26</span><span class="nm"><b>Electrical</b></span><span class="amt">$1,650.00</span></div>
+        <div class="psum">
+          <div class="prow"><span class="ref"></span><span class="nm">Subtotal, before taxes</span><span class="amt">$13,600.00</span></div>
+          <div class="prow"><span class="ref"></span><span class="nm">GST · 5.0 %</span><span class="amt">$680.00</span></div>
+          <div class="prow"><span class="ref"></span><span class="nm">QST · 9.975 %</span><span class="amt">$1,356.60</span></div>
+          <div class="prow pgrand"><span class="ref"></span><span class="nm">Estimated total</span><span class="amt">$15,636.60</span></div>
+        </div>
+      </div>
+      <div class="paper-foot">
+        <span class="ok">✓ recomputed</span> 1,850 + 4,130 + 3,570 + 2,400 + 1,650 = 13,600.00<br>
+        <a href="sample-estimate.pdf">The full two pages (PDF) →</a>
+      </div>
+    </aside>
   </section>
 
+  <h2>What you can order</h2>
+  <p class="sec-note">Fixed prices, stated before work starts. The first takeoff for a new client is free.</p>
   <section class="offers">
+    <div class="offer">
+      <div class="price">$95</div>
+      <div class="unit">up to 1,000 ft² · then $0.09/ft² · first one free</div>
+      <h3>Takeoff &amp; priced material list</h3>
+      <p>Send the plan or the measurements. You get quantities, waste allowance, boxes and trim, priced —
+         ready to hand to a client.</p>
+      <a href="mailto:spirokaglis@gmail.com?subject=Takeoff%20request">Request a takeoff →</a>
+    </div>
     <div class="offer">
       <div class="price">$490</div>
       <div class="unit">fixed · 5 business days</div>
@@ -204,14 +342,6 @@
       <p>One repo, API or workflow. What is broken, what is fragile, what is fine — each finding tied to a
          file or a line, plus a recorded walkthrough.</p>
       <a href="ops-audit.html">See what you get →</a>
-    </div>
-    <div class="offer">
-      <div class="price">$95</div>
-      <div class="unit">up to 1,000 ft² · then $0.09/ft²</div>
-      <h3>Takeoff &amp; priced material list</h3>
-      <p>Send the plan or the measurements. You get quantities, waste allowance, boxes and trim, priced —
-         ready to hand to a client.</p>
-      <a href="mailto:spirokaglis@gmail.com?subject=Takeoff%20request">Request a takeoff →</a>
     </div>
     <div class="offer">
       <div class="price">$75–300</div>
@@ -231,9 +361,9 @@
          left half-empty, totals that add up to the cent. A document that fails is not sent.</p>
     </div>
     <div class="pcard">
-      <h3>A real sample you can read first</h3>
-      <p>A complete 2-page construction estimate — five divisions, taxes to the cent — is available on
-         request before you spend anything.</p>
+      <h3>The sample above is the deliverable</h3>
+      <p>Two pages, five divisions, every quantity and price carried through to the tax lines. It is a real
+         document produced by this process — the same PDF the letter attaches.</p>
     </div>
     <div class="pcard">
       <h3>French and English</h3>

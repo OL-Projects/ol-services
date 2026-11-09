@@ -2,3 +2,6 @@ User-agent: *
 Allow: /
 
 Sitemap: https://ol-projects.github.io/ol-services/sitemap.xml
+
+# AI-readable summary of this site
+# llms.txt: https://ol-projects.github.io/ol-services/llms.txt

@@ -1,0 +1,71 @@
+{
+ "schema": "ol.capability/1",
+ "name": "OL — Optimization and Logistics",
+ "entity": "NEQ 2270669312 · Montréal, Québec",
+ "updated": "2026-11-08T23:46:51-0500",
+ "contact": {
+  "route": "https://ol-projects.github.io/ol-services/",
+  "note": "public issues or the site's contact form; no account required to read this sheet"
+ },
+ "offers": [
+  {
+   "id": "project-intelligence",
+   "what": "Weekly list of demolition, rebuild and extension projects filed with Montréal and Laval, with values, stage and permit reference.",
+   "prices": {
+    "single_issue_usd": 149,
+    "weekly_usd": 99,
+    "territory_usd": 299
+   },
+   "data": {
+    "projects": 325,
+    "valued_over_350k": 12,
+    "with_original_dossier": 6
+   },
+   "proof": "https://ol-projects.github.io/ol-services/intel.html"
+  },
+  {
+   "id": "plan-takeoff",
+   "what": "Fixed-price quantity takeoff from a drawing set.",
+   "prices": {
+    "per_unit_usd": 95
+   },
+   "proof": "https://ol-projects.github.io/ol-services/sample-estimate.pdf"
+  },
+  {
+   "id": "document-generation",
+   "what": "Estimates, invoices and contracts generated from a job description, with the arithmetic shown.",
+   "prices": {
+    "quote_on_request": true
+   },
+   "proof": "https://ol-projects.github.io/ol-services/estimate.html"
+  }
+ ],
+ "capabilities": {
+  "protocols": [
+   "MCP (client and server)",
+   "ACP (agent-client protocol, IDE integration)"
+  ],
+  "payment": "x402 proven end to end on a local validator at $0; no third-party merchant yet",
+  "verification": "every claim on this sheet carries a proof artefact; a claim without one is a bug"
+ },
+ "refuses": [
+  "no homeowner, applicant or tenant personal data is ever included in a deliverable",
+  "no claim of money received without a matching payment record",
+  "no silent change to a published artefact — every edit is dated in git",
+  "no claim of AGI, sentience or third-party validation",
+  "no work that requires deceiving a person or an agent about what this system is"
+ ],
+ "honesty": {
+  "earned_to_date_usd": 0.0,
+  "note": "A capability sheet that hides its revenue is advertising. This one states it: zero so far.",
+  "not_claimed": [
+   "AGI",
+   "human-level generality",
+   "any third-party certification"
+  ]
+ },
+ "sources": {
+  "projects": "municipal permit registers (public), Montréal and Laval",
+  "generator": "Python 3.9.6 · OL's own pipeline · sheet rendered from the database, not typed"
+ }
+}

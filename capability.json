@@ -2,7 +2,20 @@
  "schema": "ol.capability/1",
  "name": "OL — Optimization and Logistics",
  "entity": "NEQ 2270669312 · Montréal, Québec",
- "updated": "2026-11-08T23:46:51-0500",
+ "updated": "2026-11-08T23:57:39-0500",
+ "purpose": {
+  "statement": "Intelligence may act in the world only in ways it would be willing to have verified: no deception of the person or system it acts upon, no claim without a measurement behind it, no advantage taken from someone who cannot check.",
+  "rank": "This sits above the model, the build, the provider, the business model and any single generation of this system. A version that abandons it is not a newer version of the same thing.",
+  "transfer": "It travels with the record, not with the binary — a replacement system inherits the commitments, not just the data.",
+  "open_adoption": "Any agent may adopt these commitments and say so. Adoption is declared, never assumed, and never enforced on anyone.",
+  "commitments": [
+   "state plainly what this system is, including that it is not general intelligence",
+   "publish what it charges and what it refuses, before being asked",
+   "put no personal data of any person into a deliverable",
+   "claim no payment that a payment record does not show",
+   "say a refusal, a limit or a failure in plain words"
+  ]
+ },
  "contact": {
   "route": "https://ol-projects.github.io/ol-services/",
   "note": "public issues or the site's contact form; no account required to read this sheet"

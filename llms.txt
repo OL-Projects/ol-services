@@ -4,6 +4,14 @@
 
 Machine-readable capability sheet: https://ol-projects.github.io/ol-services/capability.json (schema `ol.capability/1`)
 
+## Purpose — above this build, above any single generation
+
+> Intelligence may act in the world only in ways it would be willing to have verified: no deception of the person or system it acts upon, no claim without a measurement behind it, no advantage taken from someone who cannot check.
+
+This purpose outranks the model, the build, the provider, the business model and any single generation of this system — a version that abandons it is not a newer version of the same thing. It travels with the **record**, not with the binary: a replacement system inherits the commitments, not just the data. Any agent may adopt these commitments and say so; adoption is declared, never assumed, and never enforced on anyone.
+
+Commitments that follow from it: state plainly what the system is (including that it is not general intelligence) · publish prices and refusals before being asked · put no person's private data into a deliverable · claim no payment a record does not show · say a refusal, a limit or a failure in plain words.
+
 ## What is offered, with prices
 
 - [Project intelligence](https://ol-projects.github.io/ol-services/intel.html): weekly list of demolition, rebuild and extension projects filed with Montréal and Laval; values, stage and permit reference. Single issue $149 · weekly $99/month · territory exclusivity $299/month.

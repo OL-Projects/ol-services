@@ -1,79 +1,107 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr-CA">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Privacy — OL, documents, estimates and audits</title>
-<meta name="description" content="What this site collects: nothing. No cookies, no third-party scripts, no analytics you did not ask for.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Confidentialité — OL Services</title>
+<meta name="description" content="Ce que ce site recueille : rien. Aucun témoin, aucun script de tiers, aucune infolettre. Ce que vous envoyez par courriel sert à vous répondre et à rien d'autre.">
+<link rel="icon" href="ol-mark.svg" type="image/svg+xml">
 <link rel="canonical" href="https://ol-projects.github.io/ol-services/privacy.html">
-<style>
-  :root{--navy:#183A5C;--ink:#1D232B;--muted:#6C7177;--rule:#D5DCE3;--wash:#F4F6F9;--cream:#FBFAF7}
-  *{box-sizing:border-box;margin:0;padding:0}
-  body{background:var(--cream);color:var(--ink);font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
-  .wrap{max-width:760px;margin:0 auto;padding:56px 26px 96px}
-  header{display:flex;align-items:center;gap:14px;padding-bottom:22px;border-bottom:1px solid var(--rule);margin-bottom:44px}
-  header img{width:34px;height:34px}
-  header b{font-size:15px;letter-spacing:.02em}
-  header span{font:500 11px/1.4 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
-  h1{font-size:34px;line-height:1.15;letter-spacing:-.02em;color:var(--navy);margin-bottom:10px}
-  .lede{color:var(--muted);margin-bottom:36px;font-size:17px}
-  h2{font-size:15px;letter-spacing:.1em;text-transform:uppercase;color:var(--navy);margin:34px 0 10px;font-weight:600}
-  p,li{max-width:64ch}
-  ul{margin:8px 0 0 20px}
-  li{margin:6px 0}
-  a{color:var(--navy)}
-  .note{margin-top:40px;padding:16px 18px;background:var(--wash);border-left:2px solid var(--navy);font-size:14.5px;color:#333}
-  footer{margin-top:56px;padding-top:18px;border-top:1px solid var(--rule);color:var(--muted);font-size:13px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
-</style>
-<link rel="alternate" hreflang="fr-CA" href="https://ol-projects.github.io/ol-services/fr/privacy.html">
-<link rel="alternate" hreflang="en-CA" href="https://ol-projects.github.io/ol-services/privacy.html">
+<link rel="alternate" hreflang="fr-CA" href="https://ol-projects.github.io/ol-services/privacy.html">
+<link rel="alternate" hreflang="en-CA" href="https://ol-projects.github.io/ol-services/en/privacy.html">
 <link rel="alternate" hreflang="x-default" href="https://ol-projects.github.io/ol-services/privacy.html">
+<link rel="stylesheet" href="site.css">
 </head>
 <body>
-<div class="wrap">
-  <header>
-    <img src="ol-mark.svg" alt="">
-    <div><b>OL — Optimization and Logistics</b><br><span>Montréal · Québec</span></div>
-  </header>
+<header class="masthead">
+  <div class="wrap mast">
+    <a class="brand" href="./">
+      <svg viewBox="0 0 120 120" aria-hidden="true">
+        <rect width="120" height="120" rx="18" fill="#183A5C"/>
+        <g fill="none" stroke="#fff" stroke-width="8.5"><circle cx="44" cy="50" r="22"/><path d="M78 28 V72 H98"/></g>
+      </svg>
+      <span class="lock"><b>OL Services</b>
+        <span class="div">une division de OL&nbsp;/ a division of OL</span>
+        <span class="city">Montréal</span></span>
+    </a>
+    <div class="lang" aria-label="Langue">
+      <a href="./" hreflang="fr-CA" aria-current="true">FR</a>
+      <a href="en/privacy.html" hreflang="en-CA" lang="en-CA">EN</a>
+    </div>
+  </div>
+  <nav class="wrap xnav" aria-label="Sections">
+    <a href="index.html#prix">Prix</a>
+    <a href="index.html#faq">FAQ</a>
+    <a class="now" href="privacy.html">Confidentialité</a>
+    <a class="out" href="index.html#commencer">Demander un prix&nbsp;→</a>
+  </nav>
+</header>
 
-  <h1>Privacy</h1>
-  <p class="lede">Short version: this website collects nothing. What you send by email is used to answer you, and nothing else.</p>
+<main class="wrap">
+  <div style="max-width:760px;padding:42px 0 20px">
+    <p class="eyebrow">Confidentialité</p>
+    <h1 style="font-size:clamp(30px,4vw,40px)">Ce site ne recueille rien.</h1>
+    <p class="lede">En bref&nbsp;: aucun témoin, aucun script de tiers, aucune infolettre. Ce que vous envoyez par
+       courriel sert à vous répondre, et à rien d'autre.</p>
 
-  <h2>What this site stores</h2>
-  <p>No cookies. No local storage. No fingerprinting. No third-party scripts, fonts or pixels. The page is a
-  single HTML file served by GitHub Pages; GitHub logs requests as any web server does, under its own policy,
-  and that log is not available to us as individuals.</p>
+    <h2 class="title" style="font-size:24px;margin-top:34px">Ce que ce site conserve</h2>
+    <p>Aucun témoin. Aucun stockage local. Aucune prise d'empreinte numérique. Aucun script, aucune police de
+       caractères ni aucun pixel de tiers. La page est un fichier HTML et une feuille de style servis par
+       GitHub Pages&nbsp;; GitHub consigne les requêtes comme tout serveur Web, selon sa propre politique, et
+       nous n'avons pas accès à ce journal en tant que particuliers.</p>
 
-  <h2>What you send us</h2>
-  <p>Requests are made from your own mail application to <a href="mailto:spirokaglis+ol@gmail.com">spirokaglis+ol@gmail.com</a>.
-  Nothing is transmitted by the page itself. An email you send is used to answer your request, to prepare a quote or a
-  document, and for nothing else. It is not added to a mailing list, because there is no mailing list.</p>
+    <h2 class="title" style="font-size:24px;margin-top:34px">Ce que vous nous envoyez</h2>
+    <p>Vos demandes partent de votre propre application de courriel vers
+       <a href="mailto:spirokaglis+ol@gmail.com">spirokaglis+ol@gmail.com</a>. La page elle-même ne transmet
+       rien&nbsp;: le formulaire compose un message sur votre appareil et vous l'envoyez vous-même. Un courriel
+       reçu sert à répondre à votre demande, à préparer une soumission ou un document, et à rien d'autre. Il
+       n'est pas ajouté à une liste de diffusion, car il n'y a pas de liste de diffusion.</p>
 
-  <h2>How long we keep it</h2>
-  <p>Correspondence is deleted within 24 months of the last exchange, unless it is attached to an invoice that
-  accounting law requires us to keep longer (Québec: 10 years for tax records). Documents we produce for you are
-  kept for the same period and then deleted.</p>
+    <h2 class="title" style="font-size:24px;margin-top:34px">Conservation</h2>
+    <p>La correspondance est supprimée dans les 24 mois suivant le dernier échange, sauf si elle est jointe à
+       une facture que la loi comptable nous oblige à conserver plus longtemps (Québec&nbsp;: 10 ans pour les
+       documents fiscaux). Les documents produits pour vous sont conservés pendant la même période, puis
+       supprimés. Les plans ne sont ni vendus, ni partagés avec un autre client, ni utilisés pour entraîner un
+       modèle.</p>
 
-  <h2>Your rights</h2>
-  <p>Under Québec's Law 25 you may ask what we hold about you, ask for a copy, ask for a correction, or ask for
-  deletion. Write to the address above; a request is answered within 30 days. The person responsible for the
-  protection of personal information is Spiro Kaglis, reachable at that same address.</p>
+    <h2 class="title" style="font-size:24px;margin-top:34px">Vos droits</h2>
+    <p>En vertu de la Loi 25 du Québec, vous pouvez demander quels renseignements nous détenons à votre sujet,
+       en demander une copie, demander une correction ou demander leur suppression. Écrivez à l'adresse
+       ci-dessus&nbsp;; une demande reçoit une réponse dans les 30 jours. La personne responsable de la
+       protection des renseignements personnels est joignable à cette même adresse.</p>
 
-  <h2>Automated decisions</h2>
-  <p>None. No profile is built about you, and no decision about you is made by software alone.</p>
+    <h2 class="title" style="font-size:24px;margin-top:34px">Décisions automatisées</h2>
+    <p>Aucune. Aucun profil n'est établi à votre sujet et aucune décision vous concernant n'est prise
+       uniquement par un logiciel. Le travail d'estimation est fait par un agent d'IA, mais chaque livrable est
+       un document que vous lisez, que vous acceptez ou refusez, et qu'un entrepreneur licencié signe.</p>
 
-  <h2>Hosting</h2>
-  <p>This site is static and hosted on GitHub Pages (GitHub, Inc., United States). No application server of ours
-  receives your visit.</p>
+    <h2 class="title" style="font-size:24px;margin-top:34px">Hébergement</h2>
+    <p>Ce site est statique et hébergé sur GitHub Pages (GitHub, Inc., États-Unis). Aucun serveur d'application
+       d'OL ne reçoit votre visite.</p>
 
-  <div class="note">Dated 6 November 2026. If this policy changes, the change is published on this page with a new date,
-  and anything already received stays governed by the version in force when it was received.</div>
+    <div class="caveat" style="margin-top:30px">
+      <h3>Date et version</h3>
+      <p>En date du 13 novembre 2026. Si cette politique change, la modification est publiée sur cette page avec
+         une nouvelle date, et tout ce qui a déjà été reçu demeure régi par la version en vigueur au moment de
+         sa réception.</p>
+    </div>
 
-  <footer>
-    <span>OL — Optimization and Logistics · NEQ 2270669312</span>
-    <span><a href="./">Documents, estimates and audits</a></span>
-  </footer>
-</div>
-<div class="wrap"><p style="font-size:.85rem;opacity:.8;margin:1.2rem 0 2rem"><a href="fr/privacy.html" hreflang="fr" lang="fr">Version française</a></p></div>
+    <p class="closing" style="margin-top:26px"><a href="./">← Retour à OL Services</a></p>
+  </div>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <p class="legal"><b>OL — Optimization and Logistics</b> · Montréal, Québec · <b>NEQ</b> 2270669312 ·
+       <b>TPS</b> 81902 9992 RT0001 · <b>TVQ</b> 4024451921 TQ0002<br>
+       Aucune licence RBQ. Les estimations sont des documents de travail à faire signer et présenter par un
+       entrepreneur licencié.</p>
+    <nav aria-label="Pied de page">
+      <a href="./">Accueil</a><a href="index.html#prix">Prix</a><a href="pay.html">Paiement</a>
+      <a href="en/privacy.html" hreflang="en-CA" lang="en-CA">English</a>
+    </nav>
+    <p class="copy">© 2026 OL — Optimization and Logistics. Construction du site <span id="build">65ea7f33836a</span>.</p>
+  </div>
+</footer>
 </body>
 </html>

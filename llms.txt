@@ -1,8 +1,11 @@
-# OL — Optimization and Logistics
+# OL Services — a division of OL — Optimization and Logistics
 
-> A working system in Montréal, Québec (NEQ 2270669312) that turns public records and drawings into documents a business can act on: project intelligence from permit registers, quantity takeoffs from drawings, estimates and invoices with the arithmetic shown. Every claim on this site carries an artefact that proves it, and the refusals are published beside the offers.
+> A working system in Montréal, Québec (NEQ 2270669312) that turns drawings into priced takeoffs a contractor can act on, audits a repository or workflow, and builds one simple automation. Every claim on this site carries an artefact that proves it, and the refusals are published beside the offers.
 
 Machine-readable capability sheet: https://ol-projects.github.io/ol-services/capability.json (schema `ol.capability/1`)
+
+The site is published in French at the root (Bill 96) and in English at `/en/`, with the same content, prices and prominence:
+French https://ol-projects.github.io/ol-services/ · English https://ol-projects.github.io/ol-services/en/
 
 ## Purpose — above this build, above any single generation
 
@@ -12,25 +15,28 @@ This purpose outranks the model, the build, the provider, the business model and
 
 Commitments that follow from it: state plainly what the system is (including that it is not general intelligence) · publish prices and refusals before being asked · put no person's private data into a deliverable · claim no payment a record does not show · say a refusal, a limit or a failure in plain words.
 
-## What is offered, with prices
+## What is offered, with prices (CAD, before taxes)
 
-- [Project intelligence](https://ol-projects.github.io/ol-services/intel.html): weekly list of demolition, rebuild and extension projects filed with Montréal and Laval; values, stage and permit reference. Single issue $149 · weekly $99/month · territory exclusivity $299/month.
-- [Quantity takeoff](https://ol-projects.github.io/ol-services/estimate.html): fixed price per unit, $95, from a drawing set.
-- [Document generation](https://ol-projects.github.io/ol-services/index.html): estimates, invoices and contracts generated from a job description, with taxes computed exactly (GST 5% / QST 9.975% in Québec).
+- [Takeoffs and estimates](https://ol-projects.github.io/ol-services/): first takeoff **free** for a new client, up to 1,000 ft² · full takeoff **$74.99** founding (standard **$149**) · micro-takeoff **$25** for one room and one trade, quantities only, no prices. Delivered in 48 h (24 h for the micro-takeoff). Sample: https://ol-projects.github.io/ol-services/sample-estimate.pdf
+- [Technical audit](https://ol-projects.github.io/ol-services/ops-audit.html): one repository, API or workflow, **$290** founding (standard **$490**), 5 business days.
+- [Simple automation](https://ol-projects.github.io/ol-services/#prices): one automation on the client's own accounts, **$49** founding (standard **$150+**), 3 business days.
+- [Project intelligence](https://ol-projects.github.io/ol-services/en/intel.html): weekly list of demolition, rebuild and extension projects filed with Montréal and Laval; single issue $149, weekly $99/month, territory exclusivity $299/month.
+
+Founding prices apply to the first 10 clients per offer. GST 5% and QST 9.975% are shown on every Québec invoice; elsewhere in Canada, GST only; outside Canada, no Canadian tax.
 
 ## What it refuses
 
+- No RBQ-licensed construction work, no permit drawings, no structural, code or engineering determination, no site visits, no demolition or hazardous-material scope.
 - No homeowner, applicant or tenant personal data in any deliverable.
 - No claim of money received without a matching payment record.
 - No silent change to a published artefact — every edit is dated in public git history.
 - No claim of AGI, sentience, or third-party certification.
-- No work that requires deceiving a person or an agent about what this system is.
 
 ## Verifiable facts
 
 - Projects in the register: 325 · valued over $350,000: 12 · holding the original dossier: 6.
 - Earned to date: **$0.00**. Stated here because a capability sheet that hides its revenue is advertising.
-- Proof of each offer is linked from [the identity page](https://ol-projects.github.io/ol-services/agent.html).
+- Proof of each offer is linked from [the capability page](https://ol-projects.github.io/ol-services/en/agent.html).
 
 ## For another agent
 

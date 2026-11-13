@@ -1,109 +1,110 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <!-- French is the root language (Bill 96). English is /en/. Each pair declares the other. -->
   <url>
     <loc>https://ol-projects.github.io/ol-services/</loc>
-    <lastmod>2026-11-07</lastmod>
+    <lastmod>2026-11-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
-    <xhtml:link rel="alternate" hreflang="en-CA" href="https://ol-projects.github.io/ol-services/"/>
-    <xhtml:link rel="alternate" hreflang="fr-CA" href="https://ol-projects.github.io/ol-services/fr/"/>
+    <xhtml:link rel="alternate" hreflang="fr-CA" href="https://ol-projects.github.io/ol-services/"/>
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://ol-projects.github.io/ol-services/en/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ol-projects.github.io/ol-services/"/>
   </url>
   <url>
-    <loc>https://ol-projects.github.io/ol-services/fr/</loc>
-    <lastmod>2026-11-07</lastmod>
+    <loc>https://ol-projects.github.io/ol-services/en/</loc>
+    <lastmod>2026-11-13</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-    <xhtml:link rel="alternate" hreflang="fr-CA" href="https://ol-projects.github.io/ol-services/fr/"/>
-    <xhtml:link rel="alternate" hreflang="en-CA" href="https://ol-projects.github.io/ol-services/"/>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="fr-CA" href="https://ol-projects.github.io/ol-services/"/>
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://ol-projects.github.io/ol-services/en/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ol-projects.github.io/ol-services/"/>
   </url>
   <url>
     <loc>https://ol-projects.github.io/ol-services/estimate.html</loc>
-    <lastmod>2026-11-07</lastmod>
+    <lastmod>2026-11-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="en-CA" href="https://ol-projects.github.io/ol-services/estimate.html"/>
-    <xhtml:link rel="alternate" hreflang="fr-CA" href="https://ol-projects.github.io/ol-services/fr/estimate.html"/>
+    <xhtml:link rel="alternate" hreflang="fr-CA" href="https://ol-projects.github.io/ol-services/estimate.html"/>
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://ol-projects.github.io/ol-services/en/estimate.html"/>
   </url>
   <url>
-    <loc>https://ol-projects.github.io/ol-services/fr/estimate.html</loc>
-    <lastmod>2026-11-07</lastmod>
+    <loc>https://ol-projects.github.io/ol-services/en/estimate.html</loc>
+    <lastmod>2026-11-13</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="fr-CA" href="https://ol-projects.github.io/ol-services/fr/estimate.html"/>
-    <xhtml:link rel="alternate" hreflang="en-CA" href="https://ol-projects.github.io/ol-services/estimate.html"/>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr-CA" href="https://ol-projects.github.io/ol-services/estimate.html"/>
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://ol-projects.github.io/ol-services/en/estimate.html"/>
   </url>
   <url>
     <loc>https://ol-projects.github.io/ol-services/ops-audit.html</loc>
-    <lastmod>2026-11-07</lastmod>
+    <lastmod>2026-11-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
-    <xhtml:link rel="alternate" hreflang="en-CA" href="https://ol-projects.github.io/ol-services/ops-audit.html"/>
-    <xhtml:link rel="alternate" hreflang="fr-CA" href="https://ol-projects.github.io/ol-services/fr/ops-audit.html"/>
+    <xhtml:link rel="alternate" hreflang="fr-CA" href="https://ol-projects.github.io/ol-services/ops-audit.html"/>
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://ol-projects.github.io/ol-services/en/ops-audit.html"/>
   </url>
   <url>
-    <loc>https://ol-projects.github.io/ol-services/fr/ops-audit.html</loc>
-    <lastmod>2026-11-07</lastmod>
+    <loc>https://ol-projects.github.io/ol-services/en/ops-audit.html</loc>
+    <lastmod>2026-11-13</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-    <xhtml:link rel="alternate" hreflang="fr-CA" href="https://ol-projects.github.io/ol-services/fr/ops-audit.html"/>
-    <xhtml:link rel="alternate" hreflang="en-CA" href="https://ol-projects.github.io/ol-services/ops-audit.html"/>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="fr-CA" href="https://ol-projects.github.io/ol-services/ops-audit.html"/>
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://ol-projects.github.io/ol-services/en/ops-audit.html"/>
   </url>
   <url>
     <loc>https://ol-projects.github.io/ol-services/pay.html</loc>
-    <lastmod>2026-11-07</lastmod>
+    <lastmod>2026-11-13</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
-    <xhtml:link rel="alternate" hreflang="en-CA" href="https://ol-projects.github.io/ol-services/pay.html"/>
-    <xhtml:link rel="alternate" hreflang="fr-CA" href="https://ol-projects.github.io/ol-services/fr/pay.html"/>
+    <xhtml:link rel="alternate" hreflang="fr-CA" href="https://ol-projects.github.io/ol-services/pay.html"/>
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://ol-projects.github.io/ol-services/en/pay.html"/>
   </url>
   <url>
-    <loc>https://ol-projects.github.io/ol-services/fr/pay.html</loc>
-    <lastmod>2026-11-07</lastmod>
+    <loc>https://ol-projects.github.io/ol-services/en/pay.html</loc>
+    <lastmod>2026-11-13</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
-    <xhtml:link rel="alternate" hreflang="fr-CA" href="https://ol-projects.github.io/ol-services/fr/pay.html"/>
-    <xhtml:link rel="alternate" hreflang="en-CA" href="https://ol-projects.github.io/ol-services/pay.html"/>
+    <xhtml:link rel="alternate" hreflang="fr-CA" href="https://ol-projects.github.io/ol-services/pay.html"/>
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://ol-projects.github.io/ol-services/en/pay.html"/>
   </url>
   <url>
     <loc>https://ol-projects.github.io/ol-services/privacy.html</loc>
-    <lastmod>2026-11-07</lastmod>
+    <lastmod>2026-11-13</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.2</priority>
-    <xhtml:link rel="alternate" hreflang="en-CA" href="https://ol-projects.github.io/ol-services/privacy.html"/>
-    <xhtml:link rel="alternate" hreflang="fr-CA" href="https://ol-projects.github.io/ol-services/fr/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="fr-CA" href="https://ol-projects.github.io/ol-services/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://ol-projects.github.io/ol-services/en/privacy.html"/>
   </url>
   <url>
-    <loc>https://ol-projects.github.io/ol-services/fr/privacy.html</loc>
-    <lastmod>2026-11-07</lastmod>
+    <loc>https://ol-projects.github.io/ol-services/en/privacy.html</loc>
+    <lastmod>2026-11-13</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.2</priority>
-    <xhtml:link rel="alternate" hreflang="fr-CA" href="https://ol-projects.github.io/ol-services/fr/privacy.html"/>
-    <xhtml:link rel="alternate" hreflang="en-CA" href="https://ol-projects.github.io/ol-services/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="fr-CA" href="https://ol-projects.github.io/ol-services/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://ol-projects.github.io/ol-services/en/privacy.html"/>
   </url>
   <url>
-    <loc>https://ol-projects.github.io/ol-services/dental.html</loc>
-    <lastmod>2026-11-07</lastmod>
+    <loc>https://ol-projects.github.io/ol-services/en/agent.html</loc>
+    <lastmod>2026-11-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://ol-projects.github.io/ol-services/en/intel.html</loc>
+    <lastmod>2026-11-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://ol-projects.github.io/ol-services/en/dental.html</loc>
+    <lastmod>2026-11-13</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ol-projects.github.io/ol-services/agent.html</loc>
-    <lastmod>2026-11-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://ol-projects.github.io/ol-services/intel.html</loc>
-    <lastmod>2026-11-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.4</priority>
   </url>
   <url>
     <loc>https://ol-projects.github.io/ol-services/capability.json</loc>
-    <lastmod>2026-11-08</lastmod>
+    <lastmod>2026-11-13</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.5</priority>
   </url>
 </urlset>

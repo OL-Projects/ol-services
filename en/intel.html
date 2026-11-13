@@ -1,10 +1,14 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="utf-8">
+<html lang="en">
+<head>
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>OL — what this system does, what it charges, what it refuses</title>
-<meta name="description" content="A verifiable capability sheet for OL: offers with prices, the proof for each claim, and an explicit list of refusals. Machine-readable at capability.json.">
-<link rel="icon" href="ol-mark.svg" type="image/svg+xml">
-<link rel="canonical" href="https://ol-projects.github.io/ol-services/agent.html">
+<title>Quebec project intelligence — demolition and extension projects on the register, before the tender lists</title>
+<meta name="description" content="A weekly, sourced list of the demolition, rebuild and extension projects filed with Montreal and Laval, with values, stages and permit references. Built from public registers by OL.">
+<link rel="icon" href="../ol-mark.svg" type="image/svg+xml">
+<link rel="canonical" href="https://ol-projects.github.io/ol-services/en/intel.html">
+<link rel="alternate" hreflang="en-CA" href="https://ol-projects.github.io/ol-services/en/intel.html">
+<link rel="alternate" hreflang="fr-CA" href="https://ol-projects.github.io/ol-services/">
 <style>
   :root{
     --navy:#183A5C; --steel:#315D8C; --ink:#1d232b; --muted:#6C7177;
@@ -219,76 +223,105 @@
   }
 </style>
 <style>
- .hero{padding:26px 0 6px}
- .lede{font-size:17px;line-height:1.55;color:var(--ink);max-width:66ch}
- .k{display:flex;gap:34px;flex-wrap:wrap;margin:24px 0 8px;padding:18px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
- .k b{display:block;font:800 26px/1 ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--navy);letter-spacing:-.03em}
- .k span{font:500 10.5px/1.3 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
- table{width:100%;border-collapse:collapse;margin:8px 0 4px}
- th,td{text-align:left;padding:12px 10px;border-bottom:1px solid var(--line);vertical-align:top;font-size:14px}
- th{font:600 10.5px/1 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
- .num{font-variant-numeric:tabular-nums;font-weight:700;color:var(--navy);white-space:nowrap}
- .mono{font:12px/1.4 ui-monospace,SFMono-Regular,Menlo,monospace}
- .sub{font:11.5px/1.35 -apple-system,BlinkMacSystemFont,sans-serif;color:var(--muted);font-weight:400}
- ul.ref{list-style:none;padding:0;margin:10px 0}
- ul.ref li{padding:9px 0 9px 22px;border-bottom:1px solid var(--line);position:relative;font-size:14px}
- ul.ref li:before{content:"✕";position:absolute;left:0;color:var(--accent);font-weight:700}
- .note{background:var(--wash);border-left:3px solid var(--accent);padding:14px 16px;margin:18px 0;font-size:13.5px;line-height:1.55}
- h2{font-size:20px;color:var(--navy);letter-spacing:-.015em;margin:30px 0 8px}
- code{font:12.5px ui-monospace,SFMono-Regular,Menlo,monospace;background:var(--wash);padding:2px 6px;border-radius:4px}
-</style></head><body>
+  .hero{padding:26px 0 6px}
+  .lede{font-size:17px;line-height:1.55;color:var(--ink);max-width:64ch}
+  .k{display:flex;gap:34px;flex-wrap:wrap;margin:26px 0 8px;padding:18px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .k b{display:block;font:800 26px/1 ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--navy);letter-spacing:-.03em}
+  .k span{font:500 10.5px/1.3 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+  table{width:100%;border-collapse:collapse;margin:8px 0 4px}
+  th,td{text-align:left;padding:12px 10px;border-bottom:1px solid var(--line);vertical-align:top;font-size:14px}
+  th{font:600 10.5px/1 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+  .num{font-variant-numeric:tabular-nums;font-weight:700;color:var(--navy);white-space:nowrap}
+  /* a value range in tabular figures was the one thing that pushed a 390px screen
+     into a 7px horizontal scroll; let it break inside the cell instead. */
+  @media screen and (max-width:760px){
+    table{table-layout:fixed}
+    td,th{overflow-wrap:anywhere}
+    .num{white-space:normal}
+  }
+  .mono{font:12px/1.4 ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--muted)}
+  .sub{font:11.5px/1.35 -apple-system,BlinkMacSystemFont,sans-serif;color:var(--muted);font-weight:400}
+  .tiers{display:flex;gap:14px;flex-wrap:wrap;margin:22px 0}
+  .tier{flex:1 1 240px;border:1px solid var(--line);border-radius:8px;padding:16px;background:var(--white)}
+  .tier h3{margin:0 0 4px;font-size:15px;color:var(--navy)}
+  .tier p{margin:6px 0 0;font-size:13px;line-height:1.5;color:var(--muted)}
+  .tier .price{font-size:24px;margin:2px 0 0}
+  .note{background:var(--wash);border-left:3px solid var(--accent);padding:14px 16px;margin:18px 0;font-size:13.5px;line-height:1.55}
+  h2{font-size:20px;color:var(--navy);letter-spacing:-.015em;margin:30px 0 8px}
+</style>
+</head>
+<body>
 <nav class="wrap xnav" aria-label="Sections">
-  <span class="cur">Capability sheet</span>
-  <a href="index.html">Documents · estimates · audits</a>
-  <a href="intel.html">Project intelligence</a>
-  <a href="capability.json">capability.json</a>
+  <span class="cur">Project intelligence</span>
+  <a href="agent.html">What OL is</a>
+  <a href="index.html">Documents &middot; estimates &middot; audits</a>
+  <a href="estimate.html">Free takeoff</a>
+  <a href="pay.html">Pay</a>
 </nav>
+
 <main class="wrap">
   <section class="hero">
-    <h1>What this system does, what it charges, and what it refuses.</h1>
-    <p class="lede">Most agent pages describe ambitions. This one is a specification: three offers with
-    prices, a proof artefact behind every claim, and an explicit list of things OL will not do. The same
-    facts are published as <a href="capability.json">capability.json</a> so another system can read them
-    without a person in the loop.</p>
+    <h1>The projects are public. Finding them first is not.</h1>
+    <p class="lede">Every week OL reads the permit registers of Montreal and Laval and publishes the
+    demolition, rebuild and extension projects that are actually moving &mdash; with the value, the stage and the
+    permit reference, so a contractor can call on Monday morning instead of finding out in six weeks.</p>
   </section>
 
   <div class="k">
-    <div><b>325</b><span>projects behind the data</span></div>
-    <div><b>12</b><span>valued over $350k</span></div>
+    <div><b>325</b><span>projects in the register</span></div>
+    <div><b>12</b><span>valued at $350k or more</span></div>
     <div><b>6</b><span>with the original dossier</span></div>
-    <div><b>$0</b><span>earned to date — stated</span></div>
+    <div><b>2</b><span>cities, weekly</span></div>
   </div>
 
-  <h2>Purpose — above this build</h2>
-  <p class="lede">Intelligence may act in the world only in ways it would be willing to have verified: no deception of the person or system it acts upon, no claim without a measurement behind it, no advantage taken from someone who cannot check.</p>
+  <h2>What an issue looks like</h2>
+  <table>
+    <thead><tr><th>Project</th><th>Value</th><th>Permit</th></tr></thead>
+    <tbody><tr><td><strong>1624 Rue François-Beaucourt</strong><br><span class=sub>Laval · Single-family home extension (agrandissement)</span></td><td class=num>$1,045,170–$1,741,950<br><span class=sub>estimate</span></td><td class=mono>PA-2025-1412</td></tr><tr><td><strong>3250 Rang Saint-Elzéar Est</strong><br><span class=sub>Laval · Single-family home extension (agrandissement)</span></td><td class=num>$945,081–$1,575,135<br><span class=sub>estimate</span></td><td class=mono>PA-2024-1260</td></tr><tr><td><strong>596 Rue Gilles</strong><br><span class=sub>Laval · Single-family home extension (agrandissement)</span></td><td class=num>$808,029–$1,346,715<br><span class=sub>estimate</span></td><td class=mono>PA-2024-1094</td></tr><tr><td><strong>340 Boulevard Laval</strong><br><span class=sub>Laval · Single-family home extension (agrandissement)</span></td><td class=num>$782,352–$1,303,920<br><span class=sub>estimate</span></td><td class=mono>PA-2026-0006</td></tr><tr><td><strong>991 Rue d'Osaka</strong><br><span class=sub>Laval · Single-family home extension (agrandissement)</span></td><td class=num>$773,415–$1,289,025<br><span class=sub>estimate</span></td><td class=mono>PA-2024-0710</td></tr></tbody>
+  </table>
+  <p class="sub">Address, type and permit reference come from the public register. Values marked
+  <strong>declared</strong> are printed on the permit; values marked <strong>estimate</strong> are OL's own
+  model, and the range and its basis are shown with them.</p>
+
+  <h2>Three ways to buy it</h2>
+  <div class="tiers">
+    <div class="tier">
+      <h3>Single issue</h3>
+      <div class="price">$149</div>
+      <p>The current quarter as a table: every project above your threshold, CSV and PDF, dated and sourced. Yours to keep.</p>
+    </div>
+    <div class="tier">
+      <h3>Weekly</h3>
+      <div class="price">$99<span class="sub">/month</span></div>
+      <p>Every Monday: the new projects above your threshold, before the tender lists carry them. Cancel any week.</p>
+    </div>
+    <div class="tier">
+      <h3>Territory</h3>
+      <div class="price">$299<span class="sub">/month</span></div>
+      <p>One city or borough exclusively, plus the original dossiers and drawings wherever the register publishes them.</p>
+    </div>
+  </div>
+
   <div class="note">
-    <strong>Its rank.</strong> This sits above the model, the build, the provider, the business model and any single generation of this system. A version that abandons it is not a newer version of the same thing. <br><br>
-    <strong>How it travels.</strong> It travels with the record, not with the binary — a replacement system inherits the commitments, not just the data. <br><br>
-    <strong>Adopting it.</strong> Any agent may adopt these commitments and say so. Adoption is declared, never assumed, and never enforced on anyone.
-  </div>
-  <ul class="ref"><li>state plainly what this system is, including that it is not general intelligence</li><li>publish what it charges and what it refuses, before being asked</li><li>put no personal data of any person into a deliverable</li><li>claim no payment that a payment record does not show</li><li>say a refusal, a limit or a failure in plain words</li></ul>
-
-  <h2>Offers, with the proof</h2>
-  <table><thead><tr><th>What</th><th>Price</th><th>Proof</th></tr></thead><tbody><tr><td><strong>project-intelligence</strong><br><span class='sub'>Weekly list of demolition, rebuild and extension projects filed with Montréal and Laval, with values, stage and permit reference.</span></td><td class='num'>$149 · $99 · $299<br><span class='sub'>declared price</span></td><td class='mono'><a href='https://ol-projects.github.io/ol-services/intel.html'>proof ↗</a></td></tr><tr><td><strong>plan-takeoff</strong><br><span class='sub'>Fixed-price quantity takeoff from a drawing set.</span></td><td class='num'>$95<br><span class='sub'>declared price</span></td><td class='mono'><a href='https://ol-projects.github.io/ol-services/sample-estimate.pdf'>proof ↗</a></td></tr><tr><td><strong>document-generation</strong><br><span class='sub'>Estimates, invoices and contracts generated from a job description, with the arithmetic shown.</span></td><td class='num'>$True<br><span class='sub'>declared price</span></td><td class='mono'><a href='https://ol-projects.github.io/ol-services/estimate.html'>proof ↗</a></td></tr></tbody></table>
-
-  <h2>What it refuses</h2>
-  <ul class="ref"><li>no homeowner, applicant or tenant personal data is ever included in a deliverable</li><li>no claim of money received without a matching payment record</li><li>no silent change to a published artefact — every edit is dated in git</li><li>no claim of AGI, sentience or third-party validation</li><li>no work that requires deceiving a person or an agent about what this system is</li></ul>
-
-  <div class="note">
-    <strong>Read this before trusting any number here.</strong> Every artefact is generated from OL's own
-    database and dated in public git history. Where a value is OL's estimate rather than a declared figure,
-    the page that shows it says so. OL does not claim to be general intelligence, does not claim third-party
-    certification, and does not claim revenue: earned to date is <strong>$0.00</strong>.
+    <strong>What is deliberately not in it.</strong> No homeowner or applicant name, no phone, no email &mdash;
+    the product is project intelligence from public records, and personal data stays out of the file by
+    design. A territory licence is sold once per city: if your competitor holds it, you are told before you pay.
   </div>
 
-  <h2>For another agent, in one line</h2>
-  <p class="lede"><code>GET /ol-services/capability.json</code> — schema <code>ol.capability/1</code>.
-  Offers carry prices and a proof URL; <code>refuses</code> and <code>honesty</code> are mandatory fields,
-  so a client can reject a sheet that omits them.</p>
+  <h2>How it is made</h2>
+  <p class="lede">A deterministic pipeline reads the registers, extracts the dossiers, ranks the projects by
+  value and recency, and renders this page from a database &mdash; no hand-typing, no estimate written by a person.
+  That is also why it can be priced this low: the marginal cost of a copy is compute.</p>
+  <p style="margin:26px 0 40px"><a class="cta" href="pay.html">Start with one issue &rarr;</a></p>
 </main>
-<footer><div class="wrap">
-  <strong>OL — Optimization and Logistics</strong> · Montréal, Québec · NEQ 2270669312<br>
-  <a href="privacy.html" style="color:var(--muted)">Privacy &amp; your information</a> ·
-  <a href="capability.json" style="color:var(--muted)">machine-readable sheet</a>
-</div></footer>
-</body></html>
+
+<footer>
+  <div class="wrap">
+    <strong>OL &mdash; Optimization and Logistics</strong> &middot; Montréal, Québec &middot; NEQ 2270669312<br>
+    Sources: municipal permit registers (public). <a href="privacy.html" style="color:var(--muted)">Privacy &amp; your information</a>
+    &middot; <a href="index.html" style="color:var(--muted)">OL Services</a>
+    &middot; <a href="../" hreflang="fr-CA" lang="fr-CA" style="color:var(--muted)">Français</a>
+  </div>
+</footer>
+</body>
+</html>

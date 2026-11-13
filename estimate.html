@@ -1,351 +1,235 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr-CA">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Free sample takeoff — enter your room dimensions | OL</title>
-<meta name="description" content="Enter your room dimensions and OL emails you a free, watermarked sample takeoff: quantities derived from your numbers, priced by rule, in the same format as a paid estimate. Montréal.">
+<title>Première prise de quantités gratuite — OL Services</title>
+<meta name="description" content="Entrez les dimensions d'une pièce, obtenez les superficies et envoyez la demande. La première prise de quantités est gratuite pour un nouveau client, jusqu'à 1 000 pi².">
 <link rel="icon" href="ol-mark.svg" type="image/svg+xml">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Free sample takeoff — enter your room dimensions">
-<meta property="og:description" content="Four numbers in, a real takeoff out. Free, watermarked, and priced the same way OL prices a paid estimate.">
-<meta name="twitter:card" content="summary">
-<style>
-  :root{
-    --navy:#183A5C; --steel:#315D8C; --ink:#1d232b; --muted:#6C7177;
-    --line:#D5DCE3; --wash:#F4F6F9; --white:#fff; --accent:#B8860B;
-    --ok:#1B7F4B; --err:#A3251F;
-  }
-  *{box-sizing:border-box}
-  html{-webkit-text-size-adjust:100%}
-  body{margin:0;font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
-       color:var(--ink);background:var(--white)}
-  .wrap{max-width:920px;margin:0 auto;padding:0 28px}
-  header{border-bottom:1px solid var(--line);padding:22px 0}
-  .brand{display:flex;align-items:center;gap:14px;text-decoration:none}
-  .brand svg{width:44px;height:44px;flex:none}
-  .brand .n{font-weight:800;font-size:19px;letter-spacing:.14em;color:var(--navy);line-height:1}
-  .brand .t{font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-top:5px}
-  .hero{padding:34px 0 6px}
-  .kicker{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--steel);font-weight:700}
-  h1{font-size:38px;line-height:1.08;letter-spacing:-.025em;color:var(--navy);margin:10px 0 12px;max-width:24ch}
-  .lede{font-size:17.5px;color:#3b4550;max-width:60ch;margin:0}
-  .grid{display:grid;grid-template-columns:1.05fr .95fr;gap:26px;margin:26px 0 10px;align-items:start}
-  form{border:1px solid var(--line);border-radius:12px;padding:20px 20px 22px;background:var(--white)}
-  fieldset{border:0;margin:0 0 16px;padding:0}
-  legend{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--steel);
-         font-weight:700;padding:0;margin-bottom:9px}
-  .rooms{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
-  .rooms label{position:relative}
-  .rooms input{position:absolute;opacity:0;width:0;height:0}
-  .rooms span{display:block;border:1px solid var(--line);border-radius:9px;padding:11px 12px;
-              font-size:14px;cursor:pointer;text-align:center;background:var(--white)}
-  .rooms input:checked + span{border-color:var(--navy);background:var(--navy);color:#fff;font-weight:700}
-  .rooms input:focus-visible + span{outline:2px solid var(--steel);outline-offset:2px}
-  .dims{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
-  .field label{display:block;font-size:12px;font-weight:700;color:var(--ink);margin-bottom:4px}
-  .field input{width:100%;border:1px solid var(--line);border-radius:8px;padding:10px 11px;
-               font:inherit;font-size:15px;color:var(--ink);background:var(--white)}
-  .field input:focus{outline:2px solid var(--steel);outline-offset:1px;border-color:var(--steel)}
-  .field .hint{font-size:11.5px;color:var(--muted);margin-top:3px}
-  .field.wide{grid-column:1/-1;margin-top:10px}
-  button{width:100%;background:var(--navy);color:#fff;border:0;border-radius:9px;padding:15px 20px;
-         font:inherit;font-weight:700;font-size:16px;cursor:pointer;margin-top:4px}
-  button:hover{background:#14304c}
-  button:disabled{opacity:.6;cursor:progress}
-  .fineprint{font-size:12.5px;color:var(--muted);margin:10px 0 0}
-  .preview{border:1px solid var(--line);border-radius:12px;background:var(--wash);padding:18px 20px}
-  .preview h2{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--steel);
-              margin:0 0 12px;padding-bottom:7px;border-bottom:2px solid var(--line)}
-  .row{display:flex;justify-content:space-between;gap:14px;padding:6px 0;font-size:14px;
-       border-bottom:1px solid #e7ecf1}
-  .row:last-of-type{border-bottom:0}
-  .row span:first-child{color:#3b4550}
-  .row span:last-child{font-variant-numeric:tabular-nums;font-weight:600;color:var(--ink)}
-  .total{margin-top:12px;background:var(--navy);color:#fff;border-radius:9px;padding:13px 15px;
-         display:flex;justify-content:space-between;align-items:baseline}
-  .total b{font-size:21px;font-variant-numeric:tabular-nums}
-  .total small{display:block;font-size:11px;letter-spacing:.06em;text-transform:uppercase;opacity:.85}
-  .msg{margin-top:12px;font-size:14px;border-radius:8px;padding:11px 13px;display:none}
-  .msg.show{display:block}
-  .msg.ok{background:#E8F3EC;color:var(--ok);border:1px solid #BFDDCB}
-  .msg.err{background:#FBEAE8;color:var(--err);border:1px solid #EFC8C3}
-  .how{margin:34px 0 0}
-  h2.sec{font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--steel);
-         margin:34px 0 12px;padding-bottom:7px;border-bottom:2px solid var(--line)}
-  .how ol{margin:0 0 0 20px;padding:0}
-  .how li{margin:8px 0;color:#3b4550}
-  .legit{margin-top:22px;border-left:4px solid var(--navy);background:var(--wash);
-         padding:16px 18px;border-radius:0 10px 10px 0;font-size:14px;color:#3b4550}
-  .upsell{margin-top:22px;border:1px solid var(--line);border-radius:12px;padding:18px 20px}
-  .upsell h3{margin:0 0 6px;font-size:16px;color:var(--navy)}
-  .upsell p{margin:0 0 12px;font-size:14.5px;color:#3b4550}
-  .upsell a{display:inline-block;background:var(--navy);color:#fff;text-decoration:none;font-weight:700;
-            padding:12px 20px;border-radius:8px;font-size:14.5px}
-  .small{font-size:13px;color:var(--muted)}
-  footer{border-top:1px solid var(--line);margin-top:30px;padding:16px 0 26px;font-size:12.5px;color:var(--muted)}
-  footer strong{color:var(--ink)}
-  @media (max-width:760px){
-    h1{font-size:30px}
-    .grid{grid-template-columns:1fr;gap:18px}
-    .wrap{padding:0 18px}
-  }
-</style>
-<link rel="alternate" hreflang="fr-CA" href="https://ol-projects.github.io/ol-services/fr/estimate.html">
-<link rel="alternate" hreflang="en-CA" href="https://ol-projects.github.io/ol-services/estimate.html">
+<link rel="canonical" href="https://ol-projects.github.io/ol-services/estimate.html">
+<link rel="alternate" hreflang="fr-CA" href="https://ol-projects.github.io/ol-services/estimate.html">
+<link rel="alternate" hreflang="en-CA" href="https://ol-projects.github.io/ol-services/en/estimate.html">
 <link rel="alternate" hreflang="x-default" href="https://ol-projects.github.io/ol-services/estimate.html">
+<link rel="stylesheet" href="site.css">
 </head>
 <body>
-<div class="wrap">
-  <header>
-    <a class="brand" href="index.html">
-      <svg viewBox="0 0 44 44" aria-hidden="true"><rect width="44" height="44" rx="9" fill="#183A5C"/><text x="22" y="29.5" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="17" font-weight="700" letter-spacing="0.5" fill="#fff">OL</text></svg>
-      <span><span class="n">OL</span><span class="t">Optimization &amp; Logistics</span></span>
+<a class="skip" href="#f">Aller au formulaire</a>
+<header class="masthead">
+  <div class="wrap mast">
+    <a class="brand" href="./">
+      <svg viewBox="0 0 120 120" aria-hidden="true">
+        <rect width="120" height="120" rx="18" fill="#183A5C"/>
+        <g fill="none" stroke="#fff" stroke-width="8.5"><circle cx="44" cy="50" r="22"/><path d="M78 28 V72 H98"/></g>
+      </svg>
+      <span class="lock"><b>OL Services</b>
+        <span class="div">une division de OL&nbsp;/ a division of OL</span>
+        <span class="city">Montréal</span></span>
     </a>
-  </header>
+    <div class="lang" aria-label="Langue">
+      <a href="./" hreflang="fr-CA" aria-current="true">FR</a>
+      <a href="en/estimate.html" hreflang="en-CA" lang="en-CA">EN</a>
+    </div>
+  </div>
+  <nav class="wrap xnav" aria-label="Sections">
+    <a href="index.html#prix">Prix</a>
+    <a href="index.html#echantillon">Échantillon</a>
+    <a href="index.html#processus">Processus</a>
+    <a href="index.html#garanties">Garanties</a>
+    <a class="now" href="estimate.html">Première gratuite</a>
+    <a class="out" href="index.html#commencer">Demander un prix&nbsp;→</a>
+  </nav>
+</header>
 
-  <section class="hero">
-    <div class="kicker">Free sample takeoff</div>
-    <h1>Your room's takeoff, priced, in your inbox.</h1>
-    <p class="lede">Enter the dimensions you already know. OL derives the quantities, prices them
-      the same way it prices a paid estimate, and emails you a watermarked sample document —
-      free. No account, no call.</p>
+<main class="wrap">
+  <section class="hero" style="grid-template-columns:1fr;padding-bottom:6px">
+    <div class="hero-copy">
+      <p class="kicker">Première prise de quantités · gratuite</p>
+      <h1 style="max-width:26ch">Les dimensions que vous connaissez déjà suffisent pour commencer.</h1>
+      <p class="lede">Entrez la pièce et ses dimensions. La page calcule les superficies dans votre navigateur,
+         puis ouvre un courriel déjà rempli avec ces chiffres. La première prise de quantités est gratuite
+         pour un nouveau client, jusqu'à 1&nbsp;000&nbsp;pi².</p>
+    </div>
   </section>
 
-  <div class="grid">
-    <form id="f" novalidate>
-      <fieldset>
-        <legend>1 · What kind of room</legend>
-        <div class="rooms">
-          <label><input type="radio" name="room" value="bathroom" checked><span>Bathroom</span></label>
-          <label><input type="radio" name="room" value="kitchen"><span>Kitchen</span></label>
-          <label><input type="radio" name="room" value="basement"><span>Basement</span></label>
-          <label><input type="radio" name="room" value="bedroom"><span>Bedroom</span></label>
-        </div>
-      </fieldset>
+  <div class="sample-grid" style="padding:26px 0 8px">
+    <form class="quote" id="f" novalidate style="max-width:none">
+      <div class="f">
+        <label for="room">Type de pièce</label>
+        <select id="room" name="room">
+          <option value="bathroom">Salle de bain</option>
+          <option value="kitchen">Cuisine</option>
+          <option value="basement">Sous-sol</option>
+          <option value="bedroom">Chambre</option>
+          <option value="other">Autre</option>
+        </select>
+      </div>
 
-      <fieldset>
-        <legend>2 · Dimensions</legend>
-        <div class="dims">
-          <div class="field">
-            <label for="length">Length</label>
-            <input id="length" name="length" type="number" inputmode="decimal"
-                   min="3" max="60" step="0.5" value="8" required>
-            <div class="hint">feet</div>
-          </div>
-          <div class="field">
-            <label for="width">Width</label>
-            <input id="width" name="width" type="number" inputmode="decimal"
-                   min="3" max="60" step="0.5" value="10" required>
-            <div class="hint">feet</div>
-          </div>
-          <div class="field">
-            <label for="height">Ceiling</label>
-            <input id="height" name="height" type="number" inputmode="decimal"
-                   min="6" max="14" step="0.5" value="8" required>
-            <div class="hint">feet</div>
-          </div>
+      <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px">
+        <div class="f">
+          <label for="length">Longueur</label>
+          <input id="length" name="length" type="number" inputmode="decimal" min="3" max="60" step="0.5" value="8" required>
+          <span class="hint">pieds</span>
         </div>
-      </fieldset>
+        <div class="f">
+          <label for="width">Largeur</label>
+          <input id="width" name="width" type="number" inputmode="decimal" min="3" max="60" step="0.5" value="10" required>
+          <span class="hint">pieds</span>
+        </div>
+        <div class="f">
+          <label for="height">Hauteur</label>
+          <input id="height" name="height" type="number" inputmode="decimal" min="6" max="14" step="0.5" value="8" required>
+          <span class="hint">pieds</span>
+        </div>
+      </div>
 
-      <fieldset>
-        <legend>3 · Where to send it</legend>
-        <div class="field">
-          <label for="email">Email</label>
-          <input id="email" name="email" type="email" autocomplete="email"
-                 placeholder="you@company.ca" required>
-        </div>
-        <div class="field wide">
-          <label for="name">Name <span class="hint" style="display:inline;font-weight:400">(optional)</span></label>
-          <input id="name" name="name" type="text" autocomplete="name" placeholder="Jane Doe">
-        </div>
-      </fieldset>
+      <div class="f">
+        <label for="name">Votre nom</label>
+        <input id="name" name="name" type="text" autocomplete="name" spellcheck="false">
+      </div>
+      <div class="f">
+        <label for="email">Courriel <span class="req" aria-hidden="true">*</span></label>
+        <input id="email" name="email" type="email" autocomplete="email" placeholder="vous@entreprise.ca" required>
+        <span class="hint">Sert à vous répondre pour ce mandat. Rien d'autre.</span>
+      </div>
 
-      <button type="submit" id="submit">Email my free sample →</button>
-      <p class="fineprint" id="fineprint">A watermarked sample, not a binding quote. Your address
-        is used to send this one document and to follow up on this job — nothing else.</p>
-      <div class="msg" id="msg" role="status" aria-live="polite"></div>
+      <div class="actions">
+        <button type="submit" class="send">Ouvrir la demande préremplie →</button>
+      </div>
+      <p class="err" id="msg" role="alert"></p>
+
+      <p class="notice">La page ne transmet rien&nbsp;: elle calcule les superficies localement et place le
+         résultat dans un courriel sur votre appareil, que vous envoyez vous-même. Aucune visite de chantier
+         n'est faite&nbsp;: une prise de quantités part des documents et des mesures que vous fournissez.
+         Détails&nbsp;: <a href="privacy.html">Confidentialité</a>.</p>
     </form>
 
-    <aside class="preview" aria-live="polite">
-      <h2>Live preview</h2>
-      <div class="row"><span>Floor area</span><span id="p-area">—</span></div>
-      <div class="row"><span>Wall area (net)</span><span id="p-walls">—</span></div>
-      <div class="row"><span>Tile + membrane</span><span id="p-tile">—</span></div>
-      <div class="row"><span>Divisions priced</span><span id="p-div">—</span></div>
-      <div class="row"><span>Estimate before tax</span><span id="p-sub">—</span></div>
-      <div class="total">
-        <div><small>Estimated total</small><span style="font-size:12.5px;opacity:.85">taxes included</span></div>
-        <b id="p-total">—</b>
+    <aside class="paper" aria-live="polite">
+      <div class="paper-top"><span><b>Calcul</b> dans votre navigateur</span><span>Sans réseau</span></div>
+      <div class="paper-body">
+        <div class="prow"><span class="ref">01</span><span class="nm">Superficie du plancher</span><span class="amt" id="p-area">—</span></div>
+        <div class="prow"><span class="ref">02</span><span class="nm">Périmètre</span><span class="amt" id="p-per">—</span></div>
+        <div class="prow"><span class="ref">03</span><span class="nm">Superficie brute des murs</span><span class="amt" id="p-gross">—</span></div>
+        <div class="prow"><span class="ref">04</span><span class="nm">Superficie nette estimée</span><span class="amt" id="p-walls">—</span></div>
       </div>
-      <p class="small" style="margin:12px 0 0">Computed in your browser with the same rules the
-        document uses, so what you see is what arrives.</p>
+      <div class="paper-foot">Déduction forfaitaire de 36&nbsp;pi² pour les ouvertures, plancher à 55&nbsp;%.
+        Ce sont des surfaces, pas des prix&nbsp;: les prix viennent du document.</div>
     </aside>
   </div>
 
-  <section class="how">
-    <h2 class="sec">What the document actually contains</h2>
-    <ol>
-      <li><strong>Quantities derived, not guessed.</strong> Floor, perimeter, gross and net wall
-        area, with the waste factor per trade stated on the page. You can check every number by hand.</li>
-      <li><strong>MasterFormat divisions</strong> — general requirements, demolition, plumbing,
-        electrical, finishes, fixtures — each line with quantity, unit and value.</li>
-      <li><strong>Subtotal, GST and QST</strong>, arithmetically checked before it is sent, and a
-        plain statement of what is excluded.</li>
-      <li><strong>Watermarked on every page</strong> as a free sample with your address on it, so it
-        can never be mistaken for a quote or passed off as one.</li>
-    </ol>
+  <section class="sec" style="margin-top:26px">
+    <div class="wrap" style="padding:0">
+      <p class="eyebrow">Ce que contient la première prise de quantités</p>
+      <h2 class="title">Le vrai livrable, pas un appât.</h2>
+      <ol class="callouts" style="max-width:78ch">
+        <li><span class="n">1</span><span>Les quantités dérivées, pas devinées&nbsp;: plancher, périmètre, superficie brute et nette des murs, avec le taux de pertes par métier indiqué sur la page.</span></li>
+        <li><span class="n">2</span><span>Les divisions MasterFormat&nbsp;: exigences générales, démolition, plomberie, électricité, finitions, appareils — chaque ligne avec quantité, unité et montant.</span></li>
+        <li><span class="n">3</span><span>Sous-total, TPS 5&nbsp;% et TVQ 9,975&nbsp;%, vérifiés arithmétiquement avant l'envoi, avec la liste claire de ce qui est exclu.</span></li>
+        <li><span class="n">4</span><span>Une révision incluse dans les 7 jours, et les erreurs de quantité ou d'arithmétique corrigées gratuitement en 24&nbsp;h.</span></li>
+      </ol>
 
-    <div class="legit">
-      <strong>Why free?</strong> Because you should see the format before you pay for it — and
-      because a sample that shows the arithmetic is the shortest way to explain what a real takeoff
-      buys you. OL holds no RBQ licence and does not perform construction work; the document is an
-      estimating deliverable.
-    </div>
+      <div class="caveat" style="max-width:78ch">
+        <h3>La limite, dite ici</h3>
+        <p>OL ne détient aucune licence RBQ et n'effectue pas de travaux de construction. Une estimation est un
+           document de travail préparé pour être signé et présenté par un entrepreneur licencié&nbsp;: c'est sa
+           signature qui l'engage. Aucune visite de chantier, aucun plan de permis, aucune détermination
+           structurale ou de code.</p>
+      </div>
 
-    <div class="upsell">
-      <h3>Want the real one — priced, sealed, specific?</h3>
-      <p>A paid takeoff is built from your plans or a site measurement: every line priced against
-        actual suppliers, permits and access accounted for, and a fixed price you can hand to a
-        bank or a client. $95 for a takeoff, delivered as a document you can act on.</p>
-      <a href="mailto:spirokaglis+ol@gmail.com?subject=Priced%20takeoff%20request&amp;body=Room%20type%3A%0ADimensions%3A%0AWhat%20I%20can%20send%20(plans%20%2F%20photos%20%2F%20measurements)%3A%0ATimeline%3A">Request a priced takeoff →</a>
+      <p style="margin-top:22px">Au-delà de 1&nbsp;000&nbsp;pi², ou pour une liste chiffrée&nbsp;:
+         <a href="index.html#prix">voir les prix</a> — prise complète 74,99&nbsp;$ (tarif de lancement, régulier
+         149&nbsp;$), micro-prise 25&nbsp;$ pour une pièce et un métier.</p>
     </div>
   </section>
+</main>
 
-  <footer>
-    <p><strong>OL — Optimization and Logistics</strong> · Montréal, Québec, Canada · NEQ 2270669312<br>
-    GST 81902 9992 RT0001 · QST 4024451921 TQ0002 · <a href="mailto:spirokaglis+ol@gmail.com">spirokaglis+ol@gmail.com</a> · <a href="https://ol-projects.github.io/ol-agent/" target="_blank" rel="noopener">The Mac app</a></p>
-  </footer>
-</div>
+<footer class="site">
+  <div class="wrap">
+    <p class="legal"><b>OL — Optimization and Logistics</b> · Montréal, Québec · <b>NEQ</b> 2270669312 ·
+       <b>TPS</b> 81902 9992 RT0001 · <b>TVQ</b> 4024451921 TQ0002<br>
+       Aucune licence RBQ. Les estimations sont des documents de travail à faire signer et présenter par un
+       entrepreneur licencié.</p>
+    <nav aria-label="Pied de page">
+      <a href="./">Accueil</a><a href="index.html#prix">Prix</a><a href="sample-estimate.pdf">Échantillon</a>
+      <a href="privacy.html">Confidentialité</a><a href="en/estimate.html" hreflang="en-CA" lang="en-CA">English</a>
+    </nav>
+    <p class="copy">© 2026 OL — Optimization and Logistics. Construction du site <span id="build">65ea7f33836a</span>.</p>
+  </div>
+</footer>
 
 <script>
-/* The preview must agree with the document. Rather than duplicate the pricing rules in
-   JavaScript (two implementations of money logic always drift), the page sends the
-   dimensions to the intake endpoint with probe=true, which returns the computed figures
-   without queueing anything or sending mail. When no endpoint is configured the preview
-   says so instead of inventing a number. */
-const ENDPOINT = window.OL_LEAD_ENDPOINT || "";   // set by deploy: e.g. "https://forms.ol.example/api/lead"
+(function () {
+  var EMAIL = 'spirokaglis+ol@gmail.com';
+  var ROOMS = { bathroom: 'salle de bain', kitchen: 'cuisine', basement: 'sous-sol', bedroom: 'chambre', other: 'autre pièce' };
+  var el = function (id) { return document.getElementById(id); };
+  var f = el('f'), msg = el('msg');
 
-const el = (id) => document.getElementById(id);
-const r2 = (n) => Math.round(n * 100) / 100;
-
-// A local mirror of the DERIVATION ONLY (areas), used when no endpoint is configured:
-// areas are simple and stable, and a visitor deserves to see them immediately. Prices are
-// never mirrored — a price shown must come from the same code that prints the document.
-function localAreas(room, L, W, H) {
-  const floor = L * W, per = 2 * (L + W), gross = per * H;
-  const net = Math.max(gross - 36, gross * 0.55);
-  return { floor, per, gross, net };
-}
-
-function money(n) { return "$" + n.toLocaleString("en-CA", {minimumFractionDigits: 2, maximumFractionDigits: 2}); }
-
-function readForm() {
-  const room = document.querySelector('input[name=room]:checked').value;
-  return {
-    room,
-    length: parseFloat(el("length").value),
-    width: parseFloat(el("width").value),
-    height: parseFloat(el("height").value),
-    email: el("email").value.trim(),
-    name: el("name").value.trim(),
-  };
-}
-
-let probeTimer = null, lastProbe = 0;
-async function preview() {
-  const v = readForm();
-  if (!(v.length > 0) || !(v.width > 0) || !(v.height > 0)) return;
-  const a = localAreas(v.room, v.length, v.width, v.height);
-  el("p-area").textContent = Math.round(a.floor).toLocaleString("en-CA") + " sq ft";
-  el("p-walls").textContent = Math.round(a.net).toLocaleString("en-CA") + " sq ft";
-
-  if (!ENDPOINT) {
-    el("p-tile").textContent = "—";
-    el("p-div").textContent = "—";
-    el("p-sub").textContent = "—";
-    el("p-total").textContent = "see document";
-    return;
+  function areas() {
+    var L = parseFloat(el('length').value), W = parseFloat(el('width').value), H = parseFloat(el('height').value);
+    if (!(L > 0) || !(W > 0) || !(H > 0)) return null;
+    var floor = L * W, per = 2 * (L + W), gross = per * H;
+    var net = Math.max(gross - 36, gross * 0.55);
+    return { L: L, W: W, H: H, floor: floor, per: per, gross: gross, net: net };
   }
-  // debounce + only trust the newest response (a slow reply must not overwrite a newer one)
-  const stamp = Date.now();
-  lastProbe = stamp;
-  try {
-    const r = await fetch(ENDPOINT, {
-      method: "POST", headers: {"Content-Type": "application/json"},
-      body: JSON.stringify({...v, probe: true})
-    });
-    const d = await r.json();
-    if (stamp !== lastProbe || !d.ok || !d.figures) return;
-    const f = d.figures;
-    el("p-tile").textContent = Math.round(f.tile_sqft || 0).toLocaleString("en-CA") + " sq ft";
-    el("p-div").textContent = f.divisions || "—";
-    el("p-sub").textContent = money(f.subtotal);
-    el("p-total").textContent = money(f.total);
-  } catch (e) {
-    el("p-sub").textContent = "—";
-    el("p-total").textContent = "see document";
-  }
-}
 
-["length", "width", "height"].forEach(id => el(id).addEventListener("input", () => {
-  clearTimeout(probeTimer); probeTimer = setTimeout(preview, 250);
-}));
-document.querySelectorAll('input[name=room]').forEach(r => r.addEventListener("change", preview));
+  function show() {
+    var a = areas();
+    if (!a) return;
+    var n = function (v) { return Math.round(v).toLocaleString('fr-CA') + ' pi²'; };
+    el('p-area').textContent = n(a.floor);
+    el('p-per').textContent = Math.round(a.per).toLocaleString('fr-CA') + ' pi';
+    el('p-gross').textContent = n(a.gross);
+    el('p-walls').textContent = n(a.net);
+  }
+  ['length', 'width', 'height'].forEach(function (id) { el(id).addEventListener('input', show); });
+  show();
 
-el("f").addEventListener("submit", async (ev) => {
-  ev.preventDefault();
-  const v = readForm();
-  const msg = el("msg"), btn = el("submit");
-  msg.className = "msg";
-  if (!v.email || !/^[^@\s]+@[^@\s]+\.[A-Za-z]{2,}$/.test(v.email)) {
-    msg.textContent = "That email does not look complete — check it and try again.";
-    msg.className = "msg err show"; el("email").focus(); return;
-  }
-  if (!(v.length >= 3 && v.length <= 60 && v.width >= 3 && v.width <= 60 &&
-        v.height >= 6 && v.height <= 14)) {
-    msg.textContent = "Length and width should be 3–60 ft, ceiling 6–14 ft.";
-    msg.className = "msg err show"; return;
-  }
-  if (!ENDPOINT) {
-    /* No endpoint deployed yet. Do NOT pretend it was sent: say what actually happens,
-       and give the visitor a route that works today (a pre-filled email). */
-    const subject = encodeURIComponent(`Free sample takeoff — ${v.room} ${v.length}x${v.width} ft`);
-    const body = encodeURIComponent(
-      `Please send my free sample takeoff.\n\nRoom: ${v.room}\nLength: ${v.length} ft\n` +
-      `Width: ${v.width} ft\nCeiling: ${v.height} ft\n\nName: ${v.name || "(not given)"}\n` +
-      `Email: ${v.email}\n`);
-    msg.innerHTML = 'The generator is being connected. Your request is pre-filled — ' +
-      '<a href="mailto:spirokaglis+ol@gmail.com?subject=' + subject + '&body=' + body +
-      '">send it with one click</a> and the sample comes back the same day.';
-    msg.className = "msg ok show";
-    return;
-  }
-  btn.disabled = true; btn.textContent = "Preparing your sample…";
-  try {
-    const r = await fetch(ENDPOINT, {
-      method: "POST", headers: {"Content-Type": "application/json"},
-      body: JSON.stringify(v)
-    });
-    const d = await r.json();
-    if (d.ok) {
-      msg.textContent = d.message || "Your sample is on its way — check your inbox in a minute or two.";
-      msg.className = "msg ok show";
-      btn.textContent = "Sample requested ✓";
-    } else {
-      msg.textContent = d.error || "Something went wrong. Please try again.";
-      msg.className = "msg err show";
-      btn.disabled = false; btn.textContent = "Email my free sample →";
+  f.addEventListener('submit', function (ev) {
+    ev.preventDefault();
+    msg.textContent = '';
+    var email = el('email').value.trim();
+    if (!/^[^@\s]+@[^@\s]+\.[A-Za-z]{2,}$/.test(email)) {
+      msg.textContent = 'Ce courriel semble incomplet — vérifiez-le et réessayez.';
+      el('email').focus();
+      return;
     }
-  } catch (e) {
-    msg.textContent = "Could not reach the server. Please try again, or email spirokaglis+ol@gmail.com.";
-    msg.className = "msg err show";
-    btn.disabled = false; btn.textContent = "Email my free sample →";
-  }
-});
-
-preview();
+    var a = areas();
+    if (!a) {
+      msg.textContent = 'Entrez des dimensions valides (longueur et largeur de 3 à 60 pi, hauteur de 6 à 14 pi).';
+      return;
+    }
+    if (a.floor > 1000) {
+      msg.textContent = 'La première gratuite couvre jusqu\'à 1 000 pi² (' + Math.round(a.floor) +
+        ' pi² ici). Envoyez quand même la demande : nous donnerons le prix avant tout travail.';
+    }
+    var room = ROOMS[el('room').value] || 'pièce';
+    var subject = 'Première prise de quantités — ' + room + ' ' + a.L + ' x ' + a.W + ' pi';
+    var body = [
+      'Bonjour,',
+      '',
+      'Demande de première prise de quantités (gratuite, nouveau client).',
+      '',
+      'Pièce : ' + room,
+      'Longueur : ' + a.L + ' pi',
+      'Largeur : ' + a.W + ' pi',
+      'Hauteur : ' + a.H + ' pi',
+      'Superficie du plancher : ' + Math.round(a.floor) + ' pi²',
+      'Superficie nette estimée des murs : ' + Math.round(a.net) + ' pi²',
+      '',
+      'Nom : ' + (el('name').value.trim() || '(non fourni)'),
+      'Courriel : ' + email,
+      '',
+      'Je joindrai le plan ou des photos quand vous répondrez.',
+      '',
+      'Demande composée sur le site d\'OL ; le site n\'en a reçu aucune copie.'
+    ].join('\n');
+    var params = new URLSearchParams();
+    params.set('subject', subject);
+    params.set('body', body);
+    window.location.href = 'mailto:' + EMAIL + '?' + params.toString();
+    msg.textContent = 'Votre application de courriel devrait être ouverte avec les dimensions déjà inscrites. ' +
+      'Rien n\'a été envoyé depuis cette page — appuyez sur Envoyer. Si rien ne s\'est ouvert, écrivez à ' + EMAIL + '.';
+  });
+})();
 </script>
-<div class="wrap"><p style="font-size:.85rem;opacity:.8;margin:1.2rem 0 2rem"><a href="fr/estimate.html" hreflang="fr" lang="fr">Version française</a></p></div>
 </body>
 </html>

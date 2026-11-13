@@ -1,35 +1,40 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr-CA">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>OL — Optimization and Logistics · documents, estimates and audits that hold up</title>
-<meta name="description" content="OL writes the document your business needs and cannot get to: construction estimates and takeoffs, technical audits, and automations that run on your own accounts. Montréal.">
+<title>OL Services — prises de quantités, estimations et audits · une division de OL</title>
+<meta name="description" content="Prises de quantités et listes de matériaux chiffrées, vérifiées au cent près. Première gratuite, puis 74,99 $ (tarif de lancement; 149 $ régulier). Prix fixe en une heure ouvrable, livré en 24 à 48 h, en français ou en anglais. Montréal.">
 <link rel="icon" href="ol-mark.svg" type="image/svg+xml">
+<link rel="canonical" href="https://ol-projects.github.io/ol-services/">
+<link rel="alternate" hreflang="fr-CA" href="https://ol-projects.github.io/ol-services/">
+<link rel="alternate" hreflang="en-CA" href="https://ol-projects.github.io/ol-services/en/">
+<link rel="alternate" hreflang="x-default" href="https://ol-projects.github.io/ol-services/">
 <meta property="og:type" content="website">
-<meta property="og:title" content="OL — Optimization and Logistics · documents, estimates and audits">
-<meta property="og:description" content="Fixed-price estimates, technical audits and automations, written and machine-checked before delivery. Montréal, Québec.">
+<meta property="og:locale" content="fr_CA">
+<meta property="og:locale:alternate" content="en_CA">
+<meta property="og:title" content="Des plans en entrée. Une prise de quantités chiffrée en sortie — vérifiée au cent près.">
+<meta property="og:description" content="Quantités, pertes, boîtes et moulures, avec les prix et les taxes du Québec calculés correctement. Prix fixe, en français ou en anglais. Montréal.">
+<meta property="og:url" content="https://ol-projects.github.io/ol-services/">
 <meta property="og:image" content="https://ol-projects.github.io/ol-services/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Paperwork that holds up — OL, Montréal.">
+<meta property="og:image:alt" content="OL Services — prises de quantités, estimations et audits, Montréal.">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://ol-projects.github.io/ol-services/og.png">
-<link rel="canonical" href="https://ol-projects.github.io/ol-services/">
-<link rel="alternate" hreflang="fr-CA" href="https://ol-projects.github.io/ol-services/fr/">
-<link rel="alternate" hreflang="en-CA" href="https://ol-projects.github.io/ol-services/">
-<link rel="alternate" hreflang="x-default" href="https://ol-projects.github.io/ol-services/">
+<link rel="stylesheet" href="site.css">
 
-<!-- Machine-readable identity. A crawler, a browser or a client's accounting system can read who this
-     company is without parsing prose: legal name, registration, tax numbers, and the three offers with
-     their prices. This is the cheapest legitimacy there is, and it costs nothing. -->
+<!-- Identité lisible par une machine. Un robot, un navigateur ou le système comptable d'un client
+     peut lire qui est l'entreprise sans analyser la prose : dénomination, immatriculation, numéros
+     de taxes, et les cinq offres avec leur prix. -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "ProfessionalService",
+  "@type": ["Organization", "ProfessionalService"],
+  "@id": "https://ol-projects.github.io/ol-services/#org",
   "name": "OL — Optimization and Logistics",
-  "alternateName": "OL",
-  "description": "Fixed-price construction estimating and takeoff documents, technical audits, and automation builds. Prepared and machine-checked before delivery.",
+  "alternateName": "OL Services",
+  "description": "Prises de quantités et listes de matériaux chiffrées, audits techniques et automatisations simples. Préparés et vérifiés par ordinateur avant la livraison.",
   "url": "https://ol-projects.github.io/ol-services/",
   "email": "spirokaglis+ol@gmail.com",
   "logo": "https://ol-projects.github.io/ol-services/ol-mark.svg",
@@ -37,759 +42,696 @@
   "areaServed": { "@type": "AdministrativeArea", "name": "Québec" },
   "identifier": [
     { "@type": "PropertyValue", "name": "NEQ", "value": "2270669312" },
-    { "@type": "PropertyValue", "name": "GST", "value": "81902 9992 RT0001" },
-    { "@type": "PropertyValue", "name": "QST", "value": "4024451921 TQ0002" }
+    { "@type": "PropertyValue", "name": "TPS", "value": "81902 9992 RT0001" },
+    { "@type": "PropertyValue", "name": "TVQ", "value": "4024451921 TQ0002" }
   ],
   "currenciesAccepted": "CAD",
-  "paymentAccepted": "Interac e-Transfer, Credit Card",
+  "paymentAccepted": "Virement Interac",
+  "knowsLanguage": ["fr-CA", "en-CA"],
   "makesOffer": [
-    { "@type": "Offer", "name": "Technical audit", "price": "490.00", "priceCurrency": "CAD" },
-    { "@type": "Offer", "name": "Takeoff and priced material list", "price": "95.00", "priceCurrency": "CAD" },
-    { "@type": "Offer", "name": "Automation build", "price": "75.00", "priceCurrency": "CAD" }
+    {
+      "@type": "Offer",
+      "name": "Première prise de quantités (nouveau client)",
+      "price": "0.00",
+      "priceCurrency": "CAD",
+      "description": "Une par nouveau client, jusqu'à 1 000 pi². Livrable complet et chiffré, une révision, 48 h."
+    },
+    {
+      "@type": "Offer",
+      "name": "Prise de quantités complète — tarif de lancement",
+      "price": "74.99",
+      "priceCurrency": "CAD",
+      "description": "Jusqu'à 1 000 pi², liste de matériaux chiffrée, une révision, 48 h. Tarif régulier 149 $."
+    },
+    {
+      "@type": "Offer",
+      "name": "Micro-prise de quantités",
+      "price": "25.00",
+      "priceCurrency": "CAD",
+      "description": "Une pièce, un métier, quantités seulement — sans prix. Une révision, 24 h."
+    },
+    {
+      "@type": "Offer",
+      "name": "Audit technique — tarif de lancement",
+      "price": "290.00",
+      "priceCurrency": "CAD",
+      "description": "Un dépôt, une API ou un flux de travail. 5 jours ouvrables. Tarif régulier 490 $."
+    },
+    {
+      "@type": "Offer",
+      "name": "Automatisation simple",
+      "price": "49.00",
+      "priceCurrency": "CAD",
+      "description": "Une automatisation dans vos comptes, testée et documentée. 3 jours ouvrables. Tarif régulier 150 $ et plus."
+    }
   ]
 }
 </script>
-<style>
-  :root{
-    --navy:#183A5C; --steel:#315D8C; --ink:#1d232b; --muted:#6C7177;
-    --line:#D5DCE3; --wash:#F4F6F9; --white:#fff; --accent:#B8860B;
-  }
-  *{box-sizing:border-box}
-  html{-webkit-text-size-adjust:100%}
-  body{margin:0;font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
-       color:var(--ink);background:var(--white)}
-  .wrap{max-width:920px;margin:0 auto;padding:0 28px}
-  header{border-bottom:1px solid var(--line);padding:22px 0}
-  .brand{display:flex;align-items:center;gap:14px}
-  .brand svg{width:44px;height:44px;flex:none}
-  .brand .n{font-weight:800;font-size:19px;letter-spacing:.14em;color:var(--navy);line-height:1}
-  .brand .t{font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-top:5px}
-  .hero{padding:34px 0 18px}
-  .kicker{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--steel);font-weight:700}
-  h1{font-size:38px;line-height:1.08;letter-spacing:-.025em;color:var(--navy);margin:10px 0 12px;max-width:20ch}
-  .lede{font-size:17.5px;color:#3b4550;max-width:56ch;margin:0}
-  .offers{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:30px 0 8px}
-  .offer{border:1px solid var(--line);border-radius:12px;padding:17px 17px;background:var(--white);
-         display:flex;flex-direction:column}
-  .offer .price{font-size:30px;font-weight:800;color:var(--navy);letter-spacing:-.02em;line-height:1}
-  .offer .unit{font-size:12.5px;color:var(--muted);margin:6px 0 14px}
-  .offer h3{margin:0 0 8px;font-size:17px;color:var(--navy)}
-  .offer p{margin:0 0 16px;font-size:14.5px;color:#3b4550}
-  .offer a{margin-top:auto;font-weight:700;color:var(--steel);text-decoration:none;font-size:14.5px}
-  .offer a:hover{text-decoration:underline}
-  h2{font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--steel);
-     margin:34px 0 12px;padding-bottom:7px;border-bottom:2px solid var(--line)}
-  ul{margin:0 0 0 20px;padding:0}
-  li{margin:7px 0}
-  .proof{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-  .pcard{background:var(--wash);border:1px solid var(--line);border-radius:12px;padding:18px 20px}
-  .pcard h3{margin:0 0 6px;font-size:15.5px;color:var(--navy)}
-  .pcard p{margin:0;font-size:14px;color:#3b4550}
-  .legit{margin-top:16px;border-left:4px solid var(--navy);background:var(--wash);
-         padding:16px 18px;border-radius:0 10px 10px 0;font-size:14px;color:#3b4550}
-  .cta{display:inline-block;background:var(--navy);color:#fff;text-decoration:none;font-weight:700;
-       padding:15px 28px;border-radius:9px;margin:10px 0 8px}
-  .contact{padding:26px 0 12px}
-  .small{font-size:13px;color:var(--muted)}
-  footer{border-top:1px solid var(--line);margin-top:28px;padding:16px 0 26px;font-size:12.5px;color:var(--muted)}
-  footer strong{color:var(--ink)}
-  /* The quote form. Deliberately a real form with real <label>s rather than a
-     bare mailto link: the visitor's keyboard, screen reader and browser autofill
-     all work, and the structured fields are filled for them instead of being a
-     wall of text they are expected to rewrite. */
-  .quote{border:1px solid var(--line);border-radius:12px;padding:20px 22px;background:var(--wash);margin:14px 0 0}
-  .quote .f{margin:0 0 14px}
-  .quote label{display:block;font-weight:700;font-size:14px;color:var(--navy);margin-bottom:5px}
-  .quote .hint{font-weight:400;font-size:12.5px;color:var(--muted);display:block;margin-top:3px}
-  .quote select,.quote textarea,.quote input{width:100%;font:inherit;font-size:15px;color:var(--ink);
-    background:var(--white);border:1px solid var(--line);border-radius:8px;padding:10px 12px}
-  .quote textarea{min-height:132px;resize:vertical}
-  .quote input[type=email]{max-width:360px}
-  .quote .req{color:#9c2b2b;font-weight:700}
-  .quote .err{color:#9c2b2b;font-size:13.5px;font-weight:600;margin:10px 0 0;min-height:1.2em}
-  .quote .err:empty{display:none}
-  .quote .actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:14px}
-  .quote .send{background:var(--navy);color:#fff;border:0;font:inherit;font-weight:700;padding:13px 24px;
-    border-radius:9px;cursor:pointer}
-  .quote .send:hover{background:var(--steel)}
-  .quote .preview{font-size:13px;color:var(--steel);font-weight:700;text-decoration:none}
-  .quote .preview:hover{text-decoration:underline}
-  .quote .after{margin:12px 0 0;font-size:13.5px;color:#3b4550}
-  .quote .after:empty{display:none}
-  /* The notice the law requires to sit at the point of collection, in the same
-     sentence the visitor is deciding to press send. Not a link they must hunt. */
-  .notice{font-size:12.5px;color:var(--muted);margin:12px 0 0;padding-top:12px;border-top:1px solid var(--line)}
-  .notice a{color:var(--steel)}
-  /* Print is a separate artefact from the screen: on paper there is no scrolling, so the same content
-     has to compress to two pages without shrinking the type below readable. Measured 2026-11-06: the
-     screen layout printed as three pages with a nearly-empty third, which the document gate flagged. */
-  @media print{
-    .offer,.pcard,.legit,.proof,.offers{break-inside:avoid;page-break-inside:avoid}
-    h1,h2,h3{break-after:avoid;page-break-after:avoid}
-    header{border:0;padding:10px 0}
-    .hero{padding:14px 0 8px}
-    h1{font-size:29px;margin:6px 0 8px}
-    .lede{font-size:14px}
-    .offers{gap:9px;margin:16px 0 4px;grid-template-columns:repeat(3,1fr)}
-    .proof{grid-template-columns:1fr 1fr}
-    .offer{padding:12px 12px}
-    .offer .price{font-size:23px}
-    .offer p{font-size:12.5px;margin-bottom:10px}
-    h2{margin:20px 0 8px}
-    .pcard{padding:11px 12px}
-    .pcard p{font-size:12.5px}
-    li{margin:4px 0;font-size:13px}
-    .legit{font-size:12.5px;padding:11px 13px}
-    .contact{padding:14px 0 6px}
-    footer{margin-top:16px;padding:10px 0 0}
-    /* The quote form is an interactive artefact: a printed sheet cannot send it,
-       so on paper it compresses to its text and keeps the page count at two. */
-    .quote{padding:11px 13px;margin-top:9px}
-    .quote .f{margin-bottom:8px}
-    .quote textarea{min-height:64px}
-    .quote .send,.quote .preview,.quote .after{display:none}
-    .quote .hint{font-size:11px}
-    .notice{font-size:11px;margin-top:8px;padding-top:8px}
-  }
-  @media screen and (max-width:760px){
-    h1{font-size:33px}
-    .offers,.proof{grid-template-columns:1fr}
-    .hero{padding:40px 0 20px}
-  }
-
-.xnav{display:flex;gap:22px;align-items:center;padding:16px 26px 0;font:500 11px/1 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.13em;text-transform:uppercase;color:#6C7177}
-.xnav a{color:inherit;text-decoration:none;border-bottom:1px solid transparent;padding-bottom:3px}
-.xnav a:hover{border-bottom-color:#183A5C;color:#183A5C}
-.xnav .cur{color:#183A5C}
-.xnav .out{margin-left:auto}
-
-  /* ── 2026-11-07 craft pass: proof in the fold, a wider measure, offers for the arriving reader ── */
-  @media screen and (min-width:1100px){ .wrap{max-width:1080px} }
-  .hero{display:grid;grid-template-columns:1fr;gap:26px}
-  @media screen and (min-width:980px){
-    .hero{grid-template-columns:minmax(0,1.02fr) minmax(0,.98fr);align-items:start;gap:46px;padding:46px 0 30px}
-  }
-  .hero h1{max-width:22ch}
-  .hero-cta{display:flex;flex-wrap:wrap;gap:11px;margin:22px 0 0}
-  .btn{display:inline-block;text-decoration:none;font-weight:700;border-radius:9px;
-       padding:14px 21px;font-size:15px;line-height:1.2}
-  .btn.primary{background:var(--navy);color:#fff}
-  .btn.primary:hover{background:var(--steel)}
-  .btn.ghost{border:1px solid #C7D1DB;color:var(--navy);background:var(--white)}
-  .btn.ghost:hover{border-color:var(--navy)}
-  .hero-note{font-size:13px;color:var(--muted);margin:11px 0 0}
-  .paper{background:var(--white);border:1px solid #C8D3DE;border-radius:12px;
-         box-shadow:0 22px 46px -30px rgba(24,58,92,.6);overflow:hidden}
-  .paper-top{display:flex;justify-content:space-between;gap:10px;padding:12px 15px;
-      border-bottom:1px solid var(--line);background:#FBFCFD;
-      font:600 10px/1.35 ui-monospace,SFMono-Regular,Menlo,monospace;
-      letter-spacing:.13em;text-transform:uppercase;color:var(--muted)}
-  .paper-top b{color:var(--navy);font-weight:700}
-  .paper-body{padding:10px 15px 8px}
-  .prow{display:grid;grid-template-columns:24px minmax(0,1fr) auto;gap:9px;align-items:baseline;
-        padding:7px 0;border-bottom:1px dotted #E1E7ED;font-size:13px}
-  .prow .ref{font:600 10px/1 ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--steel);
-             letter-spacing:.04em;padding-top:2px}
-  .prow .nm{color:#3b4550}
-  .prow .nm b{display:block;color:var(--ink);font-weight:600;font-size:13px}
-  .prow .amt{font-variant-numeric:tabular-nums;font-weight:600;color:var(--ink)}
-  .psum{margin-top:6px;border-top:1px solid #CFD8E1;padding-top:7px}
-  .psum .prow{border-bottom:0;padding:3px 0}
-  .psum .prow .nm{color:var(--muted);font-size:12.5px}
-  .pgrand .nm{color:var(--navy);font-weight:800;font-size:13px}
-  .pgrand .amt{color:var(--navy);font-weight:800;font-size:15px}
-  .paper-foot{padding:9px 15px 12px;border-top:1px solid var(--line);background:#FBFCFD;
-      font:11px/1.5 ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--muted)}
-  .paper-foot .ok{color:#1c6b45;font-weight:700}
-  .paper-foot a{color:var(--steel);font-weight:700;text-decoration:none}
-  .paper-foot a:hover{text-decoration:underline}
-  .sec-note{font-size:13.5px;color:var(--muted);margin:-2px 0 14px;max-width:70ch}
-  /* ── mobile: the live page overflowed 390px because the section nav and the brand line were
-     flex rows with no wrap; every card was clipped on a phone. Fix the cause, not the symptom. ── */
-  .brand>div{min-width:0}
-  .quote{max-width:760px}
-  @media screen and (max-width:760px){
-    .xnav{flex-wrap:wrap;gap:8px 16px;padding:12px 20px 0;align-items:baseline}
-.xnav{flex-direction:column;align-items:flex-start;gap:5px}
-.xnav .cur{display:none}
-.xnav a{font-size:10px}
-    .xnav .out{margin-left:0}
-    .brand .t{letter-spacing:.09em;font-size:10.5px}
-    .wrap{padding:0 20px}
-    h1{font-size:31px}
-    .hero{padding:26px 0 16px}
-    .paper-top{font-size:9px;letter-spacing:.09em}
-    .paper-body{padding:8px 12px 6px}
-    .prow{grid-template-columns:22px minmax(0,1fr) auto;gap:7px;font-size:12.5px}
-    .paper-foot{padding:8px 12px 10px;font-size:10px}
-  }
-  @media print{
-    @page{margin:12mm}
-    .paper{box-shadow:none;break-inside:avoid;page-break-inside:avoid}
-    .paper-top,.paper-foot{font-size:8px;padding:6px 9px}
-    .paper-body{padding:5px 9px 3px}
-    .prow{font-size:10.5px;padding:2.5px 0;grid-template-columns:20px minmax(0,1fr) auto}
-    .prow .nm b{font-size:10.5px;display:inline}
-    .psum .prow{padding:1.5px 0}
-    .pgrand .amt{font-size:12px}
-    .btn,.hero-cta,.xnav{display:none}
-    .hero{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:16px;align-items:start;
-          padding:8px 0 4px}
-    .hero-note{display:none}
-    h1{font-size:26px;margin:4px 0 6px}
-    .lede{font-size:12.5px}
-    .kicker{font-size:10px}
-    .offers{margin:10px 0 2px}
-    .offer .price{font-size:20px}
-    .offer .unit{font-size:10.5px;margin:3px 0 8px}
-    .offer h3{font-size:14px;margin-bottom:4px}
-    .offer p{font-size:11px;margin-bottom:6px}
-    .offer a{font-size:11px}
-    h2{margin:12px 0 6px;font-size:11px}
-    .pcard{padding:8px 10px}
-    .pcard h3{font-size:12.5px}
-    .pcard p{font-size:10.5px}
-    .sec-note{display:none}
-    .legit{font-size:11px;padding:8px 10px;margin-top:8px}
-    .contact{padding:8px 0 2px}
-    .quote{padding:8px 10px;margin-top:6px}
-    .quote .f{margin-bottom:5px}
-    .quote label{font-size:11.5px}
-    .quote textarea{min-height:44px}
-    .quote .hint{font-size:10px}
-    .notice{font-size:9.5px;margin-top:6px;padding-top:6px}
-    .small{font-size:10.5px}
-    footer{margin-top:8px;padding:6px 0 0;font-size:9.5px}
-  }
-</style>
 </head>
 <body>
+<a class="skip" href="#top">Aller au contenu</a>
 
-<header>
-  <div class="wrap brand">
-    <svg viewBox="0 0 120 120" aria-hidden="true">
-      <rect width="120" height="120" rx="18" fill="#183A5C"/>
-      <g fill="none" stroke="#fff" stroke-width="8.5" stroke-linecap="butt" stroke-linejoin="miter">
-        <circle cx="44" cy="50" r="22"/>
-        <path d="M78 28 V72 H98"/>
-      </g>
-    </svg>
-    <div>
-      <div class="n">OL</div>
-      <div class="t">Optimization and Logistics · Montréal</div>
+<header class="masthead">
+  <div class="wrap mast">
+    <a class="brand" href="./">
+      <svg viewBox="0 0 120 120" aria-hidden="true">
+        <rect width="120" height="120" rx="18" fill="#183A5C"/>
+        <g fill="none" stroke="#fff" stroke-width="8.5" stroke-linecap="butt" stroke-linejoin="miter">
+          <circle cx="44" cy="50" r="22"/><path d="M78 28 V72 H98"/>
+        </g>
+      </svg>
+      <span class="lock">
+        <b>OL Services</b>
+        <span class="div">une division de OL&nbsp;/ a division of OL</span>
+        <span class="city">Montréal</span>
+      </span>
+    </a>
+    <div class="lang" aria-label="Langue">
+      <a href="./" hreflang="fr-CA" aria-current="true">FR</a>
+      <a href="en/" hreflang="en-CA" lang="en-CA">EN</a>
     </div>
   </div>
+  <nav class="wrap xnav" aria-label="Sections">
+    <a href="#prix">Prix</a>
+    <a href="#echantillon">Échantillon</a>
+    <a href="#processus">Processus</a>
+    <a href="#garanties">Garanties</a>
+    <a href="#faq">FAQ</a>
+    <a class="out" href="#commencer">Demander un prix&nbsp;→</a>
+  </nav>
 </header>
-<nav class="wrap xnav" aria-label="Sections">
-  <span class="cur">Documents · estimates · audits</span>
-  <a href="agent.html">What OL is</a>
-  <a href="intel.html">Project intelligence · from $149</a>
-  <a href="estimate.html">Free takeoff</a>
-  <a href="ops-audit.html">Sample audit</a>
-  <a href="dental.html" lang="fr">Trousse dentaire · $250</a>
-  <a href="pay.html">Pay</a>
-  <a class="out" href="https://ol-projects.github.io/ol-agent/">OL, the agent ↗</a>
-  <a class="lang" href="fr/" hreflang="fr" lang="fr">Français</a>
-</nav>
 
-
+<main id="top">
 <div class="wrap">
 
-  <section class="hero">
+  <!-- 01 · En-tête de page -->
+  <section class="hero" aria-labelledby="h-hero">
     <div class="hero-copy">
-      <div class="kicker">Construction takeoffs · technical audits · Montréal</div>
-      <h1>Plans in. A priced takeoff out — checked to the cent.</h1>
-      <p class="lede">Quantities, waste allowance, boxes and trim, with prices and Québec taxes
-         done correctly — and the arithmetic recomputed by a machine before the document reaches
-         you. Fixed price, in French or English.</p>
+      <p class="kicker">Division 01 · Montréal · Prix fixe</p>
+      <h1 id="h-hero">Des plans en entrée. Une prise de quantités chiffrée en sortie — vérifiée au cent près.</h1>
+      <p class="lede">Quantités, pertes, boîtes et moulures, avec les prix et les taxes du Québec calculés
+         correctement — et les montants recalculés par ordinateur avant que le document vous parvienne.
+         Prix fixe, en français ou en anglais.</p>
+      <p class="offerline">Première prise de quantités gratuite pour un nouveau client. Ensuite
+         <b>74,99&nbsp;$</b> (tarif de lancement) — <em>149&nbsp;$ au tarif régulier</em> — jusqu'à 1&nbsp;000&nbsp;pi².</p>
       <div class="hero-cta">
-        <a class="btn primary" href="mailto:spirokaglis+ol@gmail.com?subject=First%20takeoff%20request">First takeoff free — send a plan</a>
-        <a class="btn ghost" href="#sample">See the sample ↓</a>
+        <a class="btn primary" href="#commencer">Envoyez un plan — prix fixe en une heure ouvrable</a>
+        <a class="btn ghost" href="#echantillon">Voir l'échantillon ↓</a>
       </div>
-      <p class="hero-note">No account, no retainer. The first takeoff for a new client is free;
-         after that it is $95 up to 1,000 ft².</p>
+      <ul class="trust">
+        <li>Prix fixe, annoncé d'abord</li>
+        <li>Une révision incluse</li>
+        <li>À temps, ou 50&nbsp;% de rabais</li>
+        <li>Virement Interac maintenant, carte bientôt</li>
+      </ul>
+      <p class="hero-note">Aucun compte. Aucune avance. Aucun taux horaire. Vous achetez un document,
+         pas une relation avec une feuille de temps.</p>
     </div>
 
-    <!-- The proof band. Every figure below is from SAMPLE-2026-001, the same two-page PDF the
-         outreach letter attaches (sha256 46806530…): five divisions, division totals, and the
-         three tax lines recomputed to the cent. Nothing here is illustrative. -->
-    <aside class="paper" id="sample" aria-label="Excerpt from the sample estimate SAMPLE-2026-001">
-      <div class="paper-top"><span><b>Estimate</b> SAMPLE-2026-001</span><span>Bathroom · 120 ft²</span></div>
+    <!-- L'extrait est le vrai document : SAMPLE-2026-001, deux pages, cinq divisions.
+         Les montants ci-dessous sont ceux du PDF (1 850 + 4 130 + 3 570 + 2 400 + 1 650 = 13 600,
+         TPS 680,00, TVQ 1 356,60, total 15 636,60). -->
+    <aside class="paper" aria-label="Extrait de l'estimation SAMPLE-2026-001">
+      <div class="paper-top"><span><b>Estimation</b> SAMPLE-2026-001</span><span>Salle de bain · 120&nbsp;pi²</span></div>
       <div class="paper-body">
-        <div class="prow"><span class="ref">02</span><span class="nm"><b>Selective demolition &amp; removals</b></span><span class="amt">$1,850.00</span></div>
-        <div class="prow"><span class="ref">09</span><span class="nm"><b>Tiling &amp; waterproofing</b></span><span class="amt">$4,130.00</span></div>
-        <div class="prow"><span class="ref">10</span><span class="nm"><b>Fixtures &amp; finishes</b></span><span class="amt">$3,570.00</span></div>
-        <div class="prow"><span class="ref">22</span><span class="nm"><b>Plumbing</b></span><span class="amt">$2,400.00</span></div>
-        <div class="prow"><span class="ref">26</span><span class="nm"><b>Electrical</b></span><span class="amt">$1,650.00</span></div>
+        <div class="prow"><span class="ref">02</span><span class="nm"><b>Démolition sélective et dépose</b></span><span class="amt">1&nbsp;850,00&nbsp;$</span></div>
+        <div class="prow"><span class="ref">09</span><span class="nm"><b>Céramique et étanchéité</b></span><span class="amt">4&nbsp;130,00&nbsp;$</span></div>
+        <div class="prow"><span class="ref">10</span><span class="nm"><b>Appareils et finis</b></span><span class="amt">3&nbsp;570,00&nbsp;$</span></div>
+        <div class="prow"><span class="ref">22</span><span class="nm"><b>Plomberie</b></span><span class="amt">2&nbsp;400,00&nbsp;$</span></div>
+        <div class="prow"><span class="ref">26</span><span class="nm"><b>Électricité</b></span><span class="amt">1&nbsp;650,00&nbsp;$</span></div>
         <div class="psum">
-          <div class="prow"><span class="ref"></span><span class="nm">Subtotal, before taxes</span><span class="amt">$13,600.00</span></div>
-          <div class="prow"><span class="ref"></span><span class="nm">GST · 5.0 %</span><span class="amt">$680.00</span></div>
-          <div class="prow"><span class="ref"></span><span class="nm">QST · 9.975 %</span><span class="amt">$1,356.60</span></div>
-          <div class="prow pgrand"><span class="ref"></span><span class="nm">Estimated total</span><span class="amt">$15,636.60</span></div>
+          <div class="prow"><span class="ref"></span><span class="nm">Sous-total, avant taxes</span><span class="amt">13&nbsp;600,00&nbsp;$</span></div>
+          <div class="prow"><span class="ref"></span><span class="nm">TPS · 5&nbsp;%</span><span class="amt">680,00&nbsp;$</span></div>
+          <div class="prow"><span class="ref"></span><span class="nm">TVQ · 9,975&nbsp;%</span><span class="amt">1&nbsp;356,60&nbsp;$</span></div>
+          <div class="prow pgrand"><span class="ref"></span><span class="nm">Total estimé</span><span class="amt">15&nbsp;636,60&nbsp;$</span></div>
         </div>
       </div>
       <div class="paper-foot">
-        <span class="ok">✓ recomputed</span> 1,850 + 4,130 + 3,570 + 2,400 + 1,650 = 13,600.00<br>
-        <a href="sample-estimate.pdf">The full two pages (PDF) →</a>
+        <span class="ok">✓ recalculé</span> 1&nbsp;850 + 4&nbsp;130 + 3&nbsp;570 + 2&nbsp;400 + 1&nbsp;650 = 13&nbsp;600,00<br>
+        <a href="sample-estimate.pdf">Les deux pages complètes (PDF) →</a>
       </div>
     </aside>
   </section>
+</div>
 
-  <h2>What you can order</h2>
-  <p class="sec-note">Fixed prices, stated before work starts. The first takeoff for a new client is free.</p>
-  <section class="offers">
-    <div class="offer">
-      <div class="price">$95</div>
-      <div class="unit">up to 1,000 ft² · then $0.09/ft² · first one free</div>
-      <h3>Takeoff &amp; priced material list</h3>
-      <p>Send the plan or the measurements. You get quantities, waste allowance, boxes and trim, priced —
-         ready to hand to a client.</p>
-      <a href="mailto:spirokaglis+ol@gmail.com?subject=Takeoff%20request">Request a takeoff →</a>
-    </div>
-    <div class="offer">
-      <div class="price">$490</div>
-      <div class="unit">fixed · 5 business days</div>
-      <h3>Technical audit</h3>
-      <p>One repo, API or workflow. What is broken, what is fragile, what is fine — each finding tied to a
-         file or a line, plus a recorded walkthrough.</p>
-      <a href="ops-audit.html">See what you get →</a>
-    </div>
-    <div class="offer">
-      <div class="price">$75–300</div>
-      <div class="unit">per automation · 24–48 h</div>
-      <h3>Automation build</h3>
-      <p>n8n, Make or Zapier, on <em>your</em> accounts. Tested with real sample data, documented, with a
-         fix window.</p>
-      <a href="mailto:spirokaglis+ol@gmail.com?subject=Automation%20build">Describe the job →</a>
-    </div>
-  </section>
+<!-- 02 · Offres et prix -->
+<section class="sec" id="prix" aria-labelledby="h-prix">
+  <div class="wrap">
+    <p class="eyebrow">02 · Offres et prix</p>
+    <h2 class="title" id="h-prix">Ce que vous pouvez commander.</h2>
+    <p class="lede">Prix fixes, annoncés avant le début du travail. Chaque prix vise le document,
+       pas les travaux.</p>
 
-  <h2>Why the output holds up</h2>
-  <div class="proof">
-    <div class="pcard">
-      <h3>Checked by a machine, not by mood</h3>
-      <p>Every document is rendered and measured before it leaves: nothing outside the margins, no page
-         left half-empty, totals that add up to the cent. A document that fails is not sent.</p>
-    </div>
-    <div class="pcard">
-      <h3>The sample above is the deliverable</h3>
-      <p>Two pages, five divisions, every quantity and price carried through to the tax lines. It is a real
-         document produced by this process — the same PDF the letter attaches.</p>
-    </div>
-    <div class="pcard">
-      <h3>French and English</h3>
-      <p>Montréal business documents, produced in both languages, with Québec tax lines handled correctly
-         (GST 5 %, QST 9.975 %).</p>
-    </div>
-    <div class="pcard">
-      <h3>Fixed price, stated up front</h3>
-      <p>No hourly drift. If the scope changes, you get a new price before any work continues.</p>
+    <table class="ptable">
+      <colgroup>
+        <col class="c-offer"><col class="c-price"><col class="c-scope"><col class="c-time"><col class="c-get">
+      </colgroup>
+      <thead>
+        <tr><th scope="col">Offre</th><th scope="col">Prix</th><th scope="col">Portée</th><th scope="col">Délai</th><th scope="col">Ce que vous recevez</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row"><b>Première prise de quantités</b><span class="tag">Une par nouveau client</span></th>
+          <td data-l="Prix"><span class="p free">Gratuite</span></td>
+          <td data-l="Portée">Jusqu'à 1&nbsp;000&nbsp;pi², livrable complet et chiffré</td>
+          <td data-l="Délai" class="time">48&nbsp;h</td>
+          <td data-l="Vous recevez">La prise de quantités complète&nbsp;: quantités, pertes, boîtes, moulures, prix unitaires, lignes de taxes. Pas un échantillon, pas un appât.</td>
+        </tr>
+        <tr>
+          <th scope="row"><b>Prise de quantités complète</b><span class="tag">Tarif de lancement · 10 premiers clients</span></th>
+          <td data-l="Prix"><span class="p">74,99&nbsp;$<s>149&nbsp;$ au tarif régulier</s></span></td>
+          <td data-l="Portée">Jusqu'à 1&nbsp;000&nbsp;pi², liste de matériaux chiffrée, une révision</td>
+          <td data-l="Délai" class="time">48&nbsp;h</td>
+          <td data-l="Vous recevez">Liste chiffrée par division, quantités avec taux de pertes, boîtes et moulures, totaux au cent près.</td>
+        </tr>
+        <tr>
+          <th scope="row"><b>Micro-prise de quantités</b><span class="tag">Quantités seulement — sans prix</span></th>
+          <td data-l="Prix"><span class="p">25&nbsp;$</span></td>
+          <td data-l="Portée">Une pièce, un métier, <b>quantités seulement — sans prix</b>, une révision</td>
+          <td data-l="Délai" class="time">24&nbsp;h</td>
+          <td data-l="Vous recevez">Une feuille de quantités mesurées pour une pièce et un métier. Rapide, étroite, non chiffrée.</td>
+        </tr>
+        <tr>
+          <th scope="row"><b>Audit technique</b><span class="tag">Tarif de lancement · 10 premiers clients</span></th>
+          <td data-l="Prix"><span class="p">290&nbsp;$<s>490&nbsp;$ au tarif régulier</s></span></td>
+          <td data-l="Portée">Un dépôt, une API ou un flux de travail</td>
+          <td data-l="Délai" class="time">5 jours ouvrables</td>
+          <td data-l="Vous recevez">Ce qui est brisé, ce qui est fragile, ce qui va bien — chaque constat lié à un fichier ou à une ligne, avec une présentation enregistrée.</td>
+        </tr>
+        <tr>
+          <th scope="row"><b>Automatisation simple</b><span class="tag">Dans vos comptes</span></th>
+          <td data-l="Prix"><span class="p">49&nbsp;$<s>150&nbsp;$ et plus au tarif régulier</s></span></td>
+          <td data-l="Portée">Une automatisation, dans vos comptes, testée</td>
+          <td data-l="Délai" class="time">3 jours ouvrables</td>
+          <td data-l="Vous recevez">Une automatisation fonctionnelle, testée avec de vraies données, documentée, avec une période de correction.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p class="fine">Prix en dollars canadiens, avant taxes. <strong>TPS 5&nbsp;% et TVQ 9,975&nbsp;%</strong>
+       indiquées sur chaque facture. Les tarifs de lancement s'appliquent aux 10 premiers clients par offre,
+       puis le tarif régulier. Au-delà de 1&nbsp;000&nbsp;pi²&nbsp;: prix établi par mandat avant tout travail.
+       <strong>La micro-prise de quantités à 25&nbsp;$ donne les quantités, pas les prix</strong> — pour une
+       liste chiffrée, c'est la prise de quantités complète.</p>
+
+    <div class="notdo">
+      <h3>Ce que nous ne faisons pas — dit ici, pas en petits caractères</h3>
+      <p>Aucune visite de chantier. Aucun plan de permis. Aucune détermination structurale, de code ou
+         d'ingénierie. Aucun périmètre de démolition, d'amiante ou de matières dangereuses. Aucune gestion
+         de chantier. Aucun travail exigeant une licence RBQ. Si votre mandat en exige un, nous le disons
+         avant que vous payiez, pas après.</p>
     </div>
   </div>
+</section>
 
-  <div class="legit">
-    <strong>Who you are dealing with.</strong> OL — Optimization and Logistics is a registered Québec
-    company (NEQ 2270669312 · GST 81902 9992 RT0001 · QST 4024451921 TQ0002). The analysis and drafting
-    are done by an AI agent; every deliverable is reviewed before it is sent, and the limit is stated
-    plainly: <strong>OL holds no RBQ licence</strong> and does not perform or advertise construction work —
-    estimates are prepared for a licensed contractor to sign and present.
+<!-- 03 · L'échantillon -->
+<section class="sec" id="echantillon" aria-labelledby="h-ech">
+  <div class="wrap">
+    <p class="eyebrow">03 · L'échantillon</p>
+    <h2 class="title" id="h-ech">L'échantillon, c'est le livrable.</h2>
+    <p class="lede">Pas une maquette, pas un PDF de marketing. Le même document que la lettre joint.</p>
+
+    <div class="sample-grid">
+      <div>
+        <p>Trois choses arrivent&nbsp;: une <strong>prise de quantités chiffrée de deux pages</strong>
+           (cinq divisions, chaque quantité et chaque prix unitaire portés jusqu'aux lignes de taxes),
+           un <strong>plan annoté</strong> montrant ce qui a été mesuré et où, et un
+           <strong>résumé des matériaux</strong> que vous pouvez chiffrer avec votre propre fournisseur.</p>
+        <p>Chaque page est mise en page et mesurée avant l'envoi&nbsp;: rien hors des marges, aucune page à
+           moitié vide, totaux recalculés à partir de leurs composantes et comparés au chiffre imprimé à un
+           cent près. Un document qui échoue n'est pas envoyé — et on vous dit ce qui a échoué.</p>
+
+        <div class="dlcard">
+          <p class="name">Échantillon de prise de quantités — 5 divisions · 1&nbsp;000&nbsp;pi²</p>
+          <p class="meta">PDF · sample-estimate.pdf · 76 096 octets · sha256 ce6029d801663c6530ba8bdadcaf932788c198f76cf1e9642e8c53b10159889b</p>
+          <a class="dl" href="sample-estimate.pdf">Télécharger l'échantillon (PDF) →</a>
+        </div>
+      </div>
+
+      <div>
+        <h3 style="font:700 11px/1.4 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--steel);margin-bottom:10px">Ce qu'il faut regarder</h3>
+        <ol class="callouts">
+          <li><span class="n">1</span><span>Numéro de page et révision, sur chaque page.</span></li>
+          <li><span class="n">2</span><span>Sous-total de division, recalculé.</span></li>
+          <li><span class="n">3</span><span>Taux de pertes, exprimé en pourcentage, pas enterré.</span></li>
+          <li><span class="n">4</span><span>Prix unitaire et quantité, côte à côte.</span></li>
+          <li><span class="n">5</span><span>Boîtes et moulures, arrondies à ce qui s'achète.</span></li>
+          <li><span class="n">6</span><span>TPS 5&nbsp;% et TVQ 9,975&nbsp;%, portées au total.</span></li>
+        </ol>
+      </div>
+    </div>
   </div>
+</section>
 
-  <section class="contact">
-    <h2>Start</h2>
-    <p>Choose what you need priced and write two lines about the job. The button opens your own email
-       app with everything filled in — nothing is sent from this page.</p>
+<!-- 04 · Processus -->
+<section class="sec" id="processus" aria-labelledby="h-proc">
+  <div class="wrap">
+    <p class="eyebrow">04 · Processus</p>
+    <h2 class="title" id="h-proc">Quatre étapes, une heure ouvrable.</h2>
+
+    <div class="steps">
+      <div class="step">
+        <div class="n">01</div>
+        <h3>Envoyez le plan.</h3>
+        <p>PDF, photo, DWG, ou simplement les mesures dans le corps du courriel. Un courriel suffit pour
+           commencer&nbsp;; rien n'est téléversé dans un compte à créer.</p>
+      </div>
+      <div class="step">
+        <div class="n">02</div>
+        <h3>Un prix fixe en une heure ouvrable.</h3>
+        <p>Le prix revient dans la réponse, avant tout travail. Si le mandat ne peut pas être chiffré à
+           partir de ce que vous avez envoyé, vous recevez la liste exacte de ce qui manque — pas un vague
+           «&nbsp;il faudrait qu'on regarde&nbsp;».</p>
+      </div>
+      <div class="step">
+        <div class="n">03</div>
+        <h3>La prise de quantités en 24 à 48 heures.</h3>
+        <p>Micro-prise&nbsp;: 24&nbsp;h. Prise complète&nbsp;: 48&nbsp;h. Audit&nbsp;: 5 jours ouvrables.
+           Le délai commence quand vous acceptez le prix et que les renseignements sont complets.</p>
+      </div>
+      <div class="step">
+        <div class="n">04</div>
+        <h3>Une révision, puis utilisez-la.</h3>
+        <p>Envoyez vos corrections dans les 7 jours suivant la livraison&nbsp;; une ronde est incluse dans le
+           prix. Les erreurs de quantité et d'arithmétique sont corrigées gratuitement en 24 heures — celles-là
+           n'expirent jamais.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 05 · Garanties -->
+<section class="sec" id="garanties" aria-labelledby="h-gar">
+  <div class="wrap">
+    <p class="eyebrow">05 · Garanties</p>
+    <h2 class="title" id="h-gar">Quatre promesses, écrites.</h2>
+
+    <div class="promises">
+      <div class="promise">
+        <h3>Prix fixe.</h3>
+        <p>Le chiffre dans la réponse est le chiffre sur la facture. Aucune dérive horaire, aucun
+           «&nbsp;pendant qu'on y était&nbsp;». Si la portée change, vous recevez un nouveau prix et vous
+           décidez avant que le travail continue.</p>
+      </div>
+      <div class="promise">
+        <h3>À temps, ou 50&nbsp;% de rabais.</h3>
+        <p>Si le délai convenu glisse pour une raison de notre côté, vous payez la moitié. Le délai commence
+           quand vous acceptez le prix et que les renseignements sont complets&nbsp;; le temps passé à attendre
+           un plan manquant ne compte pas.</p>
+      </div>
+      <div class="promise">
+        <h3>Erreurs corrigées gratuitement, toujours.</h3>
+        <p>Les erreurs de quantité et d'arithmétique sont corrigées en 24 heures sans frais, que la révision
+           soit utilisée ou non — et que le mandat ait été payé ou gratuit.</p>
+      </div>
+      <div class="promise">
+        <h3>Vos plans restent les vôtres.</h3>
+        <p>Rien n'est vendu, rien n'est partagé avec un autre client, rien ne sert à entraîner un modèle.
+           Supprimé sur demande, ou 24 mois après la fermeture du dossier.</p>
+      </div>
+    </div>
+
+    <div class="caveat">
+      <h3>Ce que la garantie ne couvre pas</h3>
+      <p>Une prise de quantités vaut ce que vaut le plan que vous envoyez. Dimensions modifiées, feuilles
+         manquantes, portée que les dessins ne montrent pas — c'est du nouveau travail, chiffré avant de
+         commencer. La garantie couvre nos erreurs, pas un plan qui ne correspond pas au chantier.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 06 · Entreprise -->
+<section class="sec" id="entreprise" aria-labelledby="h-ent">
+  <div class="wrap">
+    <p class="eyebrow">06 · Entreprise et exécution</p>
+    <h2 class="title" id="h-ent">À qui vous avez affaire.</h2>
+
+    <p>OL Services est une division de <strong>OL — Optimization and Logistics</strong>, entreprise
+       enregistrée au Québec. Chaque facture vient d'OL, avec les taxes indiquées.</p>
+    <p class="idline"><b>NEQ</b> 2270669312 &nbsp;·&nbsp; <b>TPS</b> 81902 9992 RT0001 &nbsp;·&nbsp;
+       <b>TVQ</b> 4024451921 TQ0002</p>
+
+    <p style="margin-top:20px">L'analyse et la rédaction sont effectuées par un agent d'IA à l'intérieur de
+       la porte de vérification d'OL — la même porte qui met en page, mesure les pages et recalcule les
+       totaux. Chaque livrable passe par cette vérification avant l'envoi.</p>
+    <p>Aucun professionnel licencié ne révise le document chez OL. Ce n'est pas une relecture
+       professionnelle&nbsp;: c'est l'entrepreneur licencié qui le signe qui en fait la révision finale,
+       et c'est sa signature qui engage sa responsabilité.</p>
+
+    <h3 style="margin-top:26px">Les limites, dites clairement</h3>
+    <ul class="limits">
+      <li><b>Aucune licence RBQ.</b> OL n'effectue, ne supervise ni n'annonce de travaux de construction.</li>
+      <li><b>Les estimations sont des documents de travail.</b> Elles sont préparées pour être signées et
+          présentées par un entrepreneur licencié. La signature est celle de l'entrepreneur, et la
+          responsabilité qui vient avec.</li>
+      <li><b>Aucune détermination structurale, de code ou d'ingénierie.</b> Une prise de quantités compte ce
+          que les dessins montrent. Elle ne décide pas si les dessins sont corrects.</li>
+      <li><b>Les quantités suivent le plan.</b> Si le plan et le chantier se contredisent, le chantier
+          gagne — dites-le-nous et le prix est refait.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- 07 · Paiement -->
+<section class="sec" id="paiement" aria-labelledby="h-pay">
+  <div class="wrap">
+    <p class="eyebrow">07 · Paiement</p>
+    <h2 class="title" id="h-pay">Payer.</h2>
+
+    <p><strong>Virement Interac</strong> au compte d'entreprise d'OL aujourd'hui. Carte bientôt.</p>
+    <p>Chaque facture est émise par OL — Optimization and Logistics, en dollars canadiens, avec la
+       TPS 5&nbsp;% et la TVQ 9,975&nbsp;% indiquées séparément, et la prise de quantités en pièce jointe.</p>
+    <p>Prises de quantités et audits&nbsp;: payables à la livraison. Automatisation&nbsp;: les modalités sont
+       convenues avant le début et inscrites sur la facture.</p>
+
+    <div class="caveat" style="border-left-color:var(--bad)">
+      <h3 style="color:var(--bad)">Aucun numéro de carte par courriel, jamais.</h3>
+      <p>Si quelqu'un vous demande des numéros de carte ou des identifiants bancaires par courriel en se
+         disant d'OL, ce n'est pas nous.</p>
+    </div>
+    <p style="margin-top:18px"><a href="pay.html">Comment payer, en détail →</a></p>
+  </div>
+</section>
+
+<!-- 08 · Langue -->
+<section class="sec" id="langue" aria-labelledby="h-lang">
+  <div class="wrap">
+    <p class="eyebrow">08 · Langue</p>
+    <h2 class="title" id="h-lang">Le français d'abord. L'anglais aussi.</h2>
+
+    <p>Ce site est publié en français à la racine, avec l'anglais à un clic. Les documents sont produits
+       dans la langue que vous demandez — français, anglais ou les deux — avec les lignes de taxes du Québec
+       correctes dans les deux cas (TPS 5&nbsp;%, TVQ 9,975&nbsp;%).</p>
+    <p>L'échantillon existe dans les deux langues. Si vous avez besoin de la version française d'un document
+       pour un client, demandez-la&nbsp;; aucun supplément.</p>
+    <p><a href="en/" hreflang="en-CA" lang="en-CA">Read this page in English →</a></p>
+  </div>
+</section>
+
+<!-- 09 · Preuves -->
+<section class="sec" id="preuves" aria-labelledby="h-preuves">
+  <div class="wrap">
+    <p class="eyebrow">09 · Preuves</p>
+    <h2 class="title" id="h-preuves">Des preuves, quand il y en aura.</h2>
+
+    <p>OL Services a ouvert en novembre 2026. Il n'y a pas encore de témoignages de clients publiés, et
+       cette page n'en inventera pas.</p>
+    <p>Ce qu'il y a à la place&nbsp;: le document échantillon, les prix, l'enregistrement de l'entreprise et
+       les quatre garanties ci-dessus. Ce sont des choses vérifiables aujourd'hui. Un témoignage ne l'est pas.</p>
+    <p>Les trois premières études de cas paraîtront ici avec la permission écrite du client, et chacune
+       montrera le mandat, le prix payé, le délai de livraison, le nombre de révisions et ce qui a mal
+       tourné. Une étude de cas qui n'énumère que ce qui a bien fonctionné est une publicité, pas une preuve.</p>
+  </div>
+</section>
+
+<!-- 10 · FAQ -->
+<section class="sec" id="faq" aria-labelledby="h-faq">
+  <div class="wrap">
+    <p class="eyebrow">10 · FAQ</p>
+    <h2 class="title" id="h-faq">Questions, réponses.</h2>
+
+    <div class="faq">
+      <div class="qa">
+        <h3>Qu'est-ce qu'une prise de quantités, exactement&nbsp;?</h3>
+        <p>Une liste mesurée de ce qu'un mandat exige&nbsp;: quantités de matériaux par division, avec taux de
+           pertes, boîtes et moulures, et — dans la version complète — un prix vis-à-vis chaque ligne. C'est
+           le document à partir duquel un entrepreneur chiffre un mandat. Ce n'est pas une soumission, ni un
+           échéancier de chantier.</p>
+      </div>
+      <div class="qa">
+        <h3>Faut-il envoyer un fichier CAO&nbsp;?</h3>
+        <p>Non. Un PDF, une photo claire du plan, un DWG, ou simplement les mesures dans un courriel font
+           l'affaire. Le fichier CAO est le plus rapide et le moins ambigu, mais il n'est pas obligatoire.</p>
+      </div>
+      <div class="qa">
+        <h3>Qui signe l'estimation&nbsp;?</h3>
+        <p>Un entrepreneur licencié. OL ne détient aucune licence RBQ et n'effectue pas de travaux de
+           construction. L'estimation est un document de travail préparé pour être signé et présenté par un
+           entrepreneur, et sa révision fait partie de ce qui la rend utilisable.</p>
+      </div>
+      <div class="qa">
+        <h3>Pourquoi 74,99&nbsp;$ quand d'autres demandent 400&nbsp;$ et plus&nbsp;?</h3>
+        <p>Parce que l'essentiel du coût d'une prise de quantités traditionnelle, ce sont les heures, et OL
+           ne facture pas les heures. Le 74,99&nbsp;$ est un tarif de lancement pour les 10 premiers
+           clients&nbsp;: ces clients sont des références, et le tarif régulier ensuite est de 149&nbsp;$.
+           Ce n'est pas un rabais permanent et ce n'est pas un produit d'appel à perte — si le prix ne couvre
+           pas son propre coût, c'est le prix ou la portée qui change.</p>
+      </div>
+      <div class="qa">
+        <h3>Quelle est la différence entre la micro-prise à 25&nbsp;$ et la prise complète&nbsp;?</h3>
+        <p>La portée et le résultat. 25&nbsp;$, c'est une pièce, un métier, 24 heures,
+           <strong>quantités seulement — sans prix</strong>. La prise complète couvre jusqu'à 1&nbsp;000&nbsp;pi²,
+           inclut les prix, les pertes, les boîtes et les moulures, et prend 48 heures. Si vous avez besoin
+           d'un chiffre à donner à un client, c'est la prise complète.</p>
+      </div>
+      <div class="qa">
+        <h3>Et si le plan change après la commande&nbsp;?</h3>
+        <p>Une révision est incluse pour les changements dans les 7 jours. Après, c'est un nouveau mandat au
+           même prix fixe, chiffré avant de commencer.</p>
+      </div>
+      <div class="qa">
+        <h3>Et si le total est faux&nbsp;?</h3>
+        <p>Les erreurs de quantité et d'arithmétique sont corrigées gratuitement en 24 heures, en tout
+           temps — pas seulement pendant la fenêtre de révision. C'est justement l'objet de la porte&nbsp;: le
+           total est recalculé à partir de ses composantes avant l'envoi, donc un mauvais total ne devrait
+           jamais vous parvenir.</p>
+      </div>
+      <div class="qa">
+        <h3>Et si vous livrez en retard&nbsp;?</h3>
+        <p>Vous payez la moitié. Le délai commence quand vous acceptez le prix et que les renseignements sont
+           complets.</p>
+      </div>
+      <div class="qa">
+        <h3>Faites-vous des visites de chantier&nbsp;?</h3>
+        <p>Non. Tout se fait à distance, à partir des documents que vous envoyez. Si un mandat ne peut pas
+           être fait correctement sans visite, nous le disons plutôt que de deviner.</p>
+      </div>
+      <div class="qa">
+        <h3>Mon plan est-il confidentiel&nbsp;?</h3>
+        <p>Oui. Il sert à produire votre document et à rien d'autre&nbsp;: ni vendu, ni partagé avec un autre
+           client, ni utilisé pour entraîner un modèle. Supprimé sur demande, ou 24 mois après la fermeture
+           du dossier.</p>
+      </div>
+      <div class="qa">
+        <h3>Travaillez-vous à l'extérieur du Québec&nbsp;?</h3>
+        <p>Oui. Les factures du Québec portent la TPS 5&nbsp;% et la TVQ 9,975&nbsp;%&nbsp;; ailleurs au
+           Canada, la TPS seulement&nbsp;; à l'extérieur du Canada, aucune taxe canadienne. Les prix sont les
+           mêmes.</p>
+      </div>
+      <div class="qa">
+        <h3>Puis-je obtenir une facture avec mon numéro de bon de commande, ou au nom de mon entreprise&nbsp;?</h3>
+        <p>Oui. Dites-le à la commande et c'est sur la facture.</p>
+      </div>
+      <div class="qa">
+        <h3>Qui est derrière OL&nbsp;?</h3>
+        <p>OL — Optimization and Logistics, une entreprise enregistrée au Québec, avec les numéros ci-dessus
+           sur chaque facture. Le travail est fait par un agent d'IA à l'intérieur de la porte de vérification
+           d'OL et révisé avant l'envoi.</p>
+      </div>
+      <div class="qa">
+        <h3>Est-ce généré par IA&nbsp;?</h3>
+        <p>Oui, et c'est écrit sur la page plutôt que caché. Ce qui le rend utilisable n'est pas qui a tapé le
+           document&nbsp;: c'est que le document est mesuré, que l'arithmétique est recalculée, et qu'un
+           entrepreneur licencié le signe.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 11 · Appel final -->
+<section class="sec" id="commencer" aria-labelledby="h-start">
+  <div class="wrap">
+    <p class="eyebrow">11 · Commencer</p>
+    <h2 class="title" id="h-start">Envoyez un plan. Recevez un prix fixe.</h2>
+    <p class="lede">Écrivez deux lignes sur le mandat et joignez le plan. Le bouton ouvre votre propre
+       application de courriel avec tout rempli — rien n'est envoyé depuis cette page.</p>
 
     <form class="quote" id="quote" novalidate>
       <div class="f">
-        <label for="q-service">What do you need priced? <span class="req" aria-hidden="true">*</span></label>
+        <label for="q-service">De quoi avez-vous besoin&nbsp;? <span class="req" aria-hidden="true">*</span></label>
         <select id="q-service" name="service" required aria-describedby="q-service-hint">
-          <option value="">— choose one —</option>
-          <option value="takeoff">Takeoff &amp; priced material list — $95</option>
-          <option value="audit">Technical audit — $490</option>
-          <option value="automation">Automation build — $75–300</option>
-          <option value="other">Something else — tell me and I will price it</option>
+          <option value="">— choisissez une offre —</option>
+          <option value="first">Première prise de quantités — gratuite (jusqu'à 1 000 pi²)</option>
+          <option value="full">Prise de quantités complète — 74,99 $ (régulier 149 $)</option>
+          <option value="micro">Micro-prise de quantités — 25 $ (quantités seulement, sans prix)</option>
+          <option value="audit">Audit technique — 290 $ (régulier 490 $)</option>
+          <option value="automation">Automatisation simple — 49 $ (régulier 150 $ et plus)</option>
+          <option value="other">Autre demande — décrivez-la, nous donnerons un prix</option>
         </select>
-        <span class="hint" id="q-service-hint">Prices are fixed and stated on the page — the email just starts the job.</span>
+        <span class="hint" id="q-service-hint">Les prix fixes sont indiqués sur cette page — le courriel sert à lancer le travail.</span>
       </div>
 
       <div class="f">
-        <label for="q-detail">About the job <span class="req" aria-hidden="true">*</span></label>
-        <textarea id="q-detail" name="detail" required maxlength="1500"
-          aria-describedby="q-detail-hint"></textarea>
-        <span class="hint" id="q-detail-hint">One or two lines. Plans, repos and files are attached when you reply.</span>
+        <label for="q-detail">Le mandat <span class="req" aria-hidden="true">*</span></label>
+        <textarea id="q-detail" name="detail" required maxlength="1500" aria-describedby="q-detail-hint"
+          placeholder="Deux lignes, par exemple : sous-sol 780 pi², PVC + moulures, Laval."></textarea>
+        <span class="hint" id="q-detail-hint">Deux lignes suffisent. Les plans, dépôts de code et fichiers se joignent quand vous répondez.</span>
       </div>
 
       <div class="f">
-        <label for="q-reply">Your email <span class="hint" style="display:inline;margin:0">(optional — your mail app already puts your address on the message)</span></label>
+        <label for="q-name">Votre nom</label>
+        <input id="q-name" name="name" type="text" autocomplete="name" spellcheck="false">
+      </div>
+
+      <div class="f">
+        <label for="q-reply">Courriel <span class="hint" style="display:inline;margin:0">(facultatif — votre application de courriel inclut déjà votre adresse dans le message)</span></label>
         <input id="q-reply" name="replyTo" type="email" autocomplete="email" spellcheck="false">
       </div>
 
+      <p class="hint" style="margin:0 0 4px">Plans&nbsp;: à joindre quand vous répondrez.</p>
+
       <div class="actions">
-        <button type="submit" class="send">Open the request in my email app →</button>
-        <a class="preview" id="q-preview" href="mailto:spirokaglis+ol@gmail.com?subject=Quote%20request" hidden>Preview the whole message</a>
+        <button type="submit" class="send">Ouvrir le courriel et envoyer →</button>
+        <a class="preview" id="q-preview" href="mailto:spirokaglis+ol@gmail.com" hidden>Aperçu du message complet</a>
       </div>
       <p class="err" id="q-err" role="alert"></p>
       <p class="after" id="q-after"></p>
 
+      <details class="addr" style="margin-top:12px">
+        <summary style="cursor:pointer;font-size:13.5px;font-weight:700;color:var(--steel)">Juste l'adresse</summary>
+        <p class="reveal" style="margin:8px 0 0"><a href="mailto:spirokaglis+ol@gmail.com">spirokaglis+ol@gmail.com</a></p>
+      </details>
+
       <p class="notice">
-        <strong>What happens to what you type.</strong> This page does not send, store or transmit it:
-        the text is put into an email on <em>your</em> device and you send it yourself. It reaches OL only
-        as an ordinary email to <a href="mailto:spirokaglis+ol@gmail.com">spirokaglis+ol@gmail.com</a>, is used
-        only to answer you and price the job, and is deleted once the job is settled or after 24 months.
-        You can ask for a copy or the deletion of your information at any time by writing to that
-        address. Full detail: <a href="privacy.html">Privacy</a>.
+        <strong>Ce qui arrive à vos renseignements.</strong> Cette page ne les envoie, ne les stocke et ne les
+        transmet pas&nbsp;: le texte est placé dans un courriel sur votre appareil, que vous envoyez
+        vous-même. OL ne le reçoit que sous forme de courriel ordinaire, l'utilise uniquement pour vous
+        répondre et chiffrer le mandat, et le supprime une fois le dossier réglé ou après 24 mois. Vous pouvez
+        demander une copie ou la suppression de vos renseignements en tout temps en écrivant à la même
+        adresse. Tous les détails&nbsp;: <a href="privacy.html">Confidentialité</a>.
       </p>
     </form>
 
-    <p class="small" style="margin-top:14px">Prefer a plain email? Write to
-       <a href="mailto:spirokaglis+ol@gmail.com" style="color:var(--steel);font-weight:600">spirokaglis+ol@gmail.com</a>
-       — same thing, no form. <a href="pay.html" style="color:var(--steel);font-weight:600">How to pay</a> —
-       Interac e-Transfer now, card shortly · every invoice shows GST 5 % and QST 9.975 %</p>
-  </section>
+    <p class="closing"><strong>Modes de paiement</strong> — virement Interac maintenant, carte bientôt ·
+       chaque facture indique la TPS 5&nbsp;% et la TVQ 9,975&nbsp;%.</p>
+  </div>
+</section>
+</main>
 
-</div>
-
-<footer>
+<footer class="site">
   <div class="wrap">
-    <strong>OL — Optimization and Logistics</strong> · Montréal, Québec · NEQ 2270669312<br>
-    GST 81902 9992 RT0001 · QST 4024451921 TQ0002<br>
-    <a href="privacy.html" style="color:var(--muted)">Privacy &amp; your information</a>
+    <div class="frow">
+      <span><b>OL Services</b> — une division de OL — Optimization and Logistics</span>
+      <span>Montréal, Québec</span>
+    </div>
+    <p class="legal"><b>NEQ</b> 2270669312 · <b>TPS</b> 81902 9992 RT0001 · <b>TVQ</b> 4024451921 TQ0002<br>
+       Aucune licence RBQ. Les estimations sont des documents de travail à faire signer et présenter par un
+       entrepreneur licencié.</p>
+    <nav aria-label="Pied de page">
+      <a href="#prix">Prix</a>
+      <a href="#echantillon">Échantillon</a>
+      <a href="#processus">Processus</a>
+      <a href="#garanties">Garanties</a>
+      <a href="privacy.html">Confidentialité</a>
+      <a href="pay.html">Paiement</a>
+      <a href="estimate.html">Première prise gratuite</a>
+      <a href="en/" hreflang="en-CA" lang="en-CA">English</a>
+      <a href="https://ol-projects.github.io/ol-control/">OL, le produit ↗</a>
+    </nav>
+    <p class="copy">© 2026 OL — Optimization and Logistics. Construction du site <span id="build">65ea7f33836a</span>.</p>
   </div>
 </footer>
 
-<!-- ────────────────────────────────────────────────────────────────────────────
-     The quote form and the aggregate visit counter. Everything below is a
-     byte-identical copy of assets/quote.js, assets/counter.js and
-     assets/quote-ui.js (minus the `export`/`import` keywords); test/quote.test.mjs
-     fails if the two ever drift apart. Regenerate with `npm run build`.
-     No network request is made by the form. The counter makes exactly one,
-     carrying a constant site name and a page name — never an identifier.
-     ──────────────────────────────────────────────────────────────────────── -->
-<script type="module" id="quote-core">
+<script>
+/* Le seul traitement des renseignements du visiteur : composer un lien mailto.
+   Aucun réseau, aucun stockage, aucun serveur. Le visiteur voit le message dans
+   son propre client de courriel et l'envoie lui-même. */
+(function () {
+  var EMAIL = 'spirokaglis+ol@gmail.com';
+  var MAX = 1500;
 
-// ═══ quoted form: composer (identical to assets/quote.js) ═══
-// OL — quote composer.
-//
-// Pure, dependency-free, and deliberately the ONLY thing this site does with
-// visitor input. It takes the two filled-in fields and returns a `mailto:` URL.
-//
-// Why mailto and not a form endpoint:
-//   * There is no server here (GitHub Pages is static), so a form POST has
-//     nowhere to go without a third party — SendGrid, Formspree, a Cloudflare
-//     Worker with an account. "No third party" is the requirement, so no.
-//   * A mailto:URL is opened by the visitor's OWN mail client. The site never
-//     receives, stores, logs or transmits the content. Nothing to breach, no
-//     transfer outside Québec to assess, and the smallest possible collection
-//     under Law 25 s.5 ("only the information necessary").
-//   * It is also reversible and auditable: the visitor sees exactly what will
-//     be sent, in their own client, before they press send.
-//
-// This file is inlined into index.html and guarded by test/quote.test.js so the
-// shipped copy cannot silently drift from the tested one.
-
-const QUOTE_EMAIL = 'spirokaglis+ol@gmail.com';
-
-// What can be quoted. `value` is what goes in the email, in ASCII, so the
-// subject line is identical in every client and survives non-UTF-8 mailers.
-const QUOTE_SERVICES = [
-  {
-    value: 'takeoff',
-    label: 'Takeoff & priced material list — $95',
-    ref: 'TAKEOFF',
-    ask: 'Plan, dimensions or a photo of the measurements, plus the location of the job.',
-  },
-  {
-    value: 'audit',
-    label: 'Technical audit — $490',
-    ref: 'AUDIT',
-    ask: 'A link to the repo or workflow, and the one thing that worries you about it.',
-  },
-  {
-    value: 'automation',
-    label: 'Automation build — $75–300',
-    ref: 'AUTOMATION',
-    ask: 'Which tool you use (n8n, Make, Zapier), and what should happen automatically.',
-  },
-  {
-    value: 'other',
-    label: 'Something else — tell me and I will price it',
-    ref: 'OTHER',
-    ask: 'What the document or job is.',
-  },
-];
-
-const MAX_DETAIL = 1500;
-
-const serviceByValue = (v) => QUOTE_SERVICES.find((s) => s.value === String(v == null ? '' : v).trim()) || null;
-
-const clean = (s) => String(s == null ? '' : s).replace(/\r\n?/g, '\n').trim();
-
-/**
- * Fill the question fields with what the site knows, so a visitor does not have
- * to invent structure. The list of prompts is stable and labelled; a line whose
- * prompt ends in "*" is the one that makes the request answerable.
- */
-function detailPrompts(serviceValue) {
-  const s = serviceByValue(serviceValue);
-  if (!s) return [];
-  return [s.ask, 'Deadline, or "no deadline"', 'Where the job is', 'Any question you want answered first'];
-}
-
-/** The placeholder text for the detail box (empty when nothing is chosen). */
-function detailPlaceholder(serviceValue) {
-  const p = detailPrompts(serviceValue);
-  if (!p.length) return '';
-  return p.map((t, i) => (i === 0 ? `${t} *` : `${t}:`)).join('\n');
-}
-
-/**
- * Validate and compose. Returns {ok, href, errors, body, subject}.
- * `ok` is false and `href` null when the input cannot make a useful email.
- * Nothing here touches the network.
- */
-function buildQuoteMailto(input) {
-  const data = input || {};
-  const errors = [];
-
-  const service = serviceByValue(clean(data.service));
-  if (!service) errors.push('Choose which service you want priced.');
-
-  const detail = clean(data.detail);
-  if (!detail) errors.push('Write one or two lines about the job.');
-  if (detail.length > MAX_DETAIL) {
-    errors.push(`Keep the description under ${MAX_DETAIL} characters (it is ${detail.length}).`);
-  }
-
-  // Optional and never required: a return address is useful but the visitor is
-  // writing from their own mailbox, so the reply address already exists and
-  // asking for it would be collection beyond what the purpose needs (s.5).
-  const replyTo = clean(data.replyTo).slice(0, 200);
-
-  if (errors.length) return { ok: false, href: null, errors, body: null, subject: null };
-
-  const ref = `OL-${service.ref}`;
-  const subject = `Quote request ${ref}`;
-
-  const lines = [
-    'Bonjour / Hello,',
-    '',
-    'Quote request — OL (Optimization and Logistics)',
-    '---------------------------------------------',
-    `Service requested: ${service.label}`,
-    `Reference: ${ref}`,
-    '',
-    'The job:',
-    detail,
-    '',
-    replyTo ? `Reply to: ${replyTo}` : '',
-    '--- end of request ---',
-    '',
-    'Sent from the OL website. This message was composed on my own device;',
-    'the website did not receive a copy.',
-  ];
-
-  const body = lines.filter((l, i) => !(l === '' && lines[i - 1] === '')).join('\n');
-
-  const params = new URLSearchParams();
-  params.set('subject', subject);
-  params.set('body', body);
-
-  return {
-    ok: true,
-    href: `mailto:${QUOTE_EMAIL}?${params.toString()}`,
-    errors: [],
-    body,
-    subject,
-    reference: ref,
-  };
-}
-
-// ═══ aggregate visit counter (identical to assets/counter.js) ═══
-// OL — aggregate visit counter (client).
-//
-// WHAT THIS DOES
-//   Once, per page load, it sends ONE request to the site's own counter endpoint.
-//   The endpoint increments a number. That is the entire purpose.
-//
-// WHAT THIS DELIBERATELY NEVER SENDS
-//   - no cookie, no localStorage id, no sessionStorage id
-//   - no fingerprint (canvas, fonts, audio, WebGL, timezone, language, screen)
-//   - no IP-based identifier computed on the client
-//   - no referrer, no query string, no full URL with parameters
-//   - no per-visitor or per-session value of ANY kind
-//
-// So the request cannot tell one visitor from another, and cannot tell whether
-// the same browser has been here before. What is left is a hit count: how many
-// page loads the site served. That is why a consent banner is not used — there
-// is no individual to consent on behalf of, and no identifier to store (Law 25
-// s.8.1 has nothing to attach to; see privacy.html).
-//
-// The design rule is enforced twice: this file never calls storage or builds an
-// identifier, and counter/worker.js refuses any request carrying a cookie or an
-// identifier parameter. A counter that cannot be abused is worth more than one
-// that is documented as not abusing people.
-
-const COUNTER_CONFIG = {
-  // Set by hand once the owner deploys the Worker (see README). Empty means
-  // "not deployed yet": the page then sends nothing at all.
-  endpoint: '',
-  // Used only to attribute a hit to a page. A fixed constant, not the URL,
-  // because the URL carries no information worth sending.
-  site: 'ol-services',
-};
-
-/** Which page this is, from the file name only — never the full location. */
-function pageName(locationPath) {
-  const p = String(locationPath || '');
-  // Drop any query or fragment first: a URL like pay.html?email=… must become
-  // "pay", never carry the parameter anywhere near the wire.
-  const bare = p.split('#')[0].split('?')[0];
-  const file = bare.split('/').pop() || '';
-  if (!file) return 'index';
-  return file.replace(/\.html?$/i, '') || 'index';
-}
-
-/**
- * The complete payload. Reviewing this function is the whole privacy audit:
- * every value is a constant or a public page name.
- */
-function counterPayload(locationPath) {
-  return { site: COUNTER_CONFIG.site, page: pageName(locationPath) };
-}
-
-/**
- * Send the single hit. Never throws, never blocks rendering, and stays silent
- * when the endpoint is not configured — a site must not break because its
- * counter is down.
- */
-function sendHit(win, locationPath, fetchImpl) {
-  const cfg = (win && win.OL_COUNTER) || COUNTER_CONFIG;
-  const endpoint = String(cfg.endpoint || '').trim();
-  if (!endpoint) return Promise.resolve({ sent: false, reason: 'not-configured' });
-
-  const f = fetchImpl || (win && win.fetch && win.fetch.bind(win));
-  if (!f) return Promise.resolve({ sent: false, reason: 'no-fetch' });
-
-  const payload = { site: cfg.site || COUNTER_CONFIG.site, page: pageName(locationPath) };
-
-  try {
-    return Promise.resolve(
-      f(endpoint, {
-        method: 'POST',
-        // text/plain avoids a CORS preflight on a cross-origin endpoint.
-        headers: { 'Content-Type': 'text/plain;charset=UTF-8' },
-        body: JSON.stringify(payload),
-        // No credentials: this request carries no cookie even if the endpoint
-        // could accept one.
-        credentials: 'omit',
-        referrerPolicy: 'no-referrer',
-        mode: 'cors',
-        keepalive: true,
-      }),
-    )
-      .then((r) => ({ sent: true, ok: !!(r && r.ok) }))
-      .catch(() => ({ sent: false, reason: 'network' }));
-  } catch (e) {
-    return Promise.resolve({ sent: false, reason: 'error' });
-  }
-}
-
-// ═══ run it (identical to assets/quote-ui.js) ═══
-// OL — quote form UI.
-//
-// Wires the <form id="quote"> to the pure composer in quote.js. Its only side
-// effect is setting an anchor's href to a mailto: URL, which the visitor then
-// clicks themselves. There is no fetch, no storage and no submit to a server.
-
-
-
-const form = document.getElementById('quote');
-
-if (form) {
-  const serviceEl = document.getElementById('q-service');
-  const detailEl = document.getElementById('q-detail');
-  const replyEl = document.getElementById('q-reply');
-  const errEl = document.getElementById('q-err');
-  const afterEl = document.getElementById('q-after');
-  const previewEl = document.getElementById('q-preview');
-
-  // The form is inert without scripts: make that explicit rather than letting a
-  // submit do nothing silently.
-  const submitBtn = form.querySelector('button[type=submit]');
-
-  const read = () => ({
-    service: serviceEl.value,
-    detail: detailEl.value,
-    replyTo: replyEl.value,
-  });
-
-  const refreshPlaceholder = () => {
-    const ph = detailPlaceholder(serviceEl.value);
-    if (ph) detailEl.placeholder = ph;
-    else detailEl.removeAttribute('placeholder');
+  // value → { label: ce qui apparaît dans le courriel, ref: référence courte }
+  var SERVICES = {
+    first:      { label: 'Première prise de quantités — gratuite', ref: 'FIRST' },
+    full:       { label: 'Prise de quantités complète — 74,99 $ (régulier 149 $)', ref: 'FULL' },
+    micro:      { label: 'Micro-prise de quantités — 25 $, quantités seulement', ref: 'MICRO' },
+    audit:      { label: 'Audit technique — 290 $ (régulier 490 $)', ref: 'AUDIT' },
+    automation: { label: 'Automatisation simple — 49 $ (régulier 150 $ et plus)', ref: 'AUTOMATION' },
+    other:      { label: 'Autre demande — à chiffrer', ref: 'OTHER' }
   };
 
-  const refreshPreview = () => {
-    const result = buildQuoteMailto(read());
-    if (result.ok) {
-      previewEl.href = result.href;
-      previewEl.hidden = false;
-    } else {
-      previewEl.hidden = true;
-      previewEl.removeAttribute('href');
+  var form = document.getElementById('quote');
+  if (!form) return;
+  var serviceEl = document.getElementById('q-service');
+  var detailEl = document.getElementById('q-detail');
+  var nameEl = document.getElementById('q-name');
+  var replyEl = document.getElementById('q-reply');
+  var errEl = document.getElementById('q-err');
+  var afterEl = document.getElementById('q-after');
+  var previewEl = document.getElementById('q-preview');
+
+  function clean(s) { return String(s == null ? '' : s).replace(/\r\n?/g, '\n').trim(); }
+
+  function build() {
+    var s = SERVICES[serviceEl.value] || null;
+    var errors = [];
+    if (!s) errors.push('Choisissez l\'offre à chiffrer.');
+    var detail = clean(detailEl.value);
+    if (!detail) errors.push('Écrivez une ou deux lignes sur le mandat.');
+    if (detail.length > MAX) errors.push('Gardez la description sous ' + MAX + ' caractères (elle en fait ' + detail.length + ').');
+    var reply = clean(replyEl.value).slice(0, 200);
+    if (reply && !/^[^@\s]+@[^@\s]+\.[A-Za-z]{2,}$/.test(reply)) {
+      errors.push('Ce courriel semble incomplet — vérifiez-le ou laissez le champ vide.');
     }
-    return result;
-  };
+    if (errors.length) return { ok: false, errors: errors };
 
-  serviceEl.addEventListener('change', () => {
-    refreshPlaceholder();
-    errEl.textContent = '';
-    afterEl.textContent = '';
-    refreshPreview();
+    var ref = 'OL-' + s.ref;
+    var subject = 'Demande de prix ' + ref;
+    var lines = [
+      'Bonjour / Hello,',
+      '',
+      'Demande de prix — OL Services (Optimization and Logistics)',
+      '---------------------------------------------------------',
+      'Offre demandée : ' + s.label,
+      'Référence : ' + ref,
+      '',
+      'Le mandat :',
+      detail,
+      '',
+      nameEl.value.trim() ? 'Nom : ' + nameEl.value.trim() : '',
+      reply ? 'Courriel de réponse : ' + reply : '',
+      '--- fin de la demande ---',
+      '',
+      'Envoyé depuis le site d\'OL. Ce message a été composé sur mon appareil ;',
+      'le site n\'en a reçu aucune copie.'
+    ];
+    var body = lines.filter(function (l, i) { return !(l === '' && lines[i - 1] === ''); }).join('\n');
+    var params = new URLSearchParams();
+    params.set('subject', subject);
+    params.set('body', body);
+    return { ok: true, href: 'mailto:' + EMAIL + '?' + params.toString(), label: s.label };
+  }
+
+  function refresh() {
+    var r = build();
+    if (r.ok) { previewEl.href = r.href; previewEl.hidden = false; }
+    else { previewEl.hidden = true; previewEl.removeAttribute('href'); }
+    return r;
+  }
+
+  serviceEl.addEventListener('change', function () { errEl.textContent = ''; afterEl.textContent = ''; refresh(); });
+  [detailEl, replyEl, nameEl].forEach(function (el) {
+    el.addEventListener('input', function () { errEl.textContent = ''; refresh(); });
   });
 
-  [detailEl, replyEl].forEach((el) => {
-    el.addEventListener('input', () => {
-      errEl.textContent = '';
-      refreshPreview();
-    });
-  });
-
-  form.addEventListener('submit', (ev) => {
+  form.addEventListener('submit', function (ev) {
     ev.preventDefault();
-    const result = buildQuoteMailto(read());
-
-    if (!result.ok) {
-      errEl.textContent = result.errors.join(' ');
-      // Put the cursor where the fix is needed.
-      if (!serviceByValue(serviceEl.value)) serviceEl.focus();
-      else detailEl.focus();
+    var r = build();
+    if (!r.ok) {
+      errEl.textContent = r.errors.join(' ');
+      (SERVICES[serviceEl.value] ? detailEl : serviceEl).focus();
       return;
     }
-
     errEl.textContent = '';
-    // Hand off to the visitor's mail client. Nothing leaves the page.
-    window.location.href = result.href;
-
-    const s = serviceByValue(serviceEl.value);
-    afterEl.textContent =
-      `Your email app should now be open with the request for “${s.label}” filled in. ` +
-      'If nothing opened, use “Preview the whole message” or write to spirokaglis+ol@gmail.com. ' +
-      'Nothing was sent from this page — press Send in your mail app when you are happy with it.';
+    // Le message part vers le client de courriel du visiteur. Rien ne quitte la page.
+    window.location.href = r.href;
+    afterEl.textContent = 'Votre application de courriel devrait être ouverte avec la demande « ' + r.label +
+      ' » déjà remplie. Si rien ne s\'est ouvert, utilisez « Aperçu du message complet » ou écrivez à ' + EMAIL +
+      '. Rien n\'a été envoyé depuis cette page — appuyez sur Envoyer dans votre application.';
   });
 
-  // Progressive enhancement: the plain preview link is the no-script path, so
-  // it starts hidden and only appears once scripts can build a real href.
-  refreshPlaceholder();
-  refreshPreview();
-
-  // One aggregate page-view. Fire-and-forget; a failure cannot affect the form.
-  Promise.resolve()
-    .then(() => sendHit(window, window.location.pathname))
-    .catch(() => {});
-}
+  refresh();
+})();
 </script>
-
 </body>
 </html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en-CA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>What OL is — the capability sheet, with prices and refusals</title>
+<meta name="description" content="A specification rather than an ambition: the five OL Services offers with prices, a proof artefact behind each claim, and an explicit list of what OL will not do.">
+<link rel="icon" href="../ol-mark.svg" type="image/svg+xml">
+<link rel="canonical" href="https://ol-projects.github.io/ol-services/en/agent.html">
+<link rel="alternate" hreflang="en-CA" href="https://ol-projects.github.io/ol-services/en/agent.html">
+<link rel="alternate" hreflang="fr-CA" href="https://ol-projects.github.io/ol-services/">
+<link rel="stylesheet" href="../site.css">
+</head>
+<body>
+<header class="masthead">
+  <div class="wrap mast">
+    <a class="brand" href="./">
+      <svg viewBox="0 0 120 120" aria-hidden="true">
+        <rect width="120" height="120" rx="18" fill="#183A5C"/>
+        <g fill="none" stroke="#fff" stroke-width="8.5"><circle cx="44" cy="50" r="22"/><path d="M78 28 V72 H98"/></g>
+      </svg>
+      <span class="lock"><b>OL Services</b>
+        <span class="div">a division of OL&nbsp;/ une division de OL</span>
+        <span class="city">Montréal</span></span>
+    </a>
+    <div class="lang" aria-label="Language">
+      <a href="../" hreflang="fr-CA" lang="fr-CA">FR</a>
+      <a href="./" hreflang="en-CA" aria-current="true">EN</a>
+    </div>
+  </div>
+  <nav class="wrap xnav" aria-label="Sections">
+    <a href="index.html#prices">Prices</a>
+    <a href="index.html#sample">Sample</a>
+    <a class="now" href="agent.html">What OL is</a>
+    <a href="intel.html">Project intelligence</a>
+    <a href="../capability.json">capability.json</a>
+    <a class="out" href="index.html#start">Get a price&nbsp;→</a>
+  </nav>
+</header>
+
+<main class="wrap">
+  <section class="hero" style="grid-template-columns:1fr;padding-bottom:6px">
+    <div class="hero-copy">
+      <p class="kicker">Capability sheet · schema ol.capability/1</p>
+      <h1 style="max-width:26ch">What this system does, what it charges, and what it refuses.</h1>
+      <p class="lede">Most agent pages describe ambitions. This one is a specification: five offers with prices,
+         a proof artefact behind every claim, and an explicit list of things OL will not do. The same facts are
+         published as <a href="../capability.json">capability.json</a> so another system can read them without
+         a person in the loop.</p>
+    </div>
+  </section>
+
+  <section class="sec" style="margin-top:22px">
+    <div class="wrap" style="padding:0">
+      <p class="eyebrow">Purpose — above this build, above any single generation</p>
+      <h2 class="title" style="max-width:34ch">Intelligence may act in the world only in ways it would be willing
+        to have verified.</h2>
+      <p>No deception of the person or system it acts upon, no claim without a measurement behind it, no
+         advantage taken from someone who cannot check.</p>
+      <p>This sits above the model, the build, the provider, the business model and any single generation of
+         this system. A version that abandons it is not a newer version of the same thing. It travels with the
+         record, not with the binary: a replacement system inherits the commitments, not just the data. Any
+         agent may adopt these commitments and say so — adoption is declared, never assumed, and never enforced
+         on anyone.</p>
+      <ul class="limits">
+        <li>State plainly what this system is, including that it is not general intelligence.</li>
+        <li>Publish what it charges and what it refuses, before being asked.</li>
+        <li>Put no personal data of any person into a deliverable.</li>
+        <li>Claim no payment that a payment record does not show.</li>
+        <li>Say a refusal, a limit or a failure in plain words.</li>
+      </ul>
+
+      <p class="eyebrow" style="margin-top:34px">Offers, with the proof</p>
+      <h2 class="title">Five offers. Five prices.</h2>
+      <table class="ptable" style="table-layout:auto">
+        <thead><tr><th scope="col" style="width:26%">Offer</th><th scope="col" style="width:24%">Price (CAD)</th><th scope="col">Proof</th></tr></thead>
+        <tbody>
+          <tr><td data-l="Offer"><b>First takeoff</b><br>One per new client, up to 1,000 ft²</td>
+              <td data-l="Price" class="time">Free</td>
+              <td data-l="Proof"><a href="index.html#sample">the sample takeoff (PDF)</a></td></tr>
+          <tr><td data-l="Offer"><b>Full takeoff</b><br>Up to 1,000 ft², priced list, one revision, 48 h</td>
+              <td data-l="Price" class="time">$74.99<br><span class="muted" style="font-size:11.5px">standard $149</span></td>
+              <td data-l="Proof"><a href="../sample-estimate.pdf">sample-estimate.pdf</a></td></tr>
+          <tr><td data-l="Offer"><b>Micro-takeoff</b><br>One room, one trade, quantities only, 24 h</td>
+              <td data-l="Price" class="time">$25</td>
+              <td data-l="Proof"><a href="index.html#prices">scope stated on the price table</a></td></tr>
+          <tr><td data-l="Offer"><b>Technical audit</b><br>One repo, API or workflow, 5 business days</td>
+              <td data-l="Price" class="time">$290<br><span class="muted" style="font-size:11.5px">standard $490</span></td>
+              <td data-l="Proof"><a href="ops-audit.html">what the audit contains</a></td></tr>
+          <tr><td data-l="Offer"><b>Simple automation</b><br>One automation on your accounts, 3 business days</td>
+              <td data-l="Price" class="time">$49<br><span class="muted" style="font-size:11.5px">standard $150+</span></td>
+              <td data-l="Proof"><a href="index.html#prices">scope stated on the price table</a></td></tr>
+        </tbody>
+      </table>
+
+      <p class="eyebrow" style="margin-top:34px">What it refuses</p>
+      <h2 class="title">The refusals are part of the offer.</h2>
+      <ul class="limits">
+        <li>No homeowner, applicant or tenant personal data in any deliverable.</li>
+        <li>No claim of money received without a matching payment record.</li>
+        <li>No silent change to a published artefact — every edit is dated in public git history.</li>
+        <li>No claim of AGI, sentience, or third-party certification.</li>
+        <li>No work that requires deceiving a person or an agent about what this system is.</li>
+        <li>No RBQ-licensed construction work, no permit drawings, no structural or code determination.</li>
+      </ul>
+
+      <p class="eyebrow" style="margin-top:34px">Verifiable facts</p>
+      <h2 class="title">Numbers that come from a file, not from a sentence.</h2>
+      <p>Project register: 325 projects · 12 valued over $350,000 · 6 holding the original dossier.<br>
+         Earned to date: <strong>$0.00</strong>. Stated here because a capability sheet that hides its revenue
+         is advertising.</p>
+      <p>Each figure above is generated from OL's own database by its pipeline, not typed by hand. Where a value
+         is OL's estimate rather than a declared figure, the page that shows it says so.</p>
+
+      <div class="idline" style="margin-top:26px">
+        <b>For another agent, in one line.</b> GET /ol-services/capability.json — schema
+        <code>ol.capability/1</code>. Offers carry <code>prices</code> and a <code>proof</code> URL;
+        <code>refuses</code> and <code>honesty</code> are mandatory fields, so a client may reject a sheet that
+        omits them.
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <p class="legal"><b>OL — Optimization and Logistics</b> · Montréal, Québec · <b>NEQ</b> 2270669312 ·
+       <b>GST</b> 81902 9992 RT0001 · <b>QST</b> 4024451921 TQ0002<br>
+       No RBQ licence. Estimates are drafts for a licensed contractor to sign and present.</p>
+    <nav aria-label="Footer">
+      <a href="./">OL Services</a><a href="index.html#prices">Prices</a><a href="privacy.html">Privacy</a>
+      <a href="../capability.json">capability.json</a><a href="../" hreflang="fr-CA" lang="fr-CA">Français</a>
+    </nav>
+    <p class="copy">© 2026 OL — Optimization and Logistics. Site build <span id="build">65ea7f33836a</span>.</p>
+  </div>
+</footer>
+</body>
+</html>

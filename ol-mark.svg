@@ -1,14 +1,18 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120" role="img" aria-label="OL — Optimization and Logistics">
   <title>OL — Optimization and Logistics</title>
   <!--
-    The mark: an O and an L on a 12-unit grid with a deliberate gap between them.
+    The mark: an O and an L on a 12-unit grid with a deliberate painted gap.
     Measured 2026-11-06: the first version put the L's stem flush against the ring, so the pair read as
-    "CL" — a logo that misreads the company name is worse than no logo. The ring is now 22 units at
-    centre 44 (right edge 66) and the L stem starts at 78, leaving a 12-unit gap at any size.
+    "CL" — a logo that misreads the company name is worse than no logo.
+    Measured 2026-11-13 22:4x EST: the 12-unit gap was centreline, not painted — an 8.5-unit stroke
+    moved each edge 4.25 in, leaving 3.5 painted units (1.2 px at 40 px) and the pair crowded again.
+    Now: ring r=22 at (44,60) -> painted right edge 70.25; L stem path 86.5 with square caps -> painted
+    left edge 82.25; **painted gap 12.0 units at any size**. Ink box 17.75..102.25 x 33.75..86.25,
+    centred on (60,60) in both axes. Any future edit must keep the PAINTED gap >= 12.
   -->
   <rect width="120" height="120" rx="18" fill="#183A5C"/>
-  <g fill="none" stroke="#FFFFFF" stroke-width="8.5" stroke-linecap="butt" stroke-linejoin="miter">
-    <circle cx="44" cy="50" r="22"/>
-    <path d="M78 28 V72 H98"/>
+  <g fill="none" stroke="#FFFFFF" stroke-width="8.5" stroke-linecap="square" stroke-linejoin="miter">
+    <circle cx="44" cy="60" r="22"/>
+    <path d="M86.5 38 V82 H98"/>
   </g>
 </svg>

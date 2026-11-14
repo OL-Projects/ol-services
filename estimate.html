@@ -155,7 +155,7 @@
       <a href="./">Accueil</a><a href="index.html#prix">Prix</a><a href="sample-estimate.pdf">Échantillon</a>
       <a href="privacy.html">Confidentialité</a><a href="en/estimate.html" hreflang="en-CA" lang="en-CA">English</a>
     </nav>
-    <p class="copy">© 2026 OL — Optimization and Logistics. Construction du site <span id="build">6b148ac94bdc</span>.</p>
+    <p class="copy">© 2026 OL — Optimization and Logistics. Construction du site <span id="build">1b7215f3dddc</span>.</p>
   </div>
 </footer>
 
@@ -200,9 +200,10 @@
       msg.textContent = 'Entrez des dimensions valides (longueur et largeur de 3 à 60 pi, hauteur de 6 à 14 pi).';
       return;
     }
+    var notice = '';
     if (a.floor > 1000) {
-      msg.textContent = 'La première gratuite couvre jusqu\'à 1 000 pi² (' + Math.round(a.floor) +
-        ' pi² ici). Envoyez quand même la demande : nous donnerons le prix avant tout travail.';
+      notice = 'La première gratuite couvre jusqu\'à 1 000 pi² (' + Math.round(a.floor) +
+        ' pi² ici). Envoyez quand même la demande : nous donnerons le prix avant tout travail. ';
     }
     var room = ROOMS[el('room').value] || 'pièce';
     var subject = 'Première prise de quantités — ' + room + ' ' + a.L + ' x ' + a.W + ' pi';
@@ -229,7 +230,7 @@
     params.set('subject', subject);
     params.set('body', body);
     window.location.href = 'mailto:' + EMAIL + '?' + params.toString();
-    msg.textContent = 'Votre application de courriel devrait être ouverte avec les dimensions déjà inscrites. ' +
+    msg.textContent = notice + 'Votre application de courriel devrait être ouverte avec les dimensions déjà inscrites. ' +
       'Rien n\'a été envoyé depuis cette page — appuyez sur Envoyer. Si rien ne s\'est ouvert, écrivez à ' + EMAIL + '.';
   });
 })();

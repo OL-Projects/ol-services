@@ -11,13 +11,26 @@
 <link rel="alternate" hreflang="fr-CA" href="https://ol-projects.github.io/ol-services/">
 <style>
   :root{
+    color-scheme:light dark;
     --navy:#183A5C; --steel:#315D8C; --ink:#1d232b; --muted:#6C7177;
-    --line:#D5DCE3; --wash:#F4F6F9; --white:#fff; --accent:#B8860B;
+    --line:#D5DCE3; --wash:#F4F6F9; --white:#fff; --cream:#fff; --accent:#B8860B;
+    --body:#3b4550; --hair:#E1E7ED; --surface-2:#FBFCFD; --field:#7C8794;
+    --card-line:#C8D3DE; --ok:#1c6b45; --bad:#9c2b2b;
+    --btn-bg:var(--navy); --btn-ink:#fff;
+  }
+  /* night palette — identical values to site.css so the two stylesheets cannot
+     drift; this page is rebuilt onto site.css in the FR-parity unit */
+  @media (prefers-color-scheme: dark){
+    :root{color-scheme:dark; --navy:#A9C8E6;--steel:#8FB6DC;--ink:#E6EBF1;--muted:#93A0AD;
+      --line:#24303C;--wash:#141D26;--white:#121A22;--cream:#0B1117;--accent:#D9A93A;
+      --ok:#5CC491;--bad:#E5908F;--body:#C3CDD8;--hair:#1F2A35;--surface-2:#0F1620;
+      --field:#5D7183;--card-line:#2B3846;--btn-bg:#E6EBF1;--btn-ink:#0B1117}
+    .brand svg rect{fill:var(--ink)} .brand svg g{stroke:var(--cream)}
   }
   *{box-sizing:border-box}
   html{-webkit-text-size-adjust:100%}
   body{margin:0;font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
-       color:var(--ink);background:var(--white)}
+       color:var(--ink);background:var(--cream)}
   .wrap{max-width:920px;margin:0 auto;padding:0 28px}
   header{border-bottom:1px solid var(--line);padding:22px 0}
   .brand{display:flex;align-items:center;gap:14px}
@@ -27,14 +40,14 @@
   .hero{padding:34px 0 18px}
   .kicker{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--steel);font-weight:700}
   h1{font-size:38px;line-height:1.08;letter-spacing:-.025em;color:var(--navy);margin:10px 0 12px;max-width:20ch}
-  .lede{font-size:17.5px;color:#3b4550;max-width:56ch;margin:0}
+  .lede{font-size:17.5px;color:var(--body);max-width:56ch;margin:0}
   .offers{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:30px 0 8px}
   .offer{border:1px solid var(--line);border-radius:12px;padding:17px 17px;background:var(--white);
          display:flex;flex-direction:column}
   .offer .price{font-size:30px;font-weight:800;color:var(--navy);letter-spacing:-.02em;line-height:1}
   .offer .unit{font-size:12.5px;color:var(--muted);margin:6px 0 14px}
   .offer h3{margin:0 0 8px;font-size:17px;color:var(--navy)}
-  .offer p{margin:0 0 16px;font-size:14.5px;color:#3b4550}
+  .offer p{margin:0 0 16px;font-size:14.5px;color:var(--body)}
   .offer a{margin-top:auto;font-weight:700;color:var(--steel);text-decoration:none;font-size:14.5px}
   .offer a:hover{text-decoration:underline}
   h2{font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--steel);
@@ -44,10 +57,10 @@
   .proof{display:grid;grid-template-columns:1fr 1fr;gap:18px}
   .pcard{background:var(--wash);border:1px solid var(--line);border-radius:12px;padding:18px 20px}
   .pcard h3{margin:0 0 6px;font-size:15.5px;color:var(--navy)}
-  .pcard p{margin:0;font-size:14px;color:#3b4550}
+  .pcard p{margin:0;font-size:14px;color:var(--body)}
   .legit{margin-top:16px;border-left:4px solid var(--navy);background:var(--wash);
-         padding:16px 18px;border-radius:0 10px 10px 0;font-size:14px;color:#3b4550}
-  .cta{display:inline-block;background:var(--navy);color:#fff;text-decoration:none;font-weight:700;
+         padding:16px 18px;border-radius:0 10px 10px 0;font-size:14px;color:var(--body)}
+  .cta{display:inline-block;background:var(--btn-bg);color:var(--btn-ink);text-decoration:none;font-weight:700;
        padding:15px 28px;border-radius:9px;margin:10px 0 8px}
   .contact{padding:26px 0 12px}
   .small{font-size:13px;color:var(--muted)}
@@ -65,16 +78,16 @@
     background:var(--white);border:1px solid var(--line);border-radius:8px;padding:10px 12px}
   .quote textarea{min-height:132px;resize:vertical}
   .quote input[type=email]{max-width:360px}
-  .quote .req{color:#9c2b2b;font-weight:700}
-  .quote .err{color:#9c2b2b;font-size:13.5px;font-weight:600;margin:10px 0 0;min-height:1.2em}
+  .quote .req{color:var(--bad);font-weight:700}
+  .quote .err{color:var(--bad);font-size:13.5px;font-weight:600;margin:10px 0 0;min-height:1.2em}
   .quote .err:empty{display:none}
   .quote .actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:14px}
-  .quote .send{background:var(--navy);color:#fff;border:0;font:inherit;font-weight:700;padding:13px 24px;
+  .quote .send{background:var(--btn-bg);color:var(--btn-ink);border:0;font:inherit;font-weight:700;padding:13px 24px;
     border-radius:9px;cursor:pointer}
   .quote .send:hover{background:var(--steel)}
   .quote .preview{font-size:13px;color:var(--steel);font-weight:700;text-decoration:none}
   .quote .preview:hover{text-decoration:underline}
-  .quote .after{margin:12px 0 0;font-size:13.5px;color:#3b4550}
+  .quote .after{margin:12px 0 0;font-size:13.5px;color:var(--body)}
   .quote .after:empty{display:none}
   /* The notice the law requires to sit at the point of collection, in the same
      sentence the visitor is deciding to press send. Not a link they must hunt. */
@@ -117,10 +130,10 @@
     .hero{padding:40px 0 20px}
   }
 
-.xnav{display:flex;gap:22px;align-items:center;padding:16px 26px 0;font:500 11px/1 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.13em;text-transform:uppercase;color:#6C7177}
+.xnav{display:flex;gap:22px;align-items:center;padding:16px 26px 0;font:500 11px/1 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.13em;text-transform:uppercase;color:var(--muted)}
 .xnav a{color:inherit;text-decoration:none;border-bottom:1px solid transparent;padding-bottom:3px}
-.xnav a:hover{border-bottom-color:#183A5C;color:#183A5C}
-.xnav .cur{color:#183A5C}
+.xnav a:hover{border-bottom-color:var(--navy);color:var(--navy)}
+.xnav .cur{color:var(--navy)}
 .xnav .out{margin-left:auto}
 
   /* ── 2026-11-07 craft pass: proof in the fold, a wider measure, offers for the arriving reader ── */
@@ -133,34 +146,34 @@
   .hero-cta{display:flex;flex-wrap:wrap;gap:11px;margin:22px 0 0}
   .btn{display:inline-block;text-decoration:none;font-weight:700;border-radius:9px;
        padding:14px 21px;font-size:15px;line-height:1.2}
-  .btn.primary{background:var(--navy);color:#fff}
+  .btn.primary{background:var(--btn-bg);color:var(--btn-ink)}
   .btn.primary:hover{background:var(--steel)}
-  .btn.ghost{border:1px solid #C7D1DB;color:var(--navy);background:var(--white)}
+  .btn.ghost{border:1px solid var(--field);color:var(--navy);background:var(--white)}
   .btn.ghost:hover{border-color:var(--navy)}
   .hero-note{font-size:13px;color:var(--muted);margin:11px 0 0}
-  .paper{background:var(--white);border:1px solid #C8D3DE;border-radius:12px;
+  .paper{background:var(--white);border:1px solid var(--card-line);border-radius:12px;
          box-shadow:0 22px 46px -30px rgba(24,58,92,.6);overflow:hidden}
   .paper-top{display:flex;justify-content:space-between;gap:10px;padding:12px 15px;
-      border-bottom:1px solid var(--line);background:#FBFCFD;
+      border-bottom:1px solid var(--line);background:var(--surface-2);
       font:600 10px/1.35 ui-monospace,SFMono-Regular,Menlo,monospace;
       letter-spacing:.13em;text-transform:uppercase;color:var(--muted)}
   .paper-top b{color:var(--navy);font-weight:700}
   .paper-body{padding:10px 15px 8px}
   .prow{display:grid;grid-template-columns:24px minmax(0,1fr) auto;gap:9px;align-items:baseline;
-        padding:7px 0;border-bottom:1px dotted #E1E7ED;font-size:13px}
+        padding:7px 0;border-bottom:1px dotted var(--hair);font-size:13px}
   .prow .ref{font:600 10px/1 ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--steel);
              letter-spacing:.04em;padding-top:2px}
-  .prow .nm{color:#3b4550}
+  .prow .nm{color:var(--body)}
   .prow .nm b{display:block;color:var(--ink);font-weight:600;font-size:13px}
   .prow .amt{font-variant-numeric:tabular-nums;font-weight:600;color:var(--ink)}
-  .psum{margin-top:6px;border-top:1px solid #CFD8E1;padding-top:7px}
+  .psum{margin-top:6px;border-top:1px solid var(--line);padding-top:7px}
   .psum .prow{border-bottom:0;padding:3px 0}
   .psum .prow .nm{color:var(--muted);font-size:12.5px}
   .pgrand .nm{color:var(--navy);font-weight:800;font-size:13px}
   .pgrand .amt{color:var(--navy);font-weight:800;font-size:15px}
-  .paper-foot{padding:9px 15px 12px;border-top:1px solid var(--line);background:#FBFCFD;
+  .paper-foot{padding:9px 15px 12px;border-top:1px solid var(--line);background:var(--surface-2);
       font:11px/1.5 ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--muted)}
-  .paper-foot .ok{color:#1c6b45;font-weight:700}
+  .paper-foot .ok{color:var(--ok);font-weight:700}
   .paper-foot a{color:var(--steel);font-weight:700;text-decoration:none}
   .paper-foot a:hover{text-decoration:underline}
   .sec-note{font-size:13.5px;color:var(--muted);margin:-2px 0 14px;max-width:70ch}

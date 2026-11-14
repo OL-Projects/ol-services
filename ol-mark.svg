@@ -13,6 +13,6 @@
   <rect width="120" height="120" rx="18" fill="#183A5C"/>
   <g fill="none" stroke="#FFFFFF" stroke-width="8.5" stroke-linecap="square" stroke-linejoin="miter">
     <circle cx="44" cy="60" r="22"/>
-    <path d="M86.5 38 V82 H98"/>
+    <path d="M86.5 38 V82 H98" stroke="#FFFFFF" stroke-width="8.5" stroke-linecap="square" stroke-linejoin="miter"/>
   </g>
 </svg>

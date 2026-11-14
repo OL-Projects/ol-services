@@ -1,339 +1,224 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-CA">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Quebec project intelligence — demolition and extension projects on the register, before the tender lists</title>
-<meta name="description" content="A weekly, sourced list of the demolition, rebuild and extension projects filed with Montreal and Laval, with values, stages and permit references. Built from public registers by OL.">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#FBFAF7" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0B1117" media="(prefers-color-scheme: dark)">
+<title>Project intelligence — demolition and extension projects filed in Montreal and Laval · OL Services</title>
+<meta name="description" content="A weekly, sourced list of the demolition, rebuild and extension projects filed with Montreal and Laval, with values, stages and permit references. Built from public registers by OL. $149 an issue, $99 a month.">
 <link rel="icon" href="../ol-mark.svg" type="image/svg+xml">
 <link rel="canonical" href="https://ol-projects.github.io/ol-services/en/intel.html">
+<link rel="alternate" hreflang="fr-CA" href="https://ol-projects.github.io/ol-services/intel.html">
 <link rel="alternate" hreflang="en-CA" href="https://ol-projects.github.io/ol-services/en/intel.html">
-<link rel="alternate" hreflang="fr-CA" href="https://ol-projects.github.io/ol-services/">
-<style>
-  :root{
-    color-scheme:light dark;
-    --navy:#183A5C; --steel:#315D8C; --ink:#1d232b; --muted:#6C7177;
-    --line:#D5DCE3; --wash:#F4F6F9; --white:#fff; --cream:#fff; --accent:#B8860B;
-    --body:#3b4550; --hair:#E1E7ED; --surface-2:#FBFCFD; --field:#7C8794;
-    --card-line:#C8D3DE; --ok:#1c6b45; --bad:#9c2b2b;
-    --btn-bg:var(--navy); --btn-ink:#fff;
-  }
-  /* night palette — identical values to site.css so the two stylesheets cannot
-     drift; this page is rebuilt onto site.css in the FR-parity unit */
-  @media (prefers-color-scheme: dark){
-    :root{color-scheme:dark; --navy:#A9C8E6;--steel:#8FB6DC;--ink:#E6EBF1;--muted:#93A0AD;
-      --line:#24303C;--wash:#141D26;--white:#121A22;--cream:#0B1117;--accent:#D9A93A;
-      --ok:#5CC491;--bad:#E5908F;--body:#C3CDD8;--hair:#1F2A35;--surface-2:#0F1620;
-      --field:#5D7183;--card-line:#2B3846;--btn-bg:#E6EBF1;--btn-ink:#0B1117}
-    .brand svg rect{fill:var(--ink)} .brand svg g{stroke:var(--cream)}
-  }
-  *{box-sizing:border-box}
-  html{-webkit-text-size-adjust:100%}
-  body{margin:0;font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
-       color:var(--ink);background:var(--cream)}
-  .wrap{max-width:920px;margin:0 auto;padding:0 28px}
-  header{border-bottom:1px solid var(--line);padding:22px 0}
-  .brand{display:flex;align-items:center;gap:14px}
-  .brand svg{width:44px;height:44px;flex:none}
-  .brand .n{font-weight:800;font-size:19px;letter-spacing:.14em;color:var(--navy);line-height:1}
-  .brand .t{font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-top:5px}
-  .hero{padding:34px 0 18px}
-  .kicker{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--steel);font-weight:700}
-  h1{font-size:38px;line-height:1.08;letter-spacing:-.025em;color:var(--navy);margin:10px 0 12px;max-width:20ch}
-  .lede{font-size:17.5px;color:var(--body);max-width:56ch;margin:0}
-  .offers{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:30px 0 8px}
-  .offer{border:1px solid var(--line);border-radius:12px;padding:17px 17px;background:var(--white);
-         display:flex;flex-direction:column}
-  .offer .price{font-size:30px;font-weight:800;color:var(--navy);letter-spacing:-.02em;line-height:1}
-  .offer .unit{font-size:12.5px;color:var(--muted);margin:6px 0 14px}
-  .offer h3{margin:0 0 8px;font-size:17px;color:var(--navy)}
-  .offer p{margin:0 0 16px;font-size:14.5px;color:var(--body)}
-  .offer a{margin-top:auto;font-weight:700;color:var(--steel);text-decoration:none;font-size:14.5px}
-  .offer a:hover{text-decoration:underline}
-  h2{font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--steel);
-     margin:34px 0 12px;padding-bottom:7px;border-bottom:2px solid var(--line)}
-  ul{margin:0 0 0 20px;padding:0}
-  li{margin:7px 0}
-  .proof{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-  .pcard{background:var(--wash);border:1px solid var(--line);border-radius:12px;padding:18px 20px}
-  .pcard h3{margin:0 0 6px;font-size:15.5px;color:var(--navy)}
-  .pcard p{margin:0;font-size:14px;color:var(--body)}
-  .legit{margin-top:16px;border-left:4px solid var(--navy);background:var(--wash);
-         padding:16px 18px;border-radius:0 10px 10px 0;font-size:14px;color:var(--body)}
-  .cta{display:inline-block;background:var(--btn-bg);color:var(--btn-ink);text-decoration:none;font-weight:700;
-       padding:15px 28px;border-radius:9px;margin:10px 0 8px}
-  .contact{padding:26px 0 12px}
-  .small{font-size:13px;color:var(--muted)}
-  footer{border-top:1px solid var(--line);margin-top:28px;padding:16px 0 26px;font-size:12.5px;color:var(--muted)}
-  footer strong{color:var(--ink)}
-  /* The quote form. Deliberately a real form with real <label>s rather than a
-     bare mailto link: the visitor's keyboard, screen reader and browser autofill
-     all work, and the structured fields are filled for them instead of being a
-     wall of text they are expected to rewrite. */
-  .quote{border:1px solid var(--line);border-radius:12px;padding:20px 22px;background:var(--wash);margin:14px 0 0}
-  .quote .f{margin:0 0 14px}
-  .quote label{display:block;font-weight:700;font-size:14px;color:var(--navy);margin-bottom:5px}
-  .quote .hint{font-weight:400;font-size:12.5px;color:var(--muted);display:block;margin-top:3px}
-  .quote select,.quote textarea,.quote input{width:100%;font:inherit;font-size:15px;color:var(--ink);
-    background:var(--white);border:1px solid var(--line);border-radius:8px;padding:10px 12px}
-  .quote textarea{min-height:132px;resize:vertical}
-  .quote input[type=email]{max-width:360px}
-  .quote .req{color:var(--bad);font-weight:700}
-  .quote .err{color:var(--bad);font-size:13.5px;font-weight:600;margin:10px 0 0;min-height:1.2em}
-  .quote .err:empty{display:none}
-  .quote .actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:14px}
-  .quote .send{background:var(--btn-bg);color:var(--btn-ink);border:0;font:inherit;font-weight:700;padding:13px 24px;
-    border-radius:9px;cursor:pointer}
-  .quote .send:hover{background:var(--steel)}
-  .quote .preview{font-size:13px;color:var(--steel);font-weight:700;text-decoration:none}
-  .quote .preview:hover{text-decoration:underline}
-  .quote .after{margin:12px 0 0;font-size:13.5px;color:var(--body)}
-  .quote .after:empty{display:none}
-  /* The notice the law requires to sit at the point of collection, in the same
-     sentence the visitor is deciding to press send. Not a link they must hunt. */
-  .notice{font-size:12.5px;color:var(--muted);margin:12px 0 0;padding-top:12px;border-top:1px solid var(--line)}
-  .notice a{color:var(--steel)}
-  /* Print is a separate artefact from the screen: on paper there is no scrolling, so the same content
-     has to compress to two pages without shrinking the type below readable. Measured 2026-11-06: the
-     screen layout printed as three pages with a nearly-empty third, which the document gate flagged. */
-  @media print{
-    .offer,.pcard,.legit,.proof,.offers{break-inside:avoid;page-break-inside:avoid}
-    h1,h2,h3{break-after:avoid;page-break-after:avoid}
-    header{border:0;padding:10px 0}
-    .hero{padding:14px 0 8px}
-    h1{font-size:29px;margin:6px 0 8px}
-    .lede{font-size:14px}
-    .offers{gap:9px;margin:16px 0 4px;grid-template-columns:repeat(3,1fr)}
-    .proof{grid-template-columns:1fr 1fr}
-    .offer{padding:12px 12px}
-    .offer .price{font-size:23px}
-    .offer p{font-size:12.5px;margin-bottom:10px}
-    h2{margin:20px 0 8px}
-    .pcard{padding:11px 12px}
-    .pcard p{font-size:12.5px}
-    li{margin:4px 0;font-size:13px}
-    .legit{font-size:12.5px;padding:11px 13px}
-    .contact{padding:14px 0 6px}
-    footer{margin-top:16px;padding:10px 0 0}
-    /* The quote form is an interactive artefact: a printed sheet cannot send it,
-       so on paper it compresses to its text and keeps the page count at two. */
-    .quote{padding:11px 13px;margin-top:9px}
-    .quote .f{margin-bottom:8px}
-    .quote textarea{min-height:64px}
-    .quote .send,.quote .preview,.quote .after{display:none}
-    .quote .hint{font-size:11px}
-    .notice{font-size:11px;margin-top:8px;padding-top:8px}
-  }
-  @media screen and (max-width:760px){
-    h1{font-size:33px}
-    .offers,.proof{grid-template-columns:1fr}
-    .hero{padding:40px 0 20px}
-  }
-
-.xnav{display:flex;gap:22px;align-items:center;padding:16px 26px 0;font:500 11px/1 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.13em;text-transform:uppercase;color:var(--muted)}
-.xnav a{color:inherit;text-decoration:none;border-bottom:1px solid transparent;padding-bottom:3px}
-.xnav a:hover{border-bottom-color:var(--navy);color:var(--navy)}
-.xnav .cur{color:var(--navy)}
-.xnav .out{margin-left:auto}
-
-  /* ── 2026-11-07 craft pass: proof in the fold, a wider measure, offers for the arriving reader ── */
-  @media screen and (min-width:1100px){ .wrap{max-width:1080px} }
-  .hero{display:grid;grid-template-columns:1fr;gap:26px}
-  @media screen and (min-width:980px){
-    .hero{grid-template-columns:minmax(0,1.02fr) minmax(0,.98fr);align-items:start;gap:46px;padding:46px 0 30px}
-  }
-  .hero h1{max-width:22ch}
-  .hero-cta{display:flex;flex-wrap:wrap;gap:11px;margin:22px 0 0}
-  .btn{display:inline-block;text-decoration:none;font-weight:700;border-radius:9px;
-       padding:14px 21px;font-size:15px;line-height:1.2}
-  .btn.primary{background:var(--btn-bg);color:var(--btn-ink)}
-  .btn.primary:hover{background:var(--steel)}
-  .btn.ghost{border:1px solid var(--field);color:var(--navy);background:var(--white)}
-  .btn.ghost:hover{border-color:var(--navy)}
-  .hero-note{font-size:13px;color:var(--muted);margin:11px 0 0}
-  .paper{background:var(--white);border:1px solid var(--card-line);border-radius:12px;
-         box-shadow:0 22px 46px -30px rgba(24,58,92,.6);overflow:hidden}
-  .paper-top{display:flex;justify-content:space-between;gap:10px;padding:12px 15px;
-      border-bottom:1px solid var(--line);background:var(--surface-2);
-      font:600 10px/1.35 ui-monospace,SFMono-Regular,Menlo,monospace;
-      letter-spacing:.13em;text-transform:uppercase;color:var(--muted)}
-  .paper-top b{color:var(--navy);font-weight:700}
-  .paper-body{padding:10px 15px 8px}
-  .prow{display:grid;grid-template-columns:24px minmax(0,1fr) auto;gap:9px;align-items:baseline;
-        padding:7px 0;border-bottom:1px dotted var(--hair);font-size:13px}
-  .prow .ref{font:600 10px/1 ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--steel);
-             letter-spacing:.04em;padding-top:2px}
-  .prow .nm{color:var(--body)}
-  .prow .nm b{display:block;color:var(--ink);font-weight:600;font-size:13px}
-  .prow .amt{font-variant-numeric:tabular-nums;font-weight:600;color:var(--ink)}
-  .psum{margin-top:6px;border-top:1px solid var(--line);padding-top:7px}
-  .psum .prow{border-bottom:0;padding:3px 0}
-  .psum .prow .nm{color:var(--muted);font-size:12.5px}
-  .pgrand .nm{color:var(--navy);font-weight:800;font-size:13px}
-  .pgrand .amt{color:var(--navy);font-weight:800;font-size:15px}
-  .paper-foot{padding:9px 15px 12px;border-top:1px solid var(--line);background:var(--surface-2);
-      font:11px/1.5 ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--muted)}
-  .paper-foot .ok{color:var(--ok);font-weight:700}
-  .paper-foot a{color:var(--steel);font-weight:700;text-decoration:none}
-  .paper-foot a:hover{text-decoration:underline}
-  .sec-note{font-size:13.5px;color:var(--muted);margin:-2px 0 14px;max-width:70ch}
-  /* ── mobile: the live page overflowed 390px because the section nav and the brand line were
-     flex rows with no wrap; every card was clipped on a phone. Fix the cause, not the symptom. ── */
-  .brand>div{min-width:0}
-  .quote{max-width:760px}
-  @media screen and (max-width:760px){
-    .xnav{flex-wrap:wrap;gap:8px 16px;padding:12px 20px 0;align-items:baseline}
-.xnav{flex-direction:column;align-items:flex-start;gap:5px}
-.xnav .cur{display:none}
-.xnav a{font-size:10px}
-    .xnav .out{margin-left:0}
-    .brand .t{letter-spacing:.09em;font-size:10.5px}
-    .wrap{padding:0 20px}
-    h1{font-size:31px}
-    .hero{padding:26px 0 16px}
-    .paper-top{font-size:9px;letter-spacing:.09em}
-    .paper-body{padding:8px 12px 6px}
-    .prow{grid-template-columns:22px minmax(0,1fr) auto;gap:7px;font-size:12.5px}
-    .paper-foot{padding:8px 12px 10px;font-size:10px}
-  }
-  @media print{
-    @page{margin:12mm}
-    .paper{box-shadow:none;break-inside:avoid;page-break-inside:avoid}
-    .paper-top,.paper-foot{font-size:8px;padding:6px 9px}
-    .paper-body{padding:5px 9px 3px}
-    .prow{font-size:10.5px;padding:2.5px 0;grid-template-columns:20px minmax(0,1fr) auto}
-    .prow .nm b{font-size:10.5px;display:inline}
-    .psum .prow{padding:1.5px 0}
-    .pgrand .amt{font-size:12px}
-    .btn,.hero-cta,.xnav{display:none}
-    .hero{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:16px;align-items:start;
-          padding:8px 0 4px}
-    .hero-note{display:none}
-    h1{font-size:26px;margin:4px 0 6px}
-    .lede{font-size:12.5px}
-    .kicker{font-size:10px}
-    .offers{margin:10px 0 2px}
-    .offer .price{font-size:20px}
-    .offer .unit{font-size:10.5px;margin:3px 0 8px}
-    .offer h3{font-size:14px;margin-bottom:4px}
-    .offer p{font-size:11px;margin-bottom:6px}
-    .offer a{font-size:11px}
-    h2{margin:12px 0 6px;font-size:11px}
-    .pcard{padding:8px 10px}
-    .pcard h3{font-size:12.5px}
-    .pcard p{font-size:10.5px}
-    .sec-note{display:none}
-    .legit{font-size:11px;padding:8px 10px;margin-top:8px}
-    .contact{padding:8px 0 2px}
-    .quote{padding:8px 10px;margin-top:6px}
-    .quote .f{margin-bottom:5px}
-    .quote label{font-size:11.5px}
-    .quote textarea{min-height:44px}
-    .quote .hint{font-size:10px}
-    .notice{font-size:9.5px;margin-top:6px;padding-top:6px}
-    .small{font-size:10.5px}
-    footer{margin-top:8px;padding:6px 0 0;font-size:9.5px}
-  }
-</style>
-<style>
-  .hero{padding:26px 0 6px}
-  .lede{font-size:17px;line-height:1.55;color:var(--ink);max-width:64ch}
-  .k{display:flex;gap:34px;flex-wrap:wrap;margin:26px 0 8px;padding:18px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-  .k b{display:block;font:800 26px/1 ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--navy);letter-spacing:-.03em}
-  .k span{font:500 10.5px/1.3 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
-  table{width:100%;border-collapse:collapse;margin:8px 0 4px}
-  th,td{text-align:left;padding:12px 10px;border-bottom:1px solid var(--line);vertical-align:top;font-size:14px}
-  th{font:600 10.5px/1 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
-  .num{font-variant-numeric:tabular-nums;font-weight:700;color:var(--navy);white-space:nowrap}
-  /* a value range in tabular figures was the one thing that pushed a 390px screen
-     into a 7px horizontal scroll; let it break inside the cell instead. */
-  @media screen and (max-width:760px){
-    table{table-layout:fixed}
-    td,th{overflow-wrap:anywhere}
-    .num{white-space:normal}
-  }
-  .mono{font:12px/1.4 ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--muted)}
-  .sub{font:11.5px/1.35 -apple-system,BlinkMacSystemFont,sans-serif;color:var(--muted);font-weight:400}
-  .tiers{display:flex;gap:14px;flex-wrap:wrap;margin:22px 0}
-  .tier{flex:1 1 240px;border:1px solid var(--line);border-radius:8px;padding:16px;background:var(--white)}
-  .tier h3{margin:0 0 4px;font-size:15px;color:var(--navy)}
-  .tier p{margin:6px 0 0;font-size:13px;line-height:1.5;color:var(--muted)}
-  .tier .price{font-size:24px;margin:2px 0 0}
-  .note{background:var(--wash);border-left:3px solid var(--accent);padding:14px 16px;margin:18px 0;font-size:13.5px;line-height:1.55}
-  h2{font-size:20px;color:var(--navy);letter-spacing:-.015em;margin:30px 0 8px}
-</style>
+<link rel="alternate" hreflang="x-default" href="https://ol-projects.github.io/ol-services/intel.html">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_CA">
+<meta property="og:locale:alternate" content="fr_CA">
+<meta property="og:title" content="The projects are public. Finding them first is not.">
+<meta property="og:description" content="Every week, the demolition, rebuild and extension projects that are actually moving in Montreal and Laval — value, stage and permit reference. Public registers, a deterministic pipeline.">
+<meta property="og:url" content="https://ol-projects.github.io/ol-services/en/intel.html">
+<link rel="stylesheet" href="../site.css">
 </head>
 <body>
-<nav class="wrap xnav" aria-label="Sections">
-  <span class="cur">Project intelligence</span>
-  <a href="agent.html">What OL is</a>
-  <a href="index.html">Documents &middot; estimates &middot; audits</a>
-  <a href="estimate.html">Free takeoff</a>
-  <a href="pay.html">Pay</a>
-</nav>
+<a class="skip" href="#top">Skip to content</a>
 
-<main class="wrap">
-  <section class="hero">
-    <h1>The projects are public. Finding them first is not.</h1>
-    <p class="lede">Every week OL reads the permit registers of Montreal and Laval and publishes the
-    demolition, rebuild and extension projects that are actually moving &mdash; with the value, the stage and the
-    permit reference, so a contractor can call on Monday morning instead of finding out in six weeks.</p>
+<header class="masthead">
+  <div class="wrap mast">
+    <a class="brand" href="./">
+      <svg viewBox="0 0 120 120" aria-hidden="true">
+        <rect width="120" height="120" rx="18" fill="#183A5C"/>
+        <g fill="none" stroke="#fff" stroke-width="8.5" stroke-linecap="butt" stroke-linejoin="miter">
+          <circle cx="44" cy="50" r="22"/><path d="M78 28 V72 H98"/>
+        </g>
+      </svg>
+      <span class="lock">
+        <b>OL Services</b>
+        <span class="div">a division of OL&nbsp;/ une division de OL</span>
+        <span class="city">Montréal</span>
+      </span>
+    </a>
+    <div class="lang" aria-label="Language">
+      <a href="../intel.html" hreflang="fr-CA" lang="fr-CA">FR</a>
+      <a href="intel.html" hreflang="en-CA" aria-current="true">EN</a>
+    </div>
+  </div>
+  <nav class="wrap xnav" aria-label="Sections">
+    <a href="index.html#prices">Prices</a>
+    <a href="index.html#sample">Sample</a>
+    <a href="agent.html">What OL is</a>
+    <a class="now" href="intel.html">Project intelligence</a>
+    <a href="../capability.json">capability.json</a>
+    <a class="out" href="index.html#start">Get a price&nbsp;→</a>
+  </nav>
+</header>
+
+<main id="top">
+<div class="wrap">
+
+  <section class="hero" aria-labelledby="h-intel">
+    <div class="hero-copy">
+      <p class="kicker">Division 01 · Project intelligence · Montreal and Laval</p>
+      <h1 id="h-intel">The projects are public. Finding them first is not.</h1>
+      <p class="lede">Every week, OL reads the permit registers of Montreal and Laval and publishes the
+        demolition, rebuild and extension projects that are actually moving — with the value, the stage and
+        the permit reference. A contractor can call on Monday morning instead of finding out in six weeks,
+        once the tender list has already closed.</p>
+      <div class="hero-cta">
+        <a class="btn primary" href="pay.html">Start with one issue&nbsp;→</a>
+        <a class="btn ghost" href="#prices">See the three ways to buy it</a>
+      </div>
+      <p class="hero-note">No homeowner name, no phone, no email: the product is project intelligence built
+        from public records, and personal data stays out of the file by design.</p>
+    </div>
+
+    <!-- The sample is the site's visual signature: the same paper as the estimate
+         card, carrying real register rows and their references. -->
+    <div class="paper" aria-label="An extract from one issue">
+      <div class="paper-top"><span>Extract · current register</span><span>Laval + Montreal</span></div>
+      <div class="paper-body">
+        <div class="prow"><span class="ref">01</span><span class="nm"><b>1624 Rue François-Beaucourt</b>Laval · extension</span><span class="amt">$1.05–1.74M</span></div>
+        <div class="prow"><span class="ref">02</span><span class="nm"><b>3250 Rang Saint-Elzéar Est</b>Laval · extension</span><span class="amt">$0.95–1.58M</span></div>
+        <div class="prow"><span class="ref">03</span><span class="nm"><b>596 Rue Gilles</b>Laval · extension</span><span class="amt">$0.81–1.35M</span></div>
+        <div class="prow"><span class="ref">04</span><span class="nm"><b>340 Boulevard Laval</b>Laval · extension</span><span class="amt">$0.78–1.30M</span></div>
+        <div class="prow"><span class="ref">05</span><span class="nm"><b>991 Rue d'Osaka</b>Laval · extension</span><span class="amt">$0.77–1.29M</span></div>
+      </div>
+      <div class="paper-foot">Address and permit reference: public register. A range marked
+        "estimate" is OL's model, shown with its basis. <span class="ok">Sourced and dated</span>.</div>
+    </div>
   </section>
 
-  <div class="k">
+  <div class="stats">
     <div><b>325</b><span>projects in the register</span></div>
     <div><b>12</b><span>valued at $350k or more</span></div>
     <div><b>6</b><span>with the original dossier</span></div>
     <div><b>2</b><span>cities, weekly</span></div>
   </div>
 
-  <h2>What an issue looks like</h2>
-  <table>
-    <thead><tr><th>Project</th><th>Value</th><th>Permit</th></tr></thead>
-    <tbody><tr><td><strong>1624 Rue François-Beaucourt</strong><br><span class=sub>Laval · Single-family home extension (agrandissement)</span></td><td class=num>$1,045,170–$1,741,950<br><span class=sub>estimate</span></td><td class=mono>PA-2025-1412</td></tr><tr><td><strong>3250 Rang Saint-Elzéar Est</strong><br><span class=sub>Laval · Single-family home extension (agrandissement)</span></td><td class=num>$945,081–$1,575,135<br><span class=sub>estimate</span></td><td class=mono>PA-2024-1260</td></tr><tr><td><strong>596 Rue Gilles</strong><br><span class=sub>Laval · Single-family home extension (agrandissement)</span></td><td class=num>$808,029–$1,346,715<br><span class=sub>estimate</span></td><td class=mono>PA-2024-1094</td></tr><tr><td><strong>340 Boulevard Laval</strong><br><span class=sub>Laval · Single-family home extension (agrandissement)</span></td><td class=num>$782,352–$1,303,920<br><span class=sub>estimate</span></td><td class=mono>PA-2026-0006</td></tr><tr><td><strong>991 Rue d'Osaka</strong><br><span class=sub>Laval · Single-family home extension (agrandissement)</span></td><td class=num>$773,415–$1,289,025<br><span class=sub>estimate</span></td><td class=mono>PA-2024-0710</td></tr></tbody>
-  </table>
-  <p class="sub">Address, type and permit reference come from the public register. Values marked
-  <strong>declared</strong> are printed on the permit; values marked <strong>estimate</strong> are OL's own
-  model, and the range and its basis are shown with them.</p>
+  <section class="sec" aria-labelledby="h-issue">
+    <p class="eyebrow">What an issue looks like</p>
+    <h2 class="title" id="h-issue">Five projects, their value, their permit.</h2>
+    <p class="lede">An issue is a dated table, not a promise: every row carries the published address, the
+      type of work, the value range and the permit reference. The five rows below come from the current
+      register.</p>
 
-  <h2>Three ways to buy it</h2>
-  <div class="tiers">
-    <div class="tier">
-      <h3>Single issue</h3>
-      <div class="price">$149</div>
-      <p>The current quarter as a table: every project above your threshold, CSV and PDF, dated and sourced. Yours to keep.</p>
-    </div>
-    <div class="tier">
-      <h3>Weekly</h3>
-      <div class="price">$99<span class="sub">/month</span></div>
-      <p>Every Monday: the new projects above your threshold, before the tender lists carry them. Cancel any week.</p>
-    </div>
-    <div class="tier">
-      <h3>Territory</h3>
-      <div class="price">$299<span class="sub">/month</span></div>
-      <p>One city or borough exclusively, plus the original dossiers and drawings wherever the register publishes them.</p>
-    </div>
-  </div>
+    <table class="dtable">
+      <thead><tr><th scope="col" style="width:38%">Project</th><th scope="col" style="width:32%">Value</th><th scope="col">Permit</th></tr></thead>
+      <tbody>
+        <tr>
+          <td data-l="Project"><b>1624 Rue François-Beaucourt</b><span class="sub">Laval · single-family extension (agrandissement)</span></td>
+          <td data-l="Value"><span class="amt">$1.05–1.74M</span><span class="sub">estimate</span></td>
+          <td data-l="Permit"><span class="ref">PA-2025-1412</span></td>
+        </tr>
+        <tr>
+          <td data-l="Project"><b>3250 Rang Saint-Elzéar Est</b><span class="sub">Laval · single-family extension (agrandissement)</span></td>
+          <td data-l="Value"><span class="amt">$0.95–1.58M</span><span class="sub">estimate</span></td>
+          <td data-l="Permit"><span class="ref">PA-2024-1260</span></td>
+        </tr>
+        <tr>
+          <td data-l="Project"><b>596 Rue Gilles</b><span class="sub">Laval · single-family extension (agrandissement)</span></td>
+          <td data-l="Value"><span class="amt">$0.81–1.35M</span><span class="sub">estimate</span></td>
+          <td data-l="Permit"><span class="ref">PA-2024-1094</span></td>
+        </tr>
+        <tr>
+          <td data-l="Project"><b>340 Boulevard Laval</b><span class="sub">Laval · single-family extension (agrandissement)</span></td>
+          <td data-l="Value"><span class="amt">$0.78–1.30M</span><span class="sub">estimate</span></td>
+          <td data-l="Permit"><span class="ref">PA-2026-0006</span></td>
+        </tr>
+        <tr>
+          <td data-l="Project"><b>991 Rue d'Osaka</b><span class="sub">Laval · single-family extension (agrandissement)</span></td>
+          <td data-l="Value"><span class="amt">$0.77–1.29M</span><span class="sub">estimate</span></td>
+          <td data-l="Permit"><span class="ref">PA-2024-0710</span></td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="sub">Address, type of work and permit reference come from the public register. A value marked
+      <b>declared</b> is printed on the permit; a value marked <b>estimate</b> is OL's own model, and the
+      range is shown with its basis rather than presented as a settled amount.</p>
+  </section>
 
-  <div class="note">
-    <strong>What is deliberately not in it.</strong> No homeowner or applicant name, no phone, no email &mdash;
-    the product is project intelligence from public records, and personal data stays out of the file by
-    design. A territory licence is sold once per city: if your competitor holds it, you are told before you pay.
-  </div>
+  <section class="sec" id="prices" aria-labelledby="h-buy">
+    <p class="eyebrow">Three ways to buy it</p>
+    <h2 class="title" id="h-buy">An issue, a subscription, or a city.</h2>
 
-  <h2>How it is made</h2>
-  <p class="lede">A deterministic pipeline reads the registers, extracts the dossiers, ranks the projects by
-  value and recency, and renders this page from a database &mdash; no hand-typing, no estimate written by a person.
-  That is also why it can be priced this low: the marginal cost of a copy is compute.</p>
-  <p style="margin:26px 0 40px"><a class="cta" href="pay.html">Start with one issue &rarr;</a></p>
+    <div class="tiers">
+      <div class="tier">
+        <h3>Single issue</h3>
+        <div class="price">$149</div>
+        <div class="unit">one time · the current quarter</div>
+        <p>The current quarter as a table: every project above your threshold, CSV and PDF, dated and
+          sourced. Yours to keep, no subscription.</p>
+        <a class="go" href="pay.html">Buy one issue&nbsp;→</a>
+      </div>
+      <div class="tier">
+        <h3>Weekly</h3>
+        <div class="price">$99<small>/mo</small></div>
+        <div class="unit">every Monday · cancel any week</div>
+        <p>Every Monday: the new projects above your threshold, before the tender lists carry them. Cancel
+          any week.</p>
+        <a class="go" href="pay.html">Subscribe&nbsp;→</a>
+      </div>
+      <div class="tier">
+        <h3>Territory</h3>
+        <div class="price">$299<small>/mo</small></div>
+        <div class="unit">one city or borough, exclusively</div>
+        <p>One city or borough exclusively, plus the original dossiers and drawings wherever the register
+          publishes them.</p>
+        <a class="go" href="pay.html">Reserve a territory&nbsp;→</a>
+      </div>
+    </div>
+    <p class="sub" style="margin-top:12px">Prices in Canadian dollars, GST and QST extra. Payment by Interac
+      e-Transfer; the <a href="pay.html">payment terms</a> are written out in full.</p>
+  </section>
+
+  <section class="sec" aria-labelledby="h-excluded">
+    <div class="caveat">
+      <h3>What is deliberately not in it</h3>
+      <p>No homeowner or applicant name, no phone, no email — the product is project intelligence from public
+        records, and personal data stays out of the file by design. A territory licence is sold once per
+        city: if a competitor holds it, you are told before you pay.</p>
+    </div>
+  </section>
+
+  <section class="sec" aria-labelledby="h-made">
+    <p class="eyebrow">How it is made</p>
+    <h2 class="title" id="h-made">A deterministic pipeline, not a manual watch.</h2>
+    <p class="lede">A pipeline reads the registers, extracts the dossiers, ranks the projects by value and
+      recency, then renders this page from a database — no hand-typing, no estimate written by a person.
+      That is also why it can be priced this low: the marginal cost of a copy is compute.</p>
+
+    <ul class="limits">
+      <li><b>The register is the source.</b> Address, type of work and permit reference come from it; OL
+        does not correct them and does not complete them.</li>
+      <li><b>"Estimate" is not "declared".</b> A value marked estimate is OL's model; the range and its
+        basis are shown with it, never presented as a settled amount.</li>
+      <li><b>A filed permit is not a guaranteed job.</b> The register says what was applied for: a permit
+        can be amended, delayed or abandoned, and the reference is the only checkable anchor.</li>
+      <li><b>No personal data.</b> No name, no phone, no email in the file — a design constraint, not a
+        setting.</li>
+    </ul>
+
+    <p style="margin:26px 0 0"><a class="btn primary" href="pay.html">Start with one issue&nbsp;→</a></p>
+    <p class="sub" style="margin-top:12px">Looking for priced quantities on a job instead?
+      <a href="index.html#prices">Takeoffs and audits</a> — first takeoff free, then $74.99.</p>
+  </section>
+
+</div>
 </main>
 
-<footer>
+<footer class="site">
   <div class="wrap">
-    <strong>OL &mdash; Optimization and Logistics</strong> &middot; Montréal, Québec &middot; NEQ 2270669312<br>
-    Sources: municipal permit registers (public). <a href="privacy.html" style="color:var(--muted)">Privacy &amp; your information</a>
-    &middot; <a href="index.html" style="color:var(--muted)">OL Services</a>
-    &middot; <a href="../" hreflang="fr-CA" lang="fr-CA" style="color:var(--muted)">Français</a>
+    <p class="legal"><b>OL — Optimization and Logistics</b> · Montréal, Québec · <b>NEQ</b> 2270669312 ·
+       <b>GST</b> 81902 9992 RT0001 · <b>QST</b> 4024451921 TQ0002<br>
+       No RBQ licence. Estimates are drafts for a licensed contractor to sign and present.</p>
+    <nav aria-label="Footer">
+      <a href="./">OL Services</a><a href="index.html#prices">Prices</a><a href="ops-audit.html">Technical audit</a>
+      <a href="pay.html">Pay</a><a href="privacy.html">Privacy</a>
+      <a href="../intel.html" hreflang="fr-CA" lang="fr-CA">Français</a>
+      <a href="https://ol-projects.github.io/ol-control/">OL, the product ↗</a>
+    </nav>
+    <p class="copy">© 2026 OL — Optimization and Logistics. Site build <span id="build">65ea7f33836a</span>.</p>
   </div>
 </footer>
 </body>

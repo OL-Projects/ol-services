@@ -276,6 +276,43 @@ footer.site nav a{color:var(--text-3);text-decoration:none;display:inline-block;
 footer.site nav a:hover{color:var(--navy)}
 footer.site .copy{font-size:12px;margin:14px 0 0;max-width:none}
 
+/* ── product page: statistic band and product cards ───────────────────────── */
+/* Four numbers, set in mono tabular figures so the columns align, with the label
+   under each. At 390 px the band wraps to two rows instead of overflowing. */
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;margin:26px 0 6px;
+       border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.stats div{padding:18px 18px 16px 0;min-width:0}
+.stats div + div{padding-left:18px;border-left:1px solid var(--line)}
+.stats b{display:block;font:700 30px/1 var(--mono);letter-spacing:-.03em;color:var(--navy);
+         font-variant-numeric:tabular-nums}
+.stats span{display:block;font:500 10.5px/1.4 var(--mono);letter-spacing:.11em;text-transform:uppercase;
+            color:var(--muted);margin-top:7px}
+.tiers{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin:22px 0 0}
+.tier{border:1px solid var(--line);border-radius:12px;background:var(--white);padding:20px 20px 18px;
+      display:flex;flex-direction:column;min-width:0}
+.tier h3{margin:0;font-size:16px}
+.tier .price{font:700 30px/1 var(--mono);letter-spacing:-.03em;color:var(--navy);margin:12px 0 2px;
+             font-variant-numeric:tabular-nums}
+.tier .price small{font:500 12.5px/1 var(--mono);letter-spacing:0;color:var(--muted);margin-left:2px}
+.tier .unit{font:500 11px/1.4 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);
+            margin:8px 0 12px}
+.tier p{margin:0 0 16px;font-size:14.5px;color:var(--text-2)}
+.tier .go{margin-top:auto;font:700 14px/1.3 var(--sans);color:var(--steel);text-decoration:none;
+          display:inline-block;padding:10px 0 4px;min-height:24px}
+.tier .go:hover{text-decoration:underline}
+/* A data table whose rows become labelled blocks on a phone: the same pattern as
+   the price table, so the reader learns one behaviour for every table on the site. */
+.dtable{width:100%;border-collapse:collapse;margin:16px 0 6px;font-size:14.5px}
+.dtable th,.dtable td{text-align:left;vertical-align:top;padding:13px 12px;border-bottom:1px solid var(--line)}
+.dtable thead th{font:700 10.5px/1.3 var(--mono);letter-spacing:.12em;text-transform:uppercase;
+                 color:var(--muted);border-bottom:2px solid var(--line);padding-bottom:9px}
+.dtable td{color:var(--text-2)}
+.dtable td b{display:block;color:var(--ink);font-size:14.5px}
+.dtable .amt{font-family:var(--mono);font-variant-numeric:tabular-nums;font-weight:600;color:var(--navy)}
+.dtable .ref{font:12px/1.5 var(--mono);color:var(--steel);white-space:nowrap}
+.sub{font-size:12.5px;line-height:1.55;color:var(--muted)}
+.sub b{color:var(--text-2)}
+
 /* ── responsive ───────────────────────────────────────────────────────────── */
 @media (max-width:980px){
   .hero{grid-template-columns:1fr;gap:30px;padding-top:40px}
@@ -295,6 +332,24 @@ footer.site .copy{font-size:12px;margin:14px 0 0;max-width:none}
   .lede{font-size:17px}
   .sec{padding-top:40px;margin-top:34px}
   .steps,.promises{grid-template-columns:1fr}
+  .stats{grid-template-columns:1fr 1fr}
+  .stats div{padding:14px 14px 13px 0}
+  .stats div:nth-child(odd){border-left:0;padding-left:0}
+  .stats div:nth-child(3),.stats div:nth-child(4){border-top:1px solid var(--line)}
+  .stats b{font-size:25px}
+  .tiers{grid-template-columns:1fr;gap:12px}
+  /* the data table becomes labelled blocks, same behaviour as .ptable */
+  .dtable{display:block}
+  .dtable thead{display:none}
+  .dtable tbody,.dtable tr,.dtable td{display:block;width:auto}
+  .dtable tr{border:1px solid var(--line);border-radius:12px;background:var(--white);
+             padding:13px 15px 9px;margin:0 0 10px}
+  .dtable td{border:0;padding:6px 0;border-top:1px dotted var(--hair)}
+  .dtable tr td:first-child{border-top:0;padding:0 0 6px}
+  .dtable tr td:first-child::before{display:none}
+  .dtable td::before{display:block;content:attr(data-l);font:600 9.5px/1.4 var(--mono);
+                     letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:2px}
+  .dtable .ref{white-space:normal}
   .prow{grid-template-columns:22px minmax(0,1fr) auto;gap:7px;font-size:12.5px}
   .paper-top{font-size:9px;letter-spacing:.08em}
   .paper-foot{font-size:10px}
@@ -345,5 +400,12 @@ footer.site .copy{font-size:12px;margin:14px 0 0;max-width:none}
   h2.title{font-size:17pt}
   .ptable{font-size:9pt}
   .promise,.step,.qa,.notdo,.caveat{break-inside:avoid;page-break-inside:avoid}
+  .stats,.tier,.dtable tr{break-inside:avoid;page-break-inside:avoid}
+  .stats b{font-size:22px}
+  .tiers{gap:9px}
+  .tier{padding:12px 13px}
+  .tier .price{font-size:22px}
+  .dtable{font-size:10.5px}
+  .dtable th,.dtable td{padding:6px 7px}
   a{color:inherit;text-decoration:none}
 }

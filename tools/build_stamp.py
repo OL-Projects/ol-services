@@ -73,7 +73,7 @@ def main():
     # replacement has to recognise an already-baked value as well as the token —
     # otherwise a rebuilt PDF leaves a stale size and hash on the page.
     meta_re = re.compile(
-        r"(PDF · sample-estimate\.pdf · )([^·<]*?)( · sha256 )([0-9a-f]{64}|\{\{SAMPLE_SHA\}\})")
+        r"(sample-estimate\.pdf</a> · )([^·<]*?)( · sha256 )([0-9a-f]{64}|\{\{SAMPLE_SHA\}\})")
 
     def render(path, rel):
         text = read(path)

@@ -51,14 +51,15 @@ a:hover{color:var(--navy)}
 .xnav{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 20px;
       padding-top:4px;padding-bottom:14px;
       font:500 11px/1 var(--mono);letter-spacing:.13em;text-transform:uppercase;color:var(--muted)}
-.xnav a{color:inherit;text-decoration:none;border-bottom:1px solid transparent;padding-bottom:4px}
+.xnav a{color:inherit;text-decoration:none;border-bottom:1px solid transparent;padding:7px 2px}
 .xnav a:hover{border-bottom-color:var(--navy);color:var(--navy)}
 .xnav .now{color:var(--navy);border-bottom-color:var(--navy)}
 .xnav .out{margin-left:auto;color:var(--navy);font-weight:700}
 .subnav{display:flex;flex-wrap:wrap;gap:4px 16px;padding-top:0;padding-bottom:12px;
-        font:500 10.5px/1.5 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:#8b9197}
-.subnav span{color:#a7acb1}
-.subnav a{color:#8b9197;text-decoration:none}
+        font:500 10.5px/1.5 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+/* WCAG AA: #a7acb1 measured 2.29:1 and #8b9197 3.18:1 on --cream; --muted measures 4.75:1 */
+.subnav span{color:var(--muted)}
+.subnav a{color:var(--muted);text-decoration:none;display:inline-block;padding:5px 2px}
 .subnav a:hover{color:var(--navy)}
 .subnav a + a::before{content:"·";margin-right:16px;color:#c3c8cc}
 
@@ -233,7 +234,7 @@ footer.site .legal{font:11px/1.9 var(--mono);color:#59636d;margin:12px 0 0;max-w
 footer.site .legal b{color:var(--navy)}
 footer.site nav{display:flex;flex-wrap:wrap;gap:6px 18px;margin:16px 0 0;font:500 11px/1.6 var(--mono);
       letter-spacing:.1em;text-transform:uppercase}
-footer.site nav a{color:#59636d;text-decoration:none}
+footer.site nav a{color:#59636d;text-decoration:none;display:inline-block;padding:6px 2px}
 footer.site nav a:hover{color:var(--navy)}
 footer.site .copy{font-size:12px;margin:14px 0 0;max-width:none}
 

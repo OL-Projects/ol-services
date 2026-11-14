@@ -351,7 +351,7 @@ footer.site .copy{font-size:12px;margin:14px 0 0;max-width:none}
                      letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:2px}
   .dtable .ref{white-space:normal}
   .prow{grid-template-columns:22px minmax(0,1fr) auto;gap:7px;font-size:12.5px}
-  .paper-top{font-size:9px;letter-spacing:.08em}
+  .paper-top{font-size:10px;letter-spacing:.08em}
   .paper-foot{font-size:10px}
   .quote{padding:18px 16px}
   /* the pricing table becomes five stacked blocks; each cell keeps its label */

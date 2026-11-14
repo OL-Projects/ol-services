@@ -17,7 +17,7 @@ Commitments that follow from it: state plainly what the system is (including tha
 
 ## What is offered, with prices (CAD, before taxes)
 
-- [Takeoffs and estimates](https://ol-projects.github.io/ol-services/): first takeoff **free** for a new client, up to 1,000 ft² · full takeoff **$74.99** founding (standard **$149**) · micro-takeoff **$25** for one room and one trade, quantities only, no prices. Delivered in 48 h (24 h for the micro-takeoff). Sample: https://ol-projects.github.io/ol-services/sample-estimate.pdf
+- [Takeoffs and estimates](https://ol-projects.github.io/ol-services/): first takeoff **free** for a new client, up to 1,000 ft² · full takeoff **$74.99** founding (standard **$149**) · micro-takeoff **$25** for one room and one trade, quantities only, no prices. Delivered in 48 h (24 h for the micro-takeoff). Sample (complete method sample: 23 confirmed lines, 16 left open, non-binding): https://ol-projects.github.io/ol-services/SAMPLE-01-FR.pdf (FR) · https://ol-projects.github.io/ol-services/SAMPLE-01-EN.pdf (EN) · priced 2-page version: https://ol-projects.github.io/ol-services/sample-estimate.pdf
 - [Technical audit](https://ol-projects.github.io/ol-services/ops-audit.html): one repository, API or workflow, **$290** founding (standard **$490**), 5 business days.
 - [Simple automation](https://ol-projects.github.io/ol-services/#prices): one automation on the client's own accounts, **$49** founding (standard **$150+**), 3 business days.
 - [Project intelligence](https://ol-projects.github.io/ol-services/en/intel.html): weekly list of demolition, rebuild and extension projects filed with Montréal and Laval; single issue $149, weekly $99/month, territory exclusivity $299/month.

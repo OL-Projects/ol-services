@@ -3,7 +3,7 @@
  "name": "OL — Optimization and Logistics",
  "entity": "NEQ 2270669312 · Montréal, Québec",
  "url": "https://ol-projects.github.io/ol-services/",
- "updated": "2026-11-13T00:00:00-0500",
+ "updated": "2026-11-13T22:27:32-0500",
  "language": {
   "site_root": "fr-CA",
   "english": "https://ol-projects.github.io/ol-services/en/",
@@ -40,14 +40,16 @@
    "what": "The complete priced takeoff for a new client: quantities, waste allowance, boxes and trim, unit prices and tax lines, up to 1,000 ft².",
    "prices": { "cad": 0 },
    "terms": "one per new client · one revision · 48 h",
-   "proof": "https://ol-projects.github.io/ol-services/sample-estimate.pdf"
+   "proof": "https://ol-projects.github.io/ol-services/SAMPLE-01-EN.pdf",
+   "priced_version": "https://ol-projects.github.io/ol-services/sample-estimate.pdf"
   },
   {
    "id": "full-takeoff",
    "what": "Priced material list by division up to 1,000 ft², with waste allowance, box and trim counts, totals to the cent.",
    "prices": { "cad": 74.99, "standard_cad": 149 },
    "terms": "founding price, first 10 clients · one revision · 48 h",
-   "proof": "https://ol-projects.github.io/ol-services/sample-estimate.pdf"
+   "proof": "https://ol-projects.github.io/ol-services/SAMPLE-01-EN.pdf",
+   "priced_version": "https://ol-projects.github.io/ol-services/sample-estimate.pdf"
   },
   {
    "id": "micro-takeoff",

@@ -2,11 +2,11 @@
  "schema": "ol.capability/1",
  "name": "OL — Optimization and Logistics",
  "entity": "NEQ 2270669312 · Montréal, Québec",
- "url": "https://ol-projects.github.io/ol-services/",
+ "url": "https://services.olcontrol.com/",
  "updated": "2026-11-13T22:27:32-0500",
  "language": {
   "site_root": "fr-CA",
-  "english": "https://ol-projects.github.io/ol-services/en/",
+  "english": "https://services.olcontrol.com/en/",
   "note": "French is published at the root and English at /en/, with the same content, prices and prominence."
  },
  "purpose": {
@@ -24,7 +24,7 @@
   ]
  },
  "contact": {
-  "route": "https://ol-projects.github.io/ol-services/#start",
+  "route": "https://services.olcontrol.com/#start",
   "email": "support@olcontrol.com",
   "note": "public site and email; no account required to read this sheet"
  },
@@ -40,37 +40,37 @@
    "what": "The complete priced takeoff for a new client: quantities, waste allowance, boxes and trim, unit prices and tax lines, up to 1,000 ft².",
    "prices": { "cad": 0 },
    "terms": "one per new client · one revision · 48 h",
-   "proof": "https://ol-projects.github.io/ol-services/SAMPLE-01-EN.pdf",
-   "priced_version": "https://ol-projects.github.io/ol-services/sample-estimate.pdf"
+   "proof": "https://services.olcontrol.com/SAMPLE-01-EN.pdf",
+   "priced_version": "https://services.olcontrol.com/sample-estimate.pdf"
   },
   {
    "id": "full-takeoff",
    "what": "Priced material list by division up to 1,000 ft², with waste allowance, box and trim counts, totals to the cent.",
    "prices": { "cad": 74.99, "standard_cad": 149 },
    "terms": "founding price, first 10 clients · one revision · 48 h",
-   "proof": "https://ol-projects.github.io/ol-services/SAMPLE-01-EN.pdf",
-   "priced_version": "https://ol-projects.github.io/ol-services/sample-estimate.pdf"
+   "proof": "https://services.olcontrol.com/SAMPLE-01-EN.pdf",
+   "priced_version": "https://services.olcontrol.com/sample-estimate.pdf"
   },
   {
    "id": "micro-takeoff",
    "what": "A measured quantity sheet for one room and one trade. Quantities only — no prices.",
    "prices": { "cad": 25 },
    "terms": "one room, one trade · one revision · 24 h",
-   "proof": "https://ol-projects.github.io/ol-services/#prices"
+   "proof": "https://services.olcontrol.com/#prices"
   },
   {
    "id": "technical-audit",
    "what": "A written audit of one repository, API or workflow: what is broken, what is fragile, what is fine, each finding tied to a file or a line, with a recorded walkthrough.",
    "prices": { "cad": 290, "standard_cad": 490 },
    "terms": "founding price, first 10 clients · 5 business days",
-   "proof": "https://ol-projects.github.io/ol-services/ops-audit.html"
+   "proof": "https://services.olcontrol.com/ops-audit.html"
   },
   {
    "id": "simple-automation",
    "what": "One automation built on the client's own accounts, tested with real sample data, documented, with a fix window.",
    "prices": { "cad": 49, "standard_cad_from": 150 },
    "terms": "3 business days",
-   "proof": "https://ol-projects.github.io/ol-services/#prices"
+   "proof": "https://services.olcontrol.com/#prices"
   }
  ],
  "related_offers": [
@@ -78,7 +78,7 @@
    "id": "project-intelligence",
    "what": "Weekly list of demolition, rebuild and extension projects filed with Montréal and Laval, with values, stage and permit reference.",
    "prices": { "cad": { "single_issue": 149, "weekly_month": 99, "territory_month": 299 } },
-   "proof": "https://ol-projects.github.io/ol-services/en/intel.html",
+   "proof": "https://services.olcontrol.com/en/intel.html",
    "language_of_page": "en-CA"
   }
  ],

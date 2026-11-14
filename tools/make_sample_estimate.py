@@ -55,7 +55,7 @@ CONTENT = {
     "tagline": "ESTIMATING • TAKEOFFS • DOCUMENT WORK",
     "place": "Montréal, Québec, Canada",
     "email": "support@olcontrol.com",
-    "site": "ol-projects.github.io/ol-services",
+    "site": "services.olcontrol.com",
     "regs": "NEQ 2270669312 • GST 81902 9992 RT0001 • QST 4024451921 TQ0002",
     "notice": "SAMPLE — NOT A BINDING QUOTE",
     "estimate_no": "SAMPLE-2026-001",

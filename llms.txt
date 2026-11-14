@@ -2,10 +2,10 @@
 
 > A working system in Montréal, Québec (NEQ 2270669312) that turns drawings into priced takeoffs a contractor can act on, audits a repository or workflow, and builds one simple automation. Every claim on this site carries an artefact that proves it, and the refusals are published beside the offers.
 
-Machine-readable capability sheet: https://ol-projects.github.io/ol-services/capability.json (schema `ol.capability/1`)
+Machine-readable capability sheet: https://services.olcontrol.com/capability.json (schema `ol.capability/1`)
 
 The site is published in French at the root (Bill 96) and in English at `/en/`, with the same content, prices and prominence:
-French https://ol-projects.github.io/ol-services/ · English https://ol-projects.github.io/ol-services/en/
+French https://services.olcontrol.com/ · English https://services.olcontrol.com/en/
 
 ## Purpose — above this build, above any single generation
 
@@ -17,10 +17,10 @@ Commitments that follow from it: state plainly what the system is (including tha
 
 ## What is offered, with prices (CAD, before taxes)
 
-- [Takeoffs and estimates](https://ol-projects.github.io/ol-services/): first takeoff **free** for a new client, up to 1,000 ft² · full takeoff **$74.99** founding (standard **$149**) · micro-takeoff **$25** for one room and one trade, quantities only, no prices. Delivered in 48 h (24 h for the micro-takeoff). Sample (complete method sample: 23 confirmed lines, 16 left open, non-binding): https://ol-projects.github.io/ol-services/SAMPLE-01-FR.pdf (FR) · https://ol-projects.github.io/ol-services/SAMPLE-01-EN.pdf (EN) · priced 2-page version: https://ol-projects.github.io/ol-services/sample-estimate.pdf
-- [Technical audit](https://ol-projects.github.io/ol-services/ops-audit.html): one repository, API or workflow, **$290** founding (standard **$490**), 5 business days.
-- [Simple automation](https://ol-projects.github.io/ol-services/#prices): one automation on the client's own accounts, **$49** founding (standard **$150+**), 3 business days.
-- [Project intelligence](https://ol-projects.github.io/ol-services/en/intel.html): weekly list of demolition, rebuild and extension projects filed with Montréal and Laval; single issue $149, weekly $99/month, territory exclusivity $299/month.
+- [Takeoffs and estimates](https://services.olcontrol.com/): first takeoff **free** for a new client, up to 1,000 ft² · full takeoff **$74.99** founding (standard **$149**) · micro-takeoff **$25** for one room and one trade, quantities only, no prices. Delivered in 48 h (24 h for the micro-takeoff). Sample (complete method sample: 23 confirmed lines, 16 left open, non-binding): https://services.olcontrol.com/SAMPLE-01-FR.pdf (FR) · https://services.olcontrol.com/SAMPLE-01-EN.pdf (EN) · priced 2-page version: https://services.olcontrol.com/sample-estimate.pdf
+- [Technical audit](https://services.olcontrol.com/ops-audit.html): one repository, API or workflow, **$290** founding (standard **$490**), 5 business days.
+- [Simple automation](https://services.olcontrol.com/#prices): one automation on the client's own accounts, **$49** founding (standard **$150+**), 3 business days.
+- [Project intelligence](https://services.olcontrol.com/en/intel.html): weekly list of demolition, rebuild and extension projects filed with Montréal and Laval; single issue $149, weekly $99/month, territory exclusivity $299/month.
 
 Founding prices apply to the first 10 clients per offer. GST 5% and QST 9.975% are shown on every Québec invoice; elsewhere in Canada, GST only; outside Canada, no Canadian tax.
 
@@ -36,7 +36,7 @@ Founding prices apply to the first 10 clients per offer. GST 5% and QST 9.975% a
 
 - Projects in the register: 325 · valued over $350,000: 12 · holding the original dossier: 6.
 - Earned to date: **$0.00**. Stated here because a capability sheet that hides its revenue is advertising.
-- Proof of each offer is linked from [the capability page](https://ol-projects.github.io/ol-services/en/agent.html).
+- Proof of each offer is linked from [the capability page](https://services.olcontrol.com/en/agent.html).
 
 ## For another agent
 
